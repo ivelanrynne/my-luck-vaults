@@ -1,0 +1,122 @@
+[gd_scene format=3 uid="uid://b3drupl4jja0y"]
+
+[ext_resource type="Texture2D" uid="uid://bgmexb846g0aa" path="res://assets/monsters/01_magma_imp/idle/01_magma_imp_idle_01.png" id="1_cg668"]
+[ext_resource type="Texture2D" uid="uid://reoccpb8a0kn" path="res://assets/monsters/01_magma_imp/attack/01_magma_imp_attack_01.png" id="1_perq5"]
+[ext_resource type="Script" uid="uid://bs62lragxh0gp" path="res://Enemies/MagmaImp.cs" id="1_xt736"]
+[ext_resource type="Texture2D" uid="uid://b68vy7pdqe1ss" path="res://assets/monsters/01_magma_imp/idle/01_magma_imp_idle_02.png" id="2_2lhyb"]
+[ext_resource type="Texture2D" uid="uid://cggy1n0236g0v" path="res://assets/monsters/01_magma_imp/attack/01_magma_imp_attack_02.png" id="2_3x3vy"]
+[ext_resource type="Texture2D" uid="uid://dmf6fbrynrf6" path="res://assets/monsters/01_magma_imp/idle/01_magma_imp_idle_03.png" id="3_h01s8"]
+[ext_resource type="Texture2D" uid="uid://cbtn2dyxfhftr" path="res://assets/monsters/01_magma_imp/attack/01_magma_imp_attack_03.png" id="3_lu4f1"]
+[ext_resource type="Texture2D" uid="uid://dte6bfp38ojuq" path="res://assets/monsters/01_magma_imp/attack/01_magma_imp_attack_04.png" id="4_ka2v6"]
+[ext_resource type="Texture2D" uid="uid://cs0k2o145e72m" path="res://assets/monsters/01_magma_imp/idle/01_magma_imp_idle_04.png" id="4_ufxoh"]
+[ext_resource type="Texture2D" uid="uid://c612ol5gjiuu1" path="res://assets/monsters/01_magma_imp/hurt_critical/01_magma_imp_hurt_critical_01.png" id="5_uhm7c"]
+[ext_resource type="Texture2D" uid="uid://bl8bs7idgm2it" path="res://assets/monsters/01_magma_imp/hurt_critical/01_magma_imp_hurt_critical_02.png" id="6_7rf51"]
+[ext_resource type="Texture2D" uid="uid://ctyxfqpardda0" path="res://assets/monsters/01_magma_imp/hurt_critical/01_magma_imp_hurt_critical_03.png" id="7_7oahf"]
+[ext_resource type="Texture2D" uid="uid://ddlbdxmh1gsa4" path="res://assets/monsters/01_magma_imp/hurt_critical/01_magma_imp_hurt_critical_04.png" id="8_6rr58"]
+[ext_resource type="Texture2D" uid="uid://bjijg2s7gvm7x" path="res://assets/monsters/01_magma_imp/move/01_magma_imp_move_01.png" id="13_4182c"]
+[ext_resource type="Texture2D" uid="uid://cknkgpxqofi71" path="res://assets/monsters/01_magma_imp/move/01_magma_imp_move_02.png" id="14_uajud"]
+[ext_resource type="Texture2D" uid="uid://fo02okyfjwpt" path="res://assets/monsters/01_magma_imp/move/01_magma_imp_move_03.png" id="15_ulfsa"]
+[ext_resource type="Texture2D" uid="uid://c74no65nw81fm" path="res://assets/monsters/01_magma_imp/move/01_magma_imp_move_04.png" id="16_yjl2m"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0s17n"]
+radius = 25.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0s17n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_perq5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_3x3vy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lu4f1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ka2v6")
+}],
+"loop": 1,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_uhm7c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_7rf51")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_7oahf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_6rr58")
+}],
+"loop": 1,
+"name": &"hurt_critical",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_cg668")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_2lhyb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_h01s8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ufxoh")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_4182c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_uajud")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ulfsa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_yjl2m")
+}],
+"loop": 1,
+"name": &"move",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bhwrh"]
+radius = 40.012497
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xt736"]
+radius = 250.04999
+
+[node name="MagmaImp" type="CharacterBody2D" unique_id=969003115]
+script = ExtResource("1_xt736")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1004389719]
+shape = SubResource("CircleShape2D_0s17n")
+
+[node name="Container" type="Node2D" parent="." unique_id=1260673953]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Container" unique_id=31598116]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_0s17n")
+animation = &"idle"
+
+[node name="AttackArea" type="Area2D" parent="." unique_id=1943395902]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=834968969]
+shape = SubResource("CircleShape2D_bhwrh")
+
+[node name="Sight" type="Area2D" parent="." unique_id=1153886277]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sight" unique_id=519496769]
+shape = SubResource("CircleShape2D_xt736")

@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://d2x7jih886h2u"]
+
+[ext_resource type="Texture2D" uid="uid://c120pm8f2bc1g" path="res://assets/portals/02_Crystal/frame_00.png" id="1_6owyt"]
+[ext_resource type="Script" uid="uid://bujhexxjsg76g" path="res://Portals-Scenes/CrystalIcePortal.cs" id="1_d2csp"]
+[ext_resource type="Texture2D" uid="uid://uafmd1rucq7u" path="res://assets/portals/02_Crystal/frame_01.png" id="2_d2csp"]
+[ext_resource type="Texture2D" uid="uid://m2uc17do3ti3" path="res://assets/portals/02_Crystal/frame_02.png" id="3_r4gbu"]
+[ext_resource type="Texture2D" uid="uid://bpb5b50jl6uqm" path="res://assets/portals/02_Crystal/frame_03.png" id="4_jqv6q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_portal"]
+size = Vector2(64, 109)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0s17n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_6owyt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_d2csp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_r4gbu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jqv6q")
+}],
+"loop": 1,
+"name": &"activated",
+"speed": 5.0
+}]
+
+[node name="Crystal_IcePortal" type="Node2D" unique_id=263141063]
+script = ExtResource("1_d2csp")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=575825949]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=154574498]
+position = Vector2(0, 6.5)
+shape = SubResource("RectangleShape2D_portal")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=814158170]
+sprite_frames = SubResource("SpriteFrames_0s17n")
+animation = &"activated"

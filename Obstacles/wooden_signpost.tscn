@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://ctvmqarwf0m5d"]
+
+[ext_resource type="Texture2D" uid="uid://bm8ovw4l48mm1" path="res://Obstacles/wooden_signpost.png" id="1_kuw3b"]
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1713542270]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=340945372]
+texture = ExtResource("1_kuw3b")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=55880464]
+polygon = PackedVector2Array(-32, -31, -31, -5, -6, -5, -4, 55, 5, 55, 4, -5, 29, -5, 39, -17, 28, -30, 6, -31, 5, -41, -5, -41, -4, -30)

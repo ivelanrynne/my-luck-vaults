@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://b0h5bch7wlu1x"]
+
+[ext_resource type="Script" uid="uid://u75n6oupaejv" path="res://Enemies/AbyssAnglerBeast.cs" id="1_wdun0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0s17n"]
+radius = 25.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0s17n"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"hurt_critical",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"move",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h3fo6"]
+radius = 31.016125
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wdun0"]
+radius = 250.04999
+
+[node name="Name" type="CharacterBody2D" unique_id=969003115]
+script = ExtResource("1_wdun0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1004389719]
+shape = SubResource("CircleShape2D_0s17n")
+
+[node name="Container" type="Node2D" parent="." unique_id=1260673953]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Container" unique_id=31598116]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_0s17n")
+animation = &"move"
+
+[node name="AttackArea" type="Area2D" parent="." unique_id=1904230850]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=1768131850]
+shape = SubResource("CircleShape2D_h3fo6")
+
+[node name="Sight" type="Area2D" parent="." unique_id=971047]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sight" unique_id=787494345]
+shape = SubResource("CircleShape2D_wdun0")

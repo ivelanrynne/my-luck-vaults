@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://c2ag5s0unchyv"]
+
+[ext_resource type="Texture2D" uid="uid://boyg4osahcpk8" path="res://assets/portals/03_Cozy_House/frame_00.png" id="1_lwofj"]
+[ext_resource type="Script" uid="uid://bxxl327dswiac" path="res://Portals-Scenes/CozyHousePortal.cs" id="1_piune"]
+[ext_resource type="Texture2D" uid="uid://bwyqg47tkcpk3" path="res://assets/portals/03_Cozy_House/frame_01.png" id="2_piune"]
+[ext_resource type="Texture2D" uid="uid://chfch6wnk10cp" path="res://assets/portals/03_Cozy_House/frame_02.png" id="3_8q6v8"]
+[ext_resource type="Texture2D" uid="uid://tkjueu5ee18f" path="res://assets/portals/03_Cozy_House/frame_03.png" id="4_4dq4p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uktcn"]
+size = Vector2(64, 134)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0fk3v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_lwofj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_piune")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_8q6v8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4dq4p")
+}],
+"loop": 1,
+"name": &"activated",
+"speed": 5.0
+}]
+
+[node name="CozyHousePortal" type="Node2D" unique_id=263141063]
+script = ExtResource("1_piune")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=575825949]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2084289069]
+position = Vector2(0, 19)
+shape = SubResource("RectangleShape2D_uktcn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1928448568]
+sprite_frames = SubResource("SpriteFrames_0fk3v")
+animation = &"activated"

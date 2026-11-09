@@ -1,0 +1,125 @@
+[gd_scene format=3 uid="uid://lcwr5se24cmx"]
+
+[ext_resource type="Script" uid="uid://djww1mx5r6jsl" path="res://Enemies/StormSkyHarpy.cs" id="1_4sjvw"]
+[ext_resource type="Texture2D" uid="uid://ck0hept3tfxnl" path="res://assets/monsters/04_storm_sky_harpy/attack/04_storm_sky_harpy_attack_01.png" id="1_v8esv"]
+[ext_resource type="Texture2D" uid="uid://lg5h3rr4h866" path="res://assets/monsters/04_storm_sky_harpy/attack/04_storm_sky_harpy_attack_02.png" id="2_exbqe"]
+[ext_resource type="Texture2D" uid="uid://baxt752y6504f" path="res://assets/monsters/04_storm_sky_harpy/attack/04_storm_sky_harpy_attack_03.png" id="3_xcp52"]
+[ext_resource type="Texture2D" uid="uid://0otv8ldd3vsk" path="res://assets/monsters/04_storm_sky_harpy/attack/04_storm_sky_harpy_attack_04.png" id="4_yp4f0"]
+[ext_resource type="Texture2D" uid="uid://da2ac2fpjvnhl" path="res://assets/monsters/04_storm_sky_harpy/hurt_critical/04_storm_sky_harpy_hurt_critical_01.png" id="5_vmpil"]
+[ext_resource type="Texture2D" uid="uid://dtiayad7ykbv4" path="res://assets/monsters/04_storm_sky_harpy/hurt_critical/04_storm_sky_harpy_hurt_critical_02.png" id="6_b0kfu"]
+[ext_resource type="Texture2D" uid="uid://cd5if5whftdvl" path="res://assets/monsters/04_storm_sky_harpy/hurt_critical/04_storm_sky_harpy_hurt_critical_03.png" id="7_50o1w"]
+[ext_resource type="Texture2D" uid="uid://c6qh1tyfix63n" path="res://assets/monsters/04_storm_sky_harpy/hurt_critical/04_storm_sky_harpy_hurt_critical_04.png" id="8_a55yt"]
+[ext_resource type="Texture2D" uid="uid://dfc2hox8ku382" path="res://assets/monsters/04_storm_sky_harpy/idle/04_storm_sky_harpy_idle_01.png" id="9_xmj0l"]
+[ext_resource type="Texture2D" uid="uid://br0tmn1dr53y5" path="res://assets/monsters/04_storm_sky_harpy/idle/04_storm_sky_harpy_idle_02.png" id="10_pyfv8"]
+[ext_resource type="Texture2D" uid="uid://cx44di3c5swae" path="res://assets/monsters/04_storm_sky_harpy/idle/04_storm_sky_harpy_idle_03.png" id="11_31h7d"]
+[ext_resource type="Texture2D" uid="uid://b3ou7i70y2igp" path="res://assets/monsters/04_storm_sky_harpy/idle/04_storm_sky_harpy_idle_04.png" id="12_dh2ik"]
+[ext_resource type="Texture2D" uid="uid://cr8x1lk0hnf11" path="res://assets/monsters/04_storm_sky_harpy/move/04_storm_sky_harpy_move_01.png" id="13_4j1ea"]
+[ext_resource type="Texture2D" uid="uid://boyiu4sikgnuc" path="res://assets/monsters/04_storm_sky_harpy/move/04_storm_sky_harpy_move_02.png" id="14_c56id"]
+[ext_resource type="Texture2D" uid="uid://bgw71kb3yl74d" path="res://assets/monsters/04_storm_sky_harpy/move/04_storm_sky_harpy_move_03.png" id="15_2wbmk"]
+[ext_resource type="Texture2D" uid="uid://ctmv24p4p76hh" path="res://assets/monsters/04_storm_sky_harpy/move/04_storm_sky_harpy_move_04.png" id="16_e4jlp"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ka2v6"]
+radius = 27.0
+height = 98.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0s17n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_v8esv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_exbqe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xcp52")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yp4f0")
+}],
+"loop": 1,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_vmpil")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_b0kfu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_50o1w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_a55yt")
+}],
+"loop": 1,
+"name": &"hurt_critical",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_xmj0l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_pyfv8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_31h7d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_dh2ik")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_4j1ea")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_c56id")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_2wbmk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_e4jlp")
+}],
+"loop": 1,
+"name": &"move",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_duftb"]
+radius = 49.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4sjvw"]
+radius = 250.04999
+
+[node name="StormSkyHarpy" type="CharacterBody2D" unique_id=969003115]
+script = ExtResource("1_4sjvw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1004389719]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_ka2v6")
+
+[node name="Container" type="Node2D" parent="." unique_id=1260673953]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Container" unique_id=31598116]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_0s17n")
+animation = &"attack"
+frame_progress = 0.061306402
+
+[node name="AttackArea" type="Area2D" parent="." unique_id=1962277251]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=1643578294]
+shape = SubResource("CircleShape2D_duftb")
+
+[node name="Sight" type="Area2D" parent="." unique_id=1646807016]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sight" unique_id=598311639]
+shape = SubResource("CircleShape2D_4sjvw")

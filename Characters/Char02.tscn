@@ -1,0 +1,180 @@
+[gd_scene format=3 uid="uid://bvapr6525vpfn"]
+
+[ext_resource type="Script" uid="uid://c0h8oli7r6xce" path="res://Characters/Char02.cs" id="1_v86vd"]
+[ext_resource type="Texture2D" uid="uid://dgogxnwed5v0j" path="res://assets/characters/female_luna/fly/female_luna_fly_01.png" id="2_ljyyi"]
+[ext_resource type="Texture2D" uid="uid://c41mrbg163qy4" path="res://assets/characters/female_luna/fly/female_luna_fly_02.png" id="3_eq8l5"]
+[ext_resource type="Texture2D" uid="uid://bsfcfbpox61g8" path="res://assets/characters/female_luna/fly/female_luna_fly_03.png" id="4_dgpxn"]
+[ext_resource type="Texture2D" uid="uid://c7ao68dex35ak" path="res://assets/characters/female_luna/fly/female_luna_fly_04.png" id="5_gqm2x"]
+[ext_resource type="Texture2D" uid="uid://cxtsifpjesjvn" path="res://assets/characters/female_luna/fly/female_luna_fly_05.png" id="6_n7gvv"]
+[ext_resource type="Texture2D" uid="uid://w8vgkp6bfpvp" path="res://assets/characters/female_luna/fly/female_luna_fly_06.png" id="7_pfgdv"]
+[ext_resource type="Texture2D" uid="uid://ejg0dw5xnna2" path="res://assets/characters/female_luna/idle/female_luna_idle_01.png" id="8_xvf50"]
+[ext_resource type="Texture2D" uid="uid://d24d6pcn2nrn8" path="res://assets/characters/female_luna/idle/female_luna_idle_02.png" id="9_6awjo"]
+[ext_resource type="Texture2D" uid="uid://bvtwfnv5syl7t" path="res://assets/characters/female_luna/idle/female_luna_idle_03.png" id="10_3ynid"]
+[ext_resource type="Texture2D" uid="uid://ctpci2pp8hswo" path="res://assets/characters/female_luna/idle/female_luna_idle_04.png" id="11_y6lwe"]
+[ext_resource type="Texture2D" uid="uid://b8vlw4hyqoa26" path="res://assets/characters/female_luna/jump/female_luna_jump_01.png" id="12_3r71p"]
+[ext_resource type="Texture2D" uid="uid://32oxnljpnd64" path="res://assets/characters/female_luna/jump/female_luna_jump_02.png" id="13_8sleh"]
+[ext_resource type="Texture2D" uid="uid://bgrreim3ewo72" path="res://assets/characters/female_luna/jump/female_luna_jump_03.png" id="14_8qbov"]
+[ext_resource type="Texture2D" uid="uid://bmyvgo654p678" path="res://assets/characters/female_luna/jump/female_luna_jump_04.png" id="15_xs27i"]
+[ext_resource type="Texture2D" uid="uid://beby26gv3l3ni" path="res://assets/characters/female_luna/run/female_luna_run_01.png" id="16_qvp3p"]
+[ext_resource type="Texture2D" uid="uid://bcy4fjtoy1o6r" path="res://assets/characters/female_luna/run/female_luna_run_02.png" id="17_jd1mc"]
+[ext_resource type="Texture2D" uid="uid://crcmbmrpknbe7" path="res://assets/characters/female_luna/run/female_luna_run_03.png" id="18_4wbgf"]
+[ext_resource type="Texture2D" uid="uid://d0eokws3xeuy0" path="res://assets/characters/female_luna/run/female_luna_run_04.png" id="19_7trag"]
+[ext_resource type="Texture2D" uid="uid://db742qk5myqk4" path="res://assets/characters/female_luna/run/female_luna_run_05.png" id="20_38as2"]
+[ext_resource type="Texture2D" uid="uid://cbhoh1s5bb1pj" path="res://assets/characters/female_luna/run/female_luna_run_06.png" id="21_c1nit"]
+[ext_resource type="Texture2D" uid="uid://di4xbqfwh2n41" path="res://assets/characters/female_luna/swim/female_luna_swim_01.png" id="22_biwfw"]
+[ext_resource type="Texture2D" uid="uid://deohr5va55ps7" path="res://assets/characters/female_luna/swim/female_luna_swim_02.png" id="23_2bl3y"]
+[ext_resource type="Texture2D" uid="uid://darvl33b23wva" path="res://assets/characters/female_luna/swim/female_luna_swim_03.png" id="24_3xa4y"]
+[ext_resource type="Texture2D" uid="uid://b2h3xo68ayo4j" path="res://assets/characters/female_luna/swim/female_luna_swim_04.png" id="25_3up5b"]
+[ext_resource type="Texture2D" uid="uid://bo5lhltbw1ady" path="res://assets/characters/female_luna/swim/female_luna_swim_05.png" id="26_wkhll"]
+[ext_resource type="Texture2D" uid="uid://chj211qcoje4m" path="res://assets/characters/female_luna/swim/female_luna_swim_06.png" id="27_d3777"]
+[ext_resource type="Texture2D" uid="uid://bdwuioreppo0v" path="res://assets/characters/female_luna/walk/female_luna_walk_01.png" id="28_g37sb"]
+[ext_resource type="Texture2D" uid="uid://cgpuxfy4q27k3" path="res://assets/characters/female_luna/walk/female_luna_walk_02.png" id="29_x8l63"]
+[ext_resource type="Texture2D" uid="uid://j3qa83efla8e" path="res://assets/characters/female_luna/walk/female_luna_walk_03.png" id="30_fjyu8"]
+[ext_resource type="Texture2D" uid="uid://diu762r8faxox" path="res://assets/characters/female_luna/walk/female_luna_walk_04.png" id="31_qcvfy"]
+[ext_resource type="Texture2D" uid="uid://dbdq8i8jap1un" path="res://assets/characters/female_luna/walk/female_luna_walk_05.png" id="32_l4jay"]
+[ext_resource type="Texture2D" uid="uid://rj0by3n46ybs" path="res://assets/characters/female_luna/walk/female_luna_walk_06.png" id="33_thamk"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h1afg"]
+radius = 24.0
+height = 88.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0s17n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ljyyi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_eq8l5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_dgpxn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_gqm2x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_n7gvv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_pfgdv")
+}],
+"loop": 1,
+"name": &"fly",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_xvf50")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_6awjo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_3ynid")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_y6lwe")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_3r71p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_8sleh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_8qbov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_xs27i")
+}],
+"loop": 1,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_qvp3p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_jd1mc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_4wbgf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_7trag")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_38as2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_c1nit")
+}],
+"loop": 1,
+"name": &"run",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_biwfw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_2bl3y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_3xa4y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_3up5b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_wkhll")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_d3777")
+}],
+"loop": 1,
+"name": &"swim",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28_g37sb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_x8l63")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_fjyu8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_qcvfy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_l4jay")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_thamk")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="Char02" type="CharacterBody2D" unique_id=1146783260]
+script = ExtResource("1_v86vd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1338106605]
+shape = SubResource("CapsuleShape2D_h1afg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2043085211]
+sprite_frames = SubResource("SpriteFrames_0s17n")
+animation = &"idle"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1179375051]

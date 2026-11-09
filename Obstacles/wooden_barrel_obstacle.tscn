@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://32yfxgjhmg1g"]
+
+[ext_resource type="Texture2D" uid="uid://tuhm4d5w06wn" path="res://assets/map_props/indoor/wooden_barrel.png" id="1_6trbk"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0s17n"]
+radius = 28.0
+height = 72.0
+
+[node name="WoodenBarrelObstacle" type="StaticBody2D" unique_id=30234979]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1005893901]
+texture = ExtResource("1_6trbk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1079794100]
+shape = SubResource("CapsuleShape2D_0s17n")

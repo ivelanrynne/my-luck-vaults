@@ -1,0 +1,233 @@
+[gd_scene format=3 uid="uid://dxeh783ewolh3"]
+
+[ext_resource type="Script" uid="uid://cn71mp1d42vgm" path="res://UserUI/SettingButtonPopup.cs" id="1_dk0vu"]
+[ext_resource type="FontFile" uid="uid://53udbob7porp" path="res://assets/gain-circus-font/Gain Circus.ttf" id="2_appdd"]
+[ext_resource type="Texture2D" uid="uid://c50bo61gq44wa" path="res://assets/icons/01_Icon_Setting.png" id="2_ei2q1"]
+[ext_resource type="Texture2D" uid="uid://cwj2kvsvw0c1i" path="res://assets/icons/02_Icon_Sound_Am_Thanh.png" id="3_a8wlh"]
+[ext_resource type="PackedScene" uid="uid://jjski0wpnkvg" path="res://UserUI/back_to_menu.tscn" id="3_appdd"]
+[ext_resource type="Texture2D" uid="uid://o52xc8u2167l" path="res://assets/icons/12_Icon_Mute_Tat_Am.png" id="4_xwvlg"]
+[ext_resource type="Texture2D" uid="uid://bhl2ny8hjft0q" path="res://assets/icons/03_Icon_Home_Trang_Chu.png" id="7_bjcp1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h3fo6"]
+bg_color = Color(0.55839837, 0.61458564, 0.6051905, 1)
+corner_radius_top_left = 28
+corner_radius_top_right = 28
+corner_radius_bottom_right = 28
+corner_radius_bottom_left = 28
+shadow_size = 4
+shadow_offset = Vector2(1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0s17n"]
+line_spacing = 5.0
+paragraph_spacing = 5.0
+font_size = 28
+outline_size = 5
+outline_color = Color(0.11858138, 0.11858138, 0.11858138, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_appdd"]
+outline_size = 2
+outline_color = Color(0.13319641, 0.13319641, 0.13319638, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f1fas"]
+bg_color = Color(0.8429114, 0.4371328, 0.70312726, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_a8wlh"]
+outline_size = 2
+outline_color = Color(0.096204735, 0.09620475, 0.096204735, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cvbu1"]
+bg_color = Color(0.36264378, 0.6966283, 0.16774979, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qn5ia"]
+bg_color = Color(0.6469046, 0.84572965, 0.6422481, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4wb2i"]
+bg_color = Color(0.44705883, 0.75686276, 0.5176471, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0s17n"]
+bg_color = Color(0.8352941, 0.25882354, 0.105882354, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 1
+shadow_offset = Vector2(1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_joyb4"]
+bg_color = Color(0.77304655, 0.44711053, 0.4952411, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nrwjr"]
+bg_color = Color(0.9647059, 0.09019608, 0.20392157, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 1
+shadow_offset = Vector2(1, 1)
+
+[sub_resource type="Theme" id="Theme_dk0vu"]
+
+[node name="SettingButtonPopup" type="Control" unique_id=231950983]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 2
+script = ExtResource("1_dk0vu")
+metadata/_edit_lock_ = true
+
+[node name="popupPanel" type="Panel" parent="." unique_id=213070816]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -372.0
+offset_top = -185.0
+offset_right = 372.0
+offset_bottom = 185.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_h3fo6")
+
+[node name="Label" type="Label" parent="popupPanel" unique_id=283890]
+layout_mode = 0
+offset_right = 744.0
+offset_bottom = 39.0
+theme_override_fonts/font = ExtResource("2_appdd")
+text = "Setting"
+label_settings = SubResource("LabelSettings_0s17n")
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="mutedSound" type="TextureButton" parent="popupPanel" unique_id=237881222]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 60.0
+offset_right = 96.0
+offset_bottom = 106.0
+texture_normal = ExtResource("4_xwvlg")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="activeSound" type="TextureButton" parent="popupPanel" unique_id=1524135730]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 60.0
+offset_right = 96.0
+offset_bottom = 106.0
+texture_normal = ExtResource("3_a8wlh")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="volumeChange" type="VBoxContainer" parent="popupPanel" unique_id=969010023]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -261.0
+offset_top = -113.0
+offset_right = 261.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="popupPanel/volumeChange" unique_id=1824450399]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_appdd")
+text = "Volume:"
+label_settings = SubResource("LabelSettings_appdd")
+
+[node name="HSlider" type="HSlider" parent="popupPanel/volumeChange" unique_id=228861154]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_f1fas")
+value = 100.0
+
+[node name="codeRedeem" type="VBoxContainer" parent="popupPanel" unique_id=1223000083]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -177.0
+offset_top = 65.0
+offset_right = 177.0
+offset_bottom = 117.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="popupPanel/codeRedeem" unique_id=817354925]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_appdd")
+text = "Code Redeem:"
+label_settings = SubResource("LabelSettings_a8wlh")
+
+[node name="enterCodes" type="LineEdit" parent="popupPanel/codeRedeem" unique_id=1093555275]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_appdd")
+placeholder_text = "Enter the code..."
+
+[node name="redeemBtn" type="Button" parent="popupPanel/codeRedeem/enterCodes" unique_id=249879454]
+layout_mode = 0
+offset_left = 285.0
+offset_top = 1.0
+offset_right = 352.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("2_appdd")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_cvbu1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qn5ia")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4wb2i")
+text = "Comfirm"
+
+[node name="exitPopup" type="Button" parent="popupPanel" unique_id=502730740]
+layout_mode = 0
+offset_left = 700.0
+offset_top = -16.0
+offset_right = 763.0
+offset_bottom = 27.0
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_0s17n")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_joyb4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nrwjr")
+text = "X"
+
+[node name="settingBtn" type="TextureButton" parent="." unique_id=1677247683]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 5.0
+offset_right = 83.0
+offset_bottom = 81.0
+theme = SubResource("Theme_dk0vu")
+texture_normal = ExtResource("2_ei2q1")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="BackToMenu" parent="." unique_id=175376995 instance=ExtResource("3_appdd")]
+layout_mode = 1
+
+[node name="backHomeIcon" type="Sprite2D" parent="BackToMenu" unique_id=1900793686]
+position = Vector2(576, 549)
+scale = Vector2(0.40234375, 0.40234375)
+texture = ExtResource("7_bjcp1")

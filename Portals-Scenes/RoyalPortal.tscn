@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://cb786mu3w2ig"]
+
+[ext_resource type="Script" uid="uid://244ckeu4qfhe" path="res://Portals-Scenes/RoyalPortal.cs" id="1_fcfto"]
+[ext_resource type="Texture2D" uid="uid://c5fv1lcgo1q6g" path="res://assets/portals/01_Royal/frame_00.png" id="1_nc747"]
+[ext_resource type="Texture2D" uid="uid://c3cs8vi3gsdhu" path="res://assets/portals/01_Royal/frame_01.png" id="2_fcfto"]
+[ext_resource type="Texture2D" uid="uid://cp1gcyey62myr" path="res://assets/portals/01_Royal/frame_02.png" id="3_qoir2"]
+[ext_resource type="Texture2D" uid="uid://bl0pd5dexqgdv" path="res://assets/portals/01_Royal/frame_03.png" id="4_ha4x0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_portal"]
+size = Vector2(64, 159)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0fk3v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_nc747")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_fcfto")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qoir2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ha4x0")
+}],
+"loop": 1,
+"name": &"activated",
+"speed": 5.0
+}]
+
+[node name="RoyalPortal" type="Node2D" unique_id=263141063]
+script = ExtResource("1_fcfto")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=575825949]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=154574498]
+position = Vector2(0, 31.5)
+shape = SubResource("RectangleShape2D_portal")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1928448568]
+sprite_frames = SubResource("SpriteFrames_0fk3v")
+animation = &"activated"
+frame = 1
+frame_progress = 0.19051082

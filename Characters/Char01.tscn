@@ -1,0 +1,180 @@
+[gd_scene format=3 uid="uid://b350lkpdoejea"]
+
+[ext_resource type="Script" uid="uid://mrrq5e20egwj" path="res://Characters/Char01.cs" id="1_sn1w6"]
+[ext_resource type="Texture2D" uid="uid://cwc8vxmohsc4x" path="res://assets/characters/male_leo/fly/male_leo_fly_01.png" id="2_n6ecc"]
+[ext_resource type="Texture2D" uid="uid://dgsodao5c2pem" path="res://assets/characters/male_leo/fly/male_leo_fly_02.png" id="3_ub4uk"]
+[ext_resource type="Texture2D" uid="uid://bdlonorn1ouij" path="res://assets/characters/male_leo/fly/male_leo_fly_03.png" id="4_a688e"]
+[ext_resource type="Texture2D" uid="uid://bklis0m42r5lf" path="res://assets/characters/male_leo/fly/male_leo_fly_04.png" id="5_ipxsl"]
+[ext_resource type="Texture2D" uid="uid://c75eqd8kwgfee" path="res://assets/characters/male_leo/fly/male_leo_fly_05.png" id="6_mm2v4"]
+[ext_resource type="Texture2D" uid="uid://f4piqwtfls8j" path="res://assets/characters/male_leo/fly/male_leo_fly_06.png" id="7_x02pw"]
+[ext_resource type="Texture2D" uid="uid://dxlqtgaui8c2" path="res://assets/characters/male_leo/idle/male_leo_idle_01.png" id="8_4kxim"]
+[ext_resource type="Texture2D" uid="uid://dvjgtl05pdkur" path="res://assets/characters/male_leo/idle/male_leo_idle_02.png" id="9_jvxab"]
+[ext_resource type="Texture2D" uid="uid://2ag7d0ect8y4" path="res://assets/characters/male_leo/idle/male_leo_idle_03.png" id="10_vs7f4"]
+[ext_resource type="Texture2D" uid="uid://bhbjpvbh1xxsq" path="res://assets/characters/male_leo/idle/male_leo_idle_04.png" id="11_0u6nl"]
+[ext_resource type="Texture2D" uid="uid://e1y5gcutxgey" path="res://assets/characters/male_leo/jump/male_leo_jump_01.png" id="12_x5ubj"]
+[ext_resource type="Texture2D" uid="uid://br0bs27gf6mgp" path="res://assets/characters/male_leo/jump/male_leo_jump_02.png" id="13_mvi8u"]
+[ext_resource type="Texture2D" uid="uid://bk0aqwd63mkjf" path="res://assets/characters/male_leo/jump/male_leo_jump_03.png" id="14_ibxut"]
+[ext_resource type="Texture2D" uid="uid://giqt72tcvj85" path="res://assets/characters/male_leo/jump/male_leo_jump_04.png" id="15_fauqv"]
+[ext_resource type="Texture2D" uid="uid://ysa22ef1qcr8" path="res://assets/characters/male_leo/run/male_leo_run_01.png" id="16_knhxd"]
+[ext_resource type="Texture2D" uid="uid://bdplu8sndiwvi" path="res://assets/characters/male_leo/run/male_leo_run_02.png" id="17_mbi6j"]
+[ext_resource type="Texture2D" uid="uid://cr15ooxmd57hu" path="res://assets/characters/male_leo/run/male_leo_run_03.png" id="18_ejkma"]
+[ext_resource type="Texture2D" uid="uid://crkeuln0cjppb" path="res://assets/characters/male_leo/run/male_leo_run_04.png" id="19_q2u5y"]
+[ext_resource type="Texture2D" uid="uid://dsyv05oomuoxi" path="res://assets/characters/male_leo/run/male_leo_run_05.png" id="20_2ufcn"]
+[ext_resource type="Texture2D" uid="uid://fnpogaujsw38" path="res://assets/characters/male_leo/run/male_leo_run_06.png" id="21_r8vhk"]
+[ext_resource type="Texture2D" uid="uid://c5d53igday6mt" path="res://assets/characters/male_leo/swim/male_leo_swim_01.png" id="22_1sbm4"]
+[ext_resource type="Texture2D" uid="uid://b3voqfrvuwnh5" path="res://assets/characters/male_leo/swim/male_leo_swim_02.png" id="23_i1p6t"]
+[ext_resource type="Texture2D" uid="uid://ccihr53masr57" path="res://assets/characters/male_leo/swim/male_leo_swim_03.png" id="24_xu4mi"]
+[ext_resource type="Texture2D" uid="uid://cu352t8jjexk" path="res://assets/characters/male_leo/swim/male_leo_swim_04.png" id="25_8dej8"]
+[ext_resource type="Texture2D" uid="uid://bbg16mepyuriw" path="res://assets/characters/male_leo/swim/male_leo_swim_05.png" id="26_b7otx"]
+[ext_resource type="Texture2D" uid="uid://boyjiga058qrc" path="res://assets/characters/male_leo/swim/male_leo_swim_06.png" id="27_sivgt"]
+[ext_resource type="Texture2D" uid="uid://bdssk5c4tdu07" path="res://assets/characters/male_leo/walk/male_leo_walk_01.png" id="28_fqure"]
+[ext_resource type="Texture2D" uid="uid://ddxpwl3osl5ii" path="res://assets/characters/male_leo/walk/male_leo_walk_02.png" id="29_kv7ss"]
+[ext_resource type="Texture2D" uid="uid://pfuniyikr5je" path="res://assets/characters/male_leo/walk/male_leo_walk_03.png" id="30_5ip23"]
+[ext_resource type="Texture2D" uid="uid://cf7qi2gbfvb2x" path="res://assets/characters/male_leo/walk/male_leo_walk_04.png" id="31_d2hdg"]
+[ext_resource type="Texture2D" uid="uid://cqg86v7gt0opi" path="res://assets/characters/male_leo/walk/male_leo_walk_05.png" id="32_85lmi"]
+[ext_resource type="Texture2D" uid="uid://btph6yxi0cng8" path="res://assets/characters/male_leo/walk/male_leo_walk_06.png" id="33_a61tt"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0s17n"]
+radius = 20.0
+height = 88.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0s17n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_n6ecc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ub4uk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_a688e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ipxsl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_mm2v4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_x02pw")
+}],
+"loop": 1,
+"name": &"fly",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_4kxim")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_jvxab")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_vs7f4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_0u6nl")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_x5ubj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_mvi8u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ibxut")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_fauqv")
+}],
+"loop": 1,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_knhxd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_mbi6j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_ejkma")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_q2u5y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_2ufcn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_r8vhk")
+}],
+"loop": 1,
+"name": &"run",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_1sbm4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_i1p6t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_xu4mi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_8dej8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_b7otx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_sivgt")
+}],
+"loop": 1,
+"name": &"swim",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28_fqure")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_kv7ss")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_5ip23")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_d2hdg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_85lmi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_a61tt")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="Char01" type="CharacterBody2D" unique_id=1146783260]
+script = ExtResource("1_sn1w6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1668294919]
+shape = SubResource("CapsuleShape2D_0s17n")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1920227368]
+sprite_frames = SubResource("SpriteFrames_0s17n")
+animation = &"walk"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1386360945]

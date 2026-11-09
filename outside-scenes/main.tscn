@@ -1,0 +1,170 @@
+[gd_scene format=3 uid="uid://dbfpaucnqr317"]
+
+[ext_resource type="Script" uid="uid://cr7tgs5dudguj" path="res://outside-scenes/MainMenu.cs" id="1_71404"]
+[ext_resource type="Texture2D" uid="uid://kwyjent3rjrh" path="res://assets/backgrounds/outdoor/01_emerald_clover_meadow.png" id="2_exel7"]
+[ext_resource type="FontFile" uid="uid://53udbob7porp" path="res://assets/gain-circus-font/Gain Circus.ttf" id="3_exel7"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_joyb4"]
+texture = ExtResource("2_exel7")
+modulate_color = Color(0.92099476, 0.9209946, 0.9209946, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nrwjr"]
+bg_color = Color(0.34302106, 0.6666004, 0.6254026, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 4
+shadow_offset = Vector2(1, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ig7tw"]
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0xm2m"]
+bg_color = Color(0.65235245, 0.59857124, 0.42984438, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ig7tw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cvbu1"]
+bg_color = Color(0.37870017, 0.64613956, 0.71882534, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 4
+shadow_offset = Vector2(1, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4wb2i"]
+bg_color = Color(0.61128014, 0.5735759, 0.7293341, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 4
+shadow_offset = Vector2(1, 4)
+
+[sub_resource type="Gradient" id="Gradient_exel7"]
+colors = PackedColorArray(0.11607202, 0.85996, 3.85046e-07, 1, 1, 0.59607846, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0s17n"]
+gradient = SubResource("Gradient_exel7")
+fill_from = Vector2(0.31196582, 0.7222222)
+fill_to = Vector2(0.61538464, 0.2777778)
+
+[node name="MainMenu" type="Control" unique_id=1575864040]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_71404")
+
+[node name="Panel" type="Panel" parent="." unique_id=1974450036]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_joyb4")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1257527573]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -203.5
+offset_top = 22.0
+offset_right = 203.5
+offset_bottom = 183.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="btnPlay" type="Button" parent="VBoxContainer" unique_id=8502554]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_exel7")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_nrwjr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ig7tw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0xm2m")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ig7tw")
+text = "Play"
+
+[node name="btnCustomCharacter" type="Button" parent="VBoxContainer" unique_id=268026557]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_exel7")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_cvbu1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ig7tw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0xm2m")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ig7tw")
+text = "Custom Character"
+
+[node name="btnQuit" type="Button" parent="VBoxContainer" unique_id=2127767072]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_exel7")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_4wb2i")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ig7tw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0xm2m")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ig7tw")
+text = "Quit"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1339849626]
+clip_children = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -391.0
+offset_top = -124.0
+offset_right = 391.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_exel7")
+theme_override_font_sizes/normal_font_size = 100
+text = "My Luck Vaults"
+fit_content = true
+autowrap_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="RichTextLabel" unique_id=1112260845]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_0s17n")
+
+[connection signal="pressed" from="VBoxContainer/btnPlay" to="." method="_on_btn_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/btnCustomCharacter" to="." method="_on_btn_custom_character_pressed"]
+[connection signal="pressed" from="VBoxContainer/btnQuit" to="." method="_on_btn_quit_pressed"]

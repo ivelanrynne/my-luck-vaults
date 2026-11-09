@@ -1,0 +1,21 @@
+# Godot specific ignores
+.godot/
+android/
+.import/
+.tmp/
+*.import
+*.tmp
+
+# Mono (C#) specific ignores
+.mono/
+
+# C# build artifacts
+bin/
+obj/
+
+# Visual Studio / Rider / VS Code settings
+.vs/
+.vscode/
+.idea/
+*.csproj
+*.sln

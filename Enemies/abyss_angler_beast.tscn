@@ -1,0 +1,122 @@
+[gd_scene format=3 uid="uid://ccq73oc2gpwjb"]
+
+[ext_resource type="Texture2D" uid="uid://cp70dinrtvt7j" path="res://assets/monsters/03_abyss_angler_beast/attack/03_abyss_angler_beast_attack_01.png" id="1_2xo05"]
+[ext_resource type="Script" uid="uid://u75n6oupaejv" path="res://Enemies/AbyssAnglerBeast.cs" id="1_wdun0"]
+[ext_resource type="Texture2D" uid="uid://4daduxhyi4bo" path="res://assets/monsters/03_abyss_angler_beast/attack/03_abyss_angler_beast_attack_02.png" id="2_wdun0"]
+[ext_resource type="Texture2D" uid="uid://bj7pcccv82mam" path="res://assets/monsters/03_abyss_angler_beast/attack/03_abyss_angler_beast_attack_03.png" id="3_gf432"]
+[ext_resource type="Texture2D" uid="uid://66q2kk1k523j" path="res://assets/monsters/03_abyss_angler_beast/attack/03_abyss_angler_beast_attack_04.png" id="4_4afki"]
+[ext_resource type="Texture2D" uid="uid://dxygxywb8j2um" path="res://assets/monsters/03_abyss_angler_beast/hurt_critical/03_abyss_angler_beast_hurt_critical_01.png" id="5_b5oqd"]
+[ext_resource type="Texture2D" uid="uid://6ove6aurloji" path="res://assets/monsters/03_abyss_angler_beast/hurt_critical/03_abyss_angler_beast_hurt_critical_02.png" id="6_t6agf"]
+[ext_resource type="Texture2D" uid="uid://c7rfrhxex3eo3" path="res://assets/monsters/03_abyss_angler_beast/hurt_critical/03_abyss_angler_beast_hurt_critical_03.png" id="7_h5yup"]
+[ext_resource type="Texture2D" uid="uid://dqa5a1ks71a6" path="res://assets/monsters/03_abyss_angler_beast/hurt_critical/03_abyss_angler_beast_hurt_critical_04.png" id="8_m2iec"]
+[ext_resource type="Texture2D" uid="uid://dj8sdkyfrbmdy" path="res://assets/monsters/03_abyss_angler_beast/idle/03_abyss_angler_beast_idle_01.png" id="9_p5hi6"]
+[ext_resource type="Texture2D" uid="uid://dja2x2v6fmrto" path="res://assets/monsters/03_abyss_angler_beast/idle/03_abyss_angler_beast_idle_02.png" id="10_hbyd5"]
+[ext_resource type="Texture2D" uid="uid://pa8n5gk7u7n8" path="res://assets/monsters/03_abyss_angler_beast/idle/03_abyss_angler_beast_idle_03.png" id="11_0s5qf"]
+[ext_resource type="Texture2D" uid="uid://bl3vswnkx88vh" path="res://assets/monsters/03_abyss_angler_beast/idle/03_abyss_angler_beast_idle_04.png" id="12_ro8mv"]
+[ext_resource type="Texture2D" uid="uid://bor6hehev4obw" path="res://assets/monsters/03_abyss_angler_beast/move/03_abyss_angler_beast_move_01.png" id="13_tt0e6"]
+[ext_resource type="Texture2D" uid="uid://su7gnlcbphfp" path="res://assets/monsters/03_abyss_angler_beast/move/03_abyss_angler_beast_move_02.png" id="14_m4tpb"]
+[ext_resource type="Texture2D" uid="uid://cx1io50lsbs25" path="res://assets/monsters/03_abyss_angler_beast/move/03_abyss_angler_beast_move_03.png" id="15_ekpd1"]
+[ext_resource type="Texture2D" uid="uid://bxhlq7pdudyea" path="res://assets/monsters/03_abyss_angler_beast/move/03_abyss_angler_beast_move_04.png" id="16_6sk44"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0s17n"]
+radius = 25.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0s17n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2xo05")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_wdun0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gf432")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4afki")
+}],
+"loop": 1,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_b5oqd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_t6agf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_h5yup")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_m2iec")
+}],
+"loop": 1,
+"name": &"hurt_critical",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_p5hi6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_hbyd5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_0s5qf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ro8mv")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_tt0e6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_m4tpb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ekpd1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_6sk44")
+}],
+"loop": 1,
+"name": &"move",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h3fo6"]
+radius = 31.016125
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wdun0"]
+radius = 250.04999
+
+[node name="AbyssAnglerBeast" type="CharacterBody2D" unique_id=969003115]
+script = ExtResource("1_wdun0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1004389719]
+shape = SubResource("CircleShape2D_0s17n")
+
+[node name="Container" type="Node2D" parent="." unique_id=1260673953]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Container" unique_id=31598116]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_0s17n")
+animation = &"idle"
+
+[node name="AttackArea" type="Area2D" parent="." unique_id=1904230850]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=1768131850]
+shape = SubResource("CircleShape2D_h3fo6")
+
+[node name="Sight" type="Area2D" parent="." unique_id=971047]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sight" unique_id=787494345]
+shape = SubResource("CircleShape2D_wdun0")

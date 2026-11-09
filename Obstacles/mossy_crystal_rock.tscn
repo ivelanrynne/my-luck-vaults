@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://c44db02cflvcn"]
+
+[ext_resource type="Texture2D" uid="uid://cchsp0rw6rcf" path="res://assets/map_props/outdoor/mossy_crystal_rock.png" id="1_74ecu"]
+
+[node name="MossyCrystalRock" type="StaticBody2D" unique_id=1713542270]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=340945372]
+texture = ExtResource("1_74ecu")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1470896662]
+polygon = PackedVector2Array(35, 5, 26, -24, 18, -3, 4, -13, -34, -4, -45, 36, 49, 36, 41, 9)

@@ -1,0 +1,123 @@
+[gd_scene format=3 uid="uid://cojh1ml3a88lm"]
+
+[ext_resource type="Texture2D" uid="uid://cvgssrkhdwuja" path="res://assets/monsters/05_tidal_water_serpent/attack/05_tidal_water_serpent_attack_01.png" id="1_60x2b"]
+[ext_resource type="Script" uid="uid://dhy56jva65jem" path="res://Enemies/TidalWaterSerpent.cs" id="1_np0qs"]
+[ext_resource type="Texture2D" uid="uid://cmq3yqituyb75" path="res://assets/monsters/05_tidal_water_serpent/attack/05_tidal_water_serpent_attack_02.png" id="2_x0slu"]
+[ext_resource type="Texture2D" uid="uid://jaraxeegvj8k" path="res://assets/monsters/05_tidal_water_serpent/attack/05_tidal_water_serpent_attack_03.png" id="3_h0u2x"]
+[ext_resource type="Texture2D" uid="uid://crlivjpffw2px" path="res://assets/monsters/05_tidal_water_serpent/attack/05_tidal_water_serpent_attack_04.png" id="4_n8a33"]
+[ext_resource type="Texture2D" uid="uid://c8bbcrfk488a3" path="res://assets/monsters/05_tidal_water_serpent/hurt_critical/05_tidal_water_serpent_hurt_critical_01.png" id="5_gvfjm"]
+[ext_resource type="Texture2D" uid="uid://vnkbg4kdgktl" path="res://assets/monsters/05_tidal_water_serpent/hurt_critical/05_tidal_water_serpent_hurt_critical_02.png" id="6_m4i6e"]
+[ext_resource type="Texture2D" uid="uid://bn6bfqbka7f2o" path="res://assets/monsters/05_tidal_water_serpent/hurt_critical/05_tidal_water_serpent_hurt_critical_03.png" id="7_hifu1"]
+[ext_resource type="Texture2D" uid="uid://cvagtoikr2mhe" path="res://assets/monsters/05_tidal_water_serpent/hurt_critical/05_tidal_water_serpent_hurt_critical_04.png" id="8_yhxjp"]
+[ext_resource type="Texture2D" uid="uid://j4sgbeyyxjkh" path="res://assets/monsters/05_tidal_water_serpent/idle/05_tidal_water_serpent_idle_01.png" id="9_ymgjg"]
+[ext_resource type="Texture2D" uid="uid://cpqh5smiqel3g" path="res://assets/monsters/05_tidal_water_serpent/idle/05_tidal_water_serpent_idle_02.png" id="10_vjhb3"]
+[ext_resource type="Texture2D" uid="uid://cs7x4oxy7dgax" path="res://assets/monsters/05_tidal_water_serpent/idle/05_tidal_water_serpent_idle_03.png" id="11_tjbi2"]
+[ext_resource type="Texture2D" uid="uid://dyjk6k5o0dr8" path="res://assets/monsters/05_tidal_water_serpent/idle/05_tidal_water_serpent_idle_04.png" id="12_oox3a"]
+[ext_resource type="Texture2D" uid="uid://bpw6c8ni3h3ef" path="res://assets/monsters/05_tidal_water_serpent/move/05_tidal_water_serpent_move_01.png" id="13_lygpu"]
+[ext_resource type="Texture2D" uid="uid://pwa5xl4xt85j" path="res://assets/monsters/05_tidal_water_serpent/move/05_tidal_water_serpent_move_02.png" id="14_utopw"]
+[ext_resource type="Texture2D" uid="uid://2pgqsi7h5dhn" path="res://assets/monsters/05_tidal_water_serpent/move/05_tidal_water_serpent_move_03.png" id="15_ppu6c"]
+[ext_resource type="Texture2D" uid="uid://dsjbnnjhfuv1m" path="res://assets/monsters/05_tidal_water_serpent/move/05_tidal_water_serpent_move_04.png" id="16_xk1jp"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nqrea"]
+radius = 25.0
+height = 64.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0s17n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_60x2b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_x0slu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_h0u2x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_n8a33")
+}],
+"loop": 1,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_gvfjm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_m4i6e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_hifu1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_yhxjp")
+}],
+"loop": 1,
+"name": &"hurt_critical",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_ymgjg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_vjhb3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_tjbi2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_oox3a")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_lygpu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_utopw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ppu6c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_xk1jp")
+}],
+"loop": 1,
+"name": &"move",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0sfyd"]
+radius = 31.016125
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_np0qs"]
+radius = 250.04999
+
+[node name="TidalWaterSerpent" type="CharacterBody2D" unique_id=969003115]
+script = ExtResource("1_np0qs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1004389719]
+shape = SubResource("CapsuleShape2D_nqrea")
+
+[node name="Container" type="Node2D" parent="." unique_id=1260673953]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Container" unique_id=31598116]
+position = Vector2(1, -6)
+sprite_frames = SubResource("SpriteFrames_0s17n")
+animation = &"idle"
+
+[node name="AttackArea" type="Area2D" parent="." unique_id=1260122057]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=2092633859]
+shape = SubResource("CircleShape2D_0sfyd")
+
+[node name="Sight" type="Area2D" parent="." unique_id=1108025257]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sight" unique_id=87822447]
+shape = SubResource("CircleShape2D_np0qs")

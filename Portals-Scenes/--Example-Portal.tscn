@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bevrr0w1e68x5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0fk3v"]
+size = Vector2(64, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0fk3v"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"activated",
+"speed": 5.0
+}]
+
+[node name="Name" type="Node2D" unique_id=263141063]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=575825949]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2083460698]
+shape = SubResource("RectangleShape2D_0fk3v")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1928448568]
+sprite_frames = SubResource("SpriteFrames_0fk3v")
+animation = &"activated"

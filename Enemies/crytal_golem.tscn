@@ -1,0 +1,123 @@
+[gd_scene format=3 uid="uid://boonvfyn07qgc"]
+
+[ext_resource type="Script" uid="uid://dsmq6eu3111tg" path="res://Enemies/CrytalGolem.cs" id="1_6hgh1"]
+[ext_resource type="Texture2D" uid="uid://gobe34gff8n8" path="res://assets/monsters/02_crystal_golem/attack/02_crystal_golem_attack_01.png" id="1_kqm7o"]
+[ext_resource type="Texture2D" uid="uid://de23o84alxbpm" path="res://assets/monsters/02_crystal_golem/attack/02_crystal_golem_attack_02.png" id="2_mgc0j"]
+[ext_resource type="Texture2D" uid="uid://dile731034h5w" path="res://assets/monsters/02_crystal_golem/attack/02_crystal_golem_attack_03.png" id="3_8aul6"]
+[ext_resource type="Texture2D" uid="uid://c805io2u71no5" path="res://assets/monsters/02_crystal_golem/attack/02_crystal_golem_attack_04.png" id="4_8hwlo"]
+[ext_resource type="Texture2D" uid="uid://bni34k1cc8cmo" path="res://assets/monsters/02_crystal_golem/hurt_critical/02_crystal_golem_hurt_critical_01.png" id="5_fu1y8"]
+[ext_resource type="Texture2D" uid="uid://bcm25iqfh8kf4" path="res://assets/monsters/02_crystal_golem/hurt_critical/02_crystal_golem_hurt_critical_02.png" id="6_4xiv1"]
+[ext_resource type="Texture2D" uid="uid://bwfdjncts778a" path="res://assets/monsters/02_crystal_golem/hurt_critical/02_crystal_golem_hurt_critical_03.png" id="7_tqrnf"]
+[ext_resource type="Texture2D" uid="uid://cakcypnojbwb8" path="res://assets/monsters/02_crystal_golem/hurt_critical/02_crystal_golem_hurt_critical_04.png" id="8_ocrcw"]
+[ext_resource type="Texture2D" uid="uid://ck8k81eus4rnm" path="res://assets/monsters/02_crystal_golem/idle/02_crystal_golem_idle_01.png" id="9_xmwr0"]
+[ext_resource type="Texture2D" uid="uid://ddf0uyocq75gb" path="res://assets/monsters/02_crystal_golem/idle/02_crystal_golem_idle_02.png" id="10_7m5hr"]
+[ext_resource type="Texture2D" uid="uid://bqk3im7fu0yi7" path="res://assets/monsters/02_crystal_golem/idle/02_crystal_golem_idle_03.png" id="11_nj5wj"]
+[ext_resource type="Texture2D" uid="uid://dfyy4kr1pewsk" path="res://assets/monsters/02_crystal_golem/idle/02_crystal_golem_idle_04.png" id="12_ceamf"]
+[ext_resource type="Texture2D" uid="uid://celleragjcwei" path="res://assets/monsters/02_crystal_golem/move/02_crystal_golem_move_01.png" id="13_660py"]
+[ext_resource type="Texture2D" uid="uid://cm882k5l1jcwp" path="res://assets/monsters/02_crystal_golem/move/02_crystal_golem_move_02.png" id="14_xkqq4"]
+[ext_resource type="Texture2D" uid="uid://b1djbgn4kpo1v" path="res://assets/monsters/02_crystal_golem/move/02_crystal_golem_move_03.png" id="15_dji7q"]
+[ext_resource type="Texture2D" uid="uid://cfb0btxc0x6va" path="res://assets/monsters/02_crystal_golem/move/02_crystal_golem_move_04.png" id="16_wk6rh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ryc0j"]
+size = Vector2(60, 52)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0s17n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_kqm7o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_mgc0j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_8aul6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8hwlo")
+}],
+"loop": 1,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_fu1y8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_4xiv1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_tqrnf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ocrcw")
+}],
+"loop": 1,
+"name": &"hurt_critical",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_xmwr0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_7m5hr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_nj5wj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ceamf")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_660py")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_xkqq4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_dji7q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_wk6rh")
+}],
+"loop": 1,
+"name": &"move",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s218y"]
+radius = 40.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6hgh1"]
+radius = 250.04999
+
+[node name="CrytalGolem" type="CharacterBody2D" unique_id=969003115]
+script = ExtResource("1_6hgh1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1004389719]
+position = Vector2(-3, 1)
+shape = SubResource("RectangleShape2D_ryc0j")
+
+[node name="Container" type="Node2D" parent="." unique_id=1260673953]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Container" unique_id=31598116]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_0s17n")
+animation = &"idle"
+
+[node name="AttackArea" type="Area2D" parent="." unique_id=1742376852]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=1339057814]
+shape = SubResource("CircleShape2D_s218y")
+
+[node name="Sight" type="Area2D" parent="." unique_id=1605272867]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sight" unique_id=630261133]
+shape = SubResource("CircleShape2D_6hgh1")
