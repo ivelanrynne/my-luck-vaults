@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://bevrr0w1e68x5"]
+
+[ext_resource type="Script" uid="uid://de2sdvkp4s6on" path="res://Portals-Scenes/CyberNeonNexus/CyberNeonNexusPortal.cs" id="1_iubm5"]
+[ext_resource type="Texture2D" uid="uid://beokbpditpkau" path="res://assets/portals/05_cyber_neon_nexus_gate/05_cyber_neon_nexus_gate_01_dormant.png" id="2_f0r5i"]
+[ext_resource type="Texture2D" uid="uid://bib2xx4sf8iaj" path="res://assets/portals/05_cyber_neon_nexus_gate/05_cyber_neon_nexus_gate_02_charging.png" id="3_v1vg2"]
+[ext_resource type="Texture2D" uid="uid://crki54iy3x1nf" path="res://assets/portals/05_cyber_neon_nexus_gate/05_cyber_neon_nexus_gate_03_active_swirl.png" id="4_ebu32"]
+[ext_resource type="Texture2D" uid="uid://yvg4w1261vy1" path="res://assets/portals/05_cyber_neon_nexus_gate/05_cyber_neon_nexus_gate_04_teleport_flash.png" id="5_5yj5m"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s1k0m"]
+radius = 32.0
+height = 120.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0fk3v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_f0r5i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_v1vg2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ebu32")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_5yj5m")
+}],
+"loop": 1,
+"name": &"activated",
+"speed": 5.0
+}]
+
+[node name="CyberNeonNexusPortal" type="Node2D" unique_id=263141063]
+script = ExtResource("1_iubm5")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=575825949]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=744820218]
+position = Vector2(0, 4)
+shape = SubResource("CapsuleShape2D_s1k0m")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1928448568]
+sprite_frames = SubResource("SpriteFrames_0fk3v")
+animation = &"activated"

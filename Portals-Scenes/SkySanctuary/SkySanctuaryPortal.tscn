@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://by4bgexwdtaow"]
+
+[ext_resource type="Script" uid="uid://blns72pyghoi8" path="res://Portals-Scenes/SkySanctuary/SkySanctuaryPortal.cs" id="1_ep2yj"]
+[ext_resource type="Texture2D" uid="uid://d3fo48gsci58t" path="res://assets/portals/05_Sky_Sanctuary/frame_00.png" id="2_1k64d"]
+[ext_resource type="Texture2D" uid="uid://c2fuky4aakqsg" path="res://assets/portals/05_Sky_Sanctuary/frame_01.png" id="3_a0agn"]
+[ext_resource type="Texture2D" uid="uid://imctmjaas38a" path="res://assets/portals/05_Sky_Sanctuary/frame_02.png" id="4_tinj0"]
+[ext_resource type="Texture2D" uid="uid://r3fmms4nkar5" path="res://assets/portals/05_Sky_Sanctuary/frame_03.png" id="5_jgj3i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0fk3v"]
+size = Vector2(64, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0fk3v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_1k64d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_a0agn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_tinj0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_jgj3i")
+}],
+"loop": 1,
+"name": &"activated",
+"speed": 5.0
+}]
+
+[node name="SkySanctuaryPortal" type="Node2D" unique_id=263141063]
+script = ExtResource("1_ep2yj")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=575825949]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2083460698]
+shape = SubResource("RectangleShape2D_0fk3v")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1928448568]
+sprite_frames = SubResource("SpriteFrames_0fk3v")
+animation = &"activated"

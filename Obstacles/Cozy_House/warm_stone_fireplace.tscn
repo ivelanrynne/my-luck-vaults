@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bia4aasm8oelx"]
+
+[ext_resource type="Texture2D" uid="uid://cyatth72pyuf4" path="res://Obstacles/Cozy_House/01_warm_stone_fireplace.png" id="1_7peyt"]
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1713542270]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=340945372]
+texture = ExtResource("1_7peyt")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=55880464]
+polygon = PackedVector2Array(-81, 115, -82, 104, -69, 95, -69, -4, -79, -5, -78, -25, -58, -29, -45, -49, -43, -117, 63, -115, 67, -56, 79, -28, 80, 115)

@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dhx2fi1x2oan"]
+
+[ext_resource type="Texture2D" uid="uid://dl1cpqf0m2yxl" path="res://Obstacles/Deep_Sea_Biolume_Abyss/04_ancient_sunken_ship_anchor.png" id="1_v0isa"]
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1713542270]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=340945372]
+texture = ExtResource("1_v0isa")
+region_enabled = true
+region_rect = Rect2(57, 0, 199, 256)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=55880464]
+polygon = PackedVector2Array(29, 104, 39, 112, 47, 105, 61, 102, 62, 95, 58, 91, 49, 82, 62, 78, 40, 70, 50, 64, 54, 70, 70, 50, 75, 33, 74, 23, 54, 37, 40, 45, 40, 34, 48, 29, 39, 28, 46, 11, 33, 20, 23, 30, 19, 21, 26, 7, 14, 17, 13, 33, 9, 20, 1, 28, 8, 5, 10, 11, 16, 6, 19, -4, 15, -12, 18, -22, 33, -24, 38, 7, 45, -7, 41, -18, 42, -26, 49, -15, 53, -17, 48, -37, 65, -33, 71, -45, 53, -54, 50, -75, 55, -83, 60, -97, 53, -107, 43, -114, 30, -115, 19, -105, 18, -93, 22, -81, 20, -73, 11, -81, 1, -81, -22, -85, -26, -75, -16, -66, -10, -64, -7, -57, -6, -44, 2, -38, -15, 5, -26, -11, -29, 15, -36, -24, -39, -16, -41, 10, -46, -4, -47, 8, -51, 16, -65, -1, -53, 4, -64, -39, -77, -20, -80, -6, -81, 7, -76, 4, -68, 43, -85, 32, -83, 41, -67, 60, -78, 52, -77, 62, -63, 71, -76, 79, -78, 85, -59, 94, -61, 101, -28, 114, -7, 107, 3, 113)

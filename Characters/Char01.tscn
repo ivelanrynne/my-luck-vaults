@@ -169,6 +169,7 @@ animations = [{
 
 [node name="Char01" type="CharacterBody2D" unique_id=1146783260]
 script = ExtResource("1_sn1w6")
+MaxJumps = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1668294919]
 shape = SubResource("CapsuleShape2D_0s17n")

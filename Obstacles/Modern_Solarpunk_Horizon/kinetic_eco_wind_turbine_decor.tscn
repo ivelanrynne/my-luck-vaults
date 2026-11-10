@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://b6k5p6u3qsgu1"]
+
+[ext_resource type="Texture2D" uid="uid://buxrncdxbmvhb" path="res://Obstacles/Modern_Solarpunk_Horizon/03_kinetic_eco_wind_turbine_decor.png" id="1_863wq"]
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1713542270]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=340945372]
+texture = ExtResource("1_863wq")
+region_enabled = true
+region_rect = Rect2(68.64607, 0, 117.20511, 226.79765)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=55880464]
+polygon = PackedVector2Array(6, 18, 7, -1, 15, 0, 15, 10, 30, 2, 41, -15, 42, -41, 34, -54, 33, -64, 29, -85, 15, -95, 18, -85, 6, -84, -10, -83, -8, -99, -16, -94, -25, -83, -40, -58, -40, -39, -37, -24, -28, 0, -12, 11, -9, -1, -6, -2, -3, 19, -15, 28, -22, 42, -16, 55, -14, 70, -19, 84, -25, 93, -20, 99, -20, 105, -16, 105, -10, 105, 13, 105, 30, 93, 21, 80, 14, 55, 14, 41, 18, 24)

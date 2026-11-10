@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://u6jubirapj4h"]
+
+[ext_resource type="Texture2D" uid="uid://bgcgn4d88gfpm" path="res://Obstacles/Deep_Sea_Biolume_Abyss/02_hydrothermal_chimney_vent.png" id="1_u18yv"]
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1713542270]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=340945372]
+texture = ExtResource("1_u18yv")
+region_enabled = true
+region_rect = Rect2(67, 0, 125, 256)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=55880464]
+polygon = PackedVector2Array(20, 103, 40, 107, 41, 97, 48, 93, 59, 91, 53, 79, 49, 72, 50, 61, 44, 56, 45, 51, 42, 41, 44, 36, 40, 24, 35, 26, 35, 33, 31, 40, 29, 25, 30, 15, 29, 9, 22, -2, 26, -7, 22, -14, 23, -27, 27, -34, 30, -48, 32, -55, 28, -61, 35, -63, 40, -70, 38, -82, 44, -85, 44, -91, 35, -105, 31, -105, 30, -115, 22, -117, 16, -112, 5, -112, -4, -105, 0, -115, -6, -115, -14, -110, -17, -100, -14, -96, -19, -86, -17, -76, -14, -68, -19, -57, -19, -44, -12, -35, -16, -32, -16, -12, -20, -9, -18, -4, -20, 4, -26, 9, -24, 17, -22, 33, -25, 40, -29, 32, -32, 15, -35, 15, -37, 26, -40, 29, -38, 33, -38, 42, -42, 48, -40, 66, -47, 71, -48, 80, -54, 92, -39, 97, -39, 104, -22, 104, -19, 111, -10, 111, 1, 117, 17, 110)

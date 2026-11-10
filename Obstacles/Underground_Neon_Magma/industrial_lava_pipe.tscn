@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://djsu06ova8sjh"]
+
+[ext_resource type="Texture2D" uid="uid://butdd22mxwa5d" path="res://Obstacles/Underground_Neon_Magma/02_industrial_lava_pipe.png" id="1_4wppb"]
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1713542270]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=340945372]
+texture = ExtResource("1_4wppb")
+region_enabled = true
+region_rect = Rect2(74.65657, 0, 117.95645, 232.80818)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=55880464]
+polygon = PackedVector2Array(-33, -97, -6, -105, 16, -104, 25, -97, 18, -89, 19, -51, 23, -44, 17, -36, 17, -21, 38, -22, 47, -13, 49, 13, 37, 22, 19, 16, 19, 31, 26, 36, 22, 46, 17, 82, 26, 86, 23, 94, 14, 100, -5, 103, -27, 99, -35, 90, -30, 78, -30, 51, -33, 40, -29, 32, -29, 23, -42, 20, -36, -28, -28, -28, -30, -40, -33, -45, -28, -52, -28, -84)

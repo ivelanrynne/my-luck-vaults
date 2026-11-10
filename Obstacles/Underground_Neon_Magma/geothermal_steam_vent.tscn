@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dnj6ged3qirj3"]
+
+[ext_resource type="Texture2D" uid="uid://dro8prw8bd0pa" path="res://Obstacles/Underground_Neon_Magma/04_geothermal_steam_vent.png" id="1_6140s"]
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1713542270]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=340945372]
+texture = ExtResource("1_6140s")
+region_enabled = true
+region_rect = Rect2(77.66185, 0, 134.48535, 228.30028)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=55880464]
+polygon = PackedVector2Array(-28, -36, -7, -44, 12, -41, 18, -31, 13, -23, 14, -14, 12, 25, 25, 23, 19, 12, 16, 3, 25, -8, 26, -8, 35, 2, 33, 11, 29, 16, 29, 27, 10, 29, 18, 36, 27, 40, 42, 49, 39, 61, 50, 77, 51, 86, 49, 89, 48, 98, 32, 104, 23, 106, 14, 103, -8, 109, -16, 105, -37, 105, -54, 98, -54, 86, -56, 83, -49, 58, -42, 56, -28, 34, -21, 31, -22, -3, -28, -8, -23, -18, -25, -22, -27, -32, -30, -40)

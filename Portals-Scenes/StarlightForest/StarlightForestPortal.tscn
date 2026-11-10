@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://ws0mcwcgt2p5"]
+
+[ext_resource type="Script" uid="uid://ct4v8xo107i7h" path="res://Portals-Scenes/StarlightForest/StarlightForestPortal.cs" id="1_xmrmx"]
+[ext_resource type="Texture2D" uid="uid://b71xttmal4a65" path="res://assets/portals/04_Starlight_Forest/frame_00.png" id="2_vb7oy"]
+[ext_resource type="Texture2D" uid="uid://b5rcfhx7e5g1" path="res://assets/portals/04_Starlight_Forest/frame_01.png" id="3_3migy"]
+[ext_resource type="Texture2D" uid="uid://dc001620nut5a" path="res://assets/portals/04_Starlight_Forest/frame_02.png" id="4_qw2lq"]
+[ext_resource type="Texture2D" uid="uid://chda2o6qo3n3r" path="res://assets/portals/04_Starlight_Forest/frame_03.png" id="5_apbc5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0fk3v"]
+size = Vector2(64, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0fk3v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vb7oy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3migy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qw2lq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_apbc5")
+}],
+"loop": 1,
+"name": &"activated",
+"speed": 5.0
+}]
+
+[node name="StarlightForestPortal" type="Node2D" unique_id=263141063]
+script = ExtResource("1_xmrmx")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=575825949]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2083460698]
+shape = SubResource("RectangleShape2D_0fk3v")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1928448568]
+sprite_frames = SubResource("SpriteFrames_0fk3v")
+animation = &"activated"

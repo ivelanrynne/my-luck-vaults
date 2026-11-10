@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cvxdc5r1fil5m"]
+
+[ext_resource type="Texture2D" uid="uid://d2473kph48t7w" path="res://Obstacles/Water_Surface_Sunset_Bay/02_tropical_tiki_bamboo_shelter.png" id="1_465j4"]
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1713542270]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=340945372]
+texture = ExtResource("1_465j4")
+region_enabled = true
+region_rect = Rect2(75.40788, 29.201828, 161.53271, 191.5853)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=55880464]
+polygon = PackedVector2Array(-60, -6, -77, -20, -8, -67, -11, -83, 12, -86, 13, -64, 71, -25, 63, -8, 64, 58, 55, 60, 53, 50, 38, 61, 40, 69, 32, 71, 30, 63, 2, 78, 2, 87, -4, 88, -6, 79, -49, 54, -53, 60, -58, 55)

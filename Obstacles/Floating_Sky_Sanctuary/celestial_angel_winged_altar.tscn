@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://85fs5vna4rlj"]
+
+[ext_resource type="Texture2D" uid="uid://b5njwy0hkkgqa" path="res://Obstacles/Floating_Sky_Sanctuary/02_celestial_angel_winged_altar.png" id="1_0wubb"]
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1713542270]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=340945372]
+texture = ExtResource("1_0wubb")
+region_enabled = true
+region_rect = Rect2(39.2079, 32.719124, 151.62898, 192.6098)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=55880464]
+polygon = PackedVector2Array(2, 89, 52, 64, 53, 56, 48, 54, 47, 35, 51, 30, 52, 25, 32, 15, 40, -6, 35, -18, 49, -38, 47, -47, 27, -20, 27, -25, 22, -25, 14, -34, 9, -34, 5, -41, 4, -31, 1, -26, -4, -40, -6, -31, -18, -21, -19, -10, -27, -13, -41, -30, -41, -23, -29, -5, -28, -1, -32, 6, -32, 15, -22, 24, -23, 30, -36, 37, -36, 42, -33, 47, -32, 67, -37, 71, -37, 75, -7, 91)

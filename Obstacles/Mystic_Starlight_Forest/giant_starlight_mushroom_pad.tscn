@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://gon7mdagkhdl"]
+
+[ext_resource type="Texture2D" uid="uid://bea74l3gqv1ku" path="res://Obstacles/Mystic_Starlight_Forest/02_giant_starlight_mushroom_pad.png" id="1_7r41l"]
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1713542270]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=340945372]
+texture = ExtResource("1_7r41l")
+region_enabled = true
+region_rect = Rect2(45.3553, 61.50837, 174.30505, 110.44329)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=55880464]
+polygon = PackedVector2Array(2, -42, 78, -18, 82, -3, 76, 11, 13, 31, 16, 48, -16, 50, -15, 31, -64, 22, -87, 5, -87, -13, -16, -40)

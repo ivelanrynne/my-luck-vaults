@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dme6jeqtja6oq"]
+
+[ext_resource type="Texture2D" uid="uid://dnypfvqkentbp" path="res://Obstacles/Floating_Sky_Sanctuary/03_sacred_floating_cloud_fountain.png" id="1_5r6ta"]
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1713542270]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=340945372]
+texture = ExtResource("1_5r6ta")
+region_enabled = true
+region_rect = Rect2(50.13611, 46.379395, 150.26297, 175.53447)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=55880464]
+polygon = PackedVector2Array(-44, 10, -39, -4, -25, -12, -13, -14, -13, -20, -23, -27, -29, -38, -25, -46, -15, -50, -8, -51, -9, -60, -17, -67, -12, -72, -7, -74, -2, -79, 1, -73, 7, -72, 8, -65, 6, -62, 1, -59, 2, -53, 18, -46, 23, -39, 21, -32, 16, -28, 7, -23, 7, -16, 25, -10, 34, -3, 36, 5, 36, 15, 35, 22, 21, 32, 7, 37, -15, 36, -34, 33, -43, 24)

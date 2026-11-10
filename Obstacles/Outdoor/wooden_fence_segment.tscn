@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cq5bvh5noph3d"]
+
+[ext_resource type="Texture2D" uid="uid://c8a41etqfvupq" path="res://assets/decors/outdoor/wooden_fence_segment.png" id="1_h2f46"]
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1713542270]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=340945372]
+texture = ExtResource("1_h2f46")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=55880464]
+polygon = PackedVector2Array(43, -30, 53, -17, 54, 41, 33, 41, 34, 29, 7, 29, 7, 40, -7, 40, -8, 30, -34, 29, -34, 42, -52, 42, -51, -20, -42, -30, -34, -22, -34, -11, -8, -11, -9, -21, 0, -30, 9, -22, 9, -11, 34, -9, 34, -19)

@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://b7kgipvw1bhsm"]
+
+[ext_resource type="Texture2D" uid="uid://btmadxnb86qx0" path="res://Obstacles/Water_Surface_Sunset_Bay/03_stack_of_wooden_cargo_barrels.png" id="1_xhlg2"]
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1713542270]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=340945372]
+texture = ExtResource("1_xhlg2")
+region_enabled = true
+region_rect = Rect2(85.17497, 35.96366, 170.82503, 162.28403)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=55880464]
+polygon = PackedVector2Array(-35, -72, -13, -76, -1, -66, 6, -49, 34, -55, 48, -40, 51, -19, 65, -10, 67, 30, 73, 37, 75, 60, 64, 74, 46, 76, 13, 56, 4, 69, -17, 73, -31, 65, -40, 50, -53, 51, -71, 40, -71, 17, -71, -5, -64, -17, -52, -22, -49, -24, -49, -40, -46, -58, -39, -70)

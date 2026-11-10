@@ -1,46 +1,65 @@
 using Godot;
 using System;
 
+/// <summary>
+/// Level nền tảng cho toàn bộ các màn chơi / bản đồ trong game (EmeraldCloverMeadow, CozyHouse, IceCave, Royal, ...).
+/// Đảm nhiệm:
+/// 1. Tự động khởi tạo và hiển thị hệ thống UI cố định (Pause, Setting, Audio) qua CanvasLayer độc lập.
+/// 2. Quản lý việc sinh (Spawn) nhân vật người chơi được chọn từ GameManager.
+/// 3. Hỗ trợ bấm phím [Tab] để hoán đổi nhanh giữa các nhân vật (Char01 <-> Char02) mà vẫn bảo toàn nguyên vẹn
+///    vận tốc đà rơi (momentum), số lượt nhảy còn lại, lượng mana và trạng thái bay để chống các lỗi bay xuyên map.
+/// </summary>
 public partial class BaseLevel : Node2D
 {
+    // Tham chiếu đến thực thể nhân vật đang hoạt động trong level hiện tại
     protected CharacterBody2D _currentCharacter;
 
+    // Vị trí mặc định để sinh nhân vật khi người chơi bước vào màn chơi lần đầu
     [Export]
     public Vector2 SpawnPosition = new Vector2(300, 250);
 
+    // Đường dẫn PackedScene của ControlUI (chứa nút Pause, Play, Setting, BackToMenu, ...)
     [Export]
     public PackedScene ControlUiScene = GD.Load<PackedScene>("res://UserUI/ControlUI.tscn");
 
     [ExportGroup("Giới Hạn Đổi Nhân Vật")]
+    // Thời gian hồi chiêu (giây) giữa các lần bấm phím Tab đổi nhân vật để chống spam lơ lửng trên không
     [Export]
-    public float SwitchCooldown { get; set; } = 1.0f; // Thời gian hồi chiêu khi ấn Tab đổi nhân vật (giây)
+    public float SwitchCooldown { get; set; } = 1.0f;
 
+    // Bộ đếm lùi thời gian hồi chiêu đổi nhân vật
     protected float _switchCooldownTimer = 0f;
 
     public override void _Ready()
     {
-        // Tự động spawn UI cố định trên màn hình (trừ MainMenu vì MainMenu không kế thừa BaseLevel)
+        // 1. Tự động khởi tạo hệ thống giao diện UI trên màn hình (được đặt trong CanvasLayer riêng)
         SetupControlUI();
 
-        // Tự động spawn nhân vật đang chọn
+        // 2. Tự động sinh nhân vật đang được chọn trong GameManager tại vị trí xuất phát
         SpawnCharacter(GameManager.SelectedCharacterIndex, SpawnPosition);
     }
 
     public override void _PhysicsProcess(double delta)
     {
+        // Đếm lùi thời gian hồi chiêu của phím Tab
         if (_switchCooldownTimer > 0f)
         {
             _switchCooldownTimer -= (float)delta;
         }
     }
 
+    /// <summary>
+    /// Tạo ra CanvasLayer độc lập để hiển thị ControlUI.
+    /// Giúp UI luôn cố định trên màn hình camera và nằm đè lên trên toàn bộ quái và bản đồ.
+    /// </summary>
     protected virtual void SetupControlUI()
     {
         if (ControlUiScene != null)
         {
             var canvasLayer = new CanvasLayer();
             canvasLayer.Name = "UICanvasLayer";
-            canvasLayer.Layer = 100; // Đặt layer cao để UI luôn nổi trên quái và map
+            // Đặt Layer = 100 để đảm bảo UI luôn hiển thị ở tầng trên cùng của viewport
+            canvasLayer.Layer = 100;
             
             var uiInstance = ControlUiScene.Instantiate<Control>();
             canvasLayer.AddChild(uiInstance);
@@ -48,13 +67,17 @@ public partial class BaseLevel : Node2D
         }
     }
 
+    /// <summary>
+    /// Bắt sự kiện phím toàn cục chưa được xử lý bởi GUI.
+    /// Nhận phím Tab để hoán đổi nhân vật.
+    /// </summary>
     public override void _UnhandledInput(InputEvent @event)
     {
-        // Bấm Tab để đổi nhân vật (có giới hạn cooldown chống spam lơ lửng)
         if (@event is InputEventKey keyEvent && keyEvent.Pressed && !keyEvent.Echo)
         {
             if (keyEvent.Keycode == Key.Tab)
             {
+                // Chỉ cho đổi nhân vật khi đã hết thời gian hồi chiêu
                 if (_switchCooldownTimer <= 0f)
                 {
                     SwitchCharacter();
@@ -63,14 +86,21 @@ public partial class BaseLevel : Node2D
         }
     }
 
+    /// <summary>
+    /// Thực hiện hoán đổi sang nhân vật tiếp theo trong danh sách:
+    /// - Sao chép toàn bộ trạng thái hiện tại (vị trí, vận tốc, hướng mặt, mana, số lần nhảy, bay/lướt).
+    /// - Hủy an toàn nhân vật cũ.
+    /// - Tạo nhân vật mới và nạp lại toàn bộ trạng thái để quá trình chơi liền mạch, không bị khựng đà.
+    /// </summary>
     protected virtual void SwitchCharacter()
     {
+        // Tính toán index của nhân vật kế tiếp theo vòng tròn (0 -> 1 -> 0)
         int nextIndex = (GameManager.SelectedCharacterIndex + 1) % GameManager.CharacterScenes.Length;
         GameManager.SelectedCharacterIndex = nextIndex;
 
         Vector2 currentPos = _currentCharacter != null ? _currentCharacter.GlobalPosition : SpawnPosition;
         
-        // Lưu lại toàn bộ trạng thái của nhân vật cũ để truyền sang nhân vật mới
+        // 1. Lưu lại toàn bộ trạng thái của nhân vật cũ
         Vector2 currentVelocity = _currentCharacter != null ? _currentCharacter.Velocity : Vector2.Zero;
         int currentFacingDirection = 1;
         int remainingJumps = 0;
@@ -101,7 +131,7 @@ public partial class BaseLevel : Node2D
             }
         }
 
-        // Tắt collision và giải phóng nhân vật cũ
+        // 2. Vô hiệu hóa va chạm và giải phóng nhân vật cũ khỏi bộ nhớ
         if (_currentCharacter != null && IsInstanceValid(_currentCharacter))
         {
             var col = _currentCharacter.GetNodeOrNull<CollisionShape2D>("CollisionShape2D");
@@ -112,10 +142,10 @@ public partial class BaseLevel : Node2D
             _currentCharacter = null;
         }
 
-        // Spawn nhân vật mới và truyền nguyên vẹn vận tốc đà rơi (momentum) cùng hướng nhìn
+        // 3. Khởi tạo nhân vật mới tại đúng vị trí, duy trì nguyên vẹn vận tốc đà quán tính (momentum)
         SpawnCharacter(nextIndex, currentPos, currentVelocity, currentFacingDirection);
 
-        // Kế thừa chính xác số lần nhảy còn lại, mana và trạng thái bay để ngăn bug nhảy vô hạn / lơ lửng
+        // 4. Kế thừa các biến trạng thái quan trọng vào nhân vật mới để chống hack/bug nhảy vô hạn
         if (_currentCharacter is BaseCharacter newChar)
         {
             newChar.RemainingJumps = remainingJumps;
@@ -127,10 +157,13 @@ public partial class BaseLevel : Node2D
             newChar.SwimDurationTimer = swimTimer;
         }
 
-        // Kích hoạt thời gian hồi chiêu đổi nhân vật
+        // 5. Kích hoạt hồi chiêu đổi nhân vật
         _switchCooldownTimer = SwitchCooldown;
     }
 
+    /// <summary>
+    /// Nạp Scene nhân vật từ đường dẫn tài nguyên, đặt tọa độ, vận tốc và đưa vào cây node.
+    /// </summary>
     protected virtual void SpawnCharacter(int charIndex, Vector2 position, Vector2 velocity = default, int facingDirection = 1)
     {
         string scenePath = GameManager.CharacterScenes[charIndex];
@@ -157,7 +190,7 @@ public partial class BaseLevel : Node2D
         _currentCharacter.SetPhysicsProcess(true);
         AddChild(_currentCharacter);
 
-        // Đảm bảo animation chạy mượt mà ngay khi vừa switch
+        // Đảm bảo Sprite luôn phát animation ban đầu mượt mà
         var animSprite = _currentCharacter.GetNodeOrNull<AnimatedSprite2D>("AnimatedSprite2D");
         if (animSprite != null)
         {
@@ -165,6 +198,10 @@ public partial class BaseLevel : Node2D
         }
     }
 
+    /// <summary>
+    /// Phương thức công khai được gọi bởi các Portal khi người chơi vừa bước qua cổng dịch chuyển.
+    /// Giúp dịch chuyển nhân vật tới tọa độ chỉ định của level mới.
+    /// </summary>
     public void SpawnCharacterAt(int charIndex, Vector2 position, int facingDirection = 1)
     {
         if (_currentCharacter != null && IsInstanceValid(_currentCharacter))

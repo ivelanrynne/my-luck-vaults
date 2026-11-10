@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://chjbdv5tehwac"]
+
+[ext_resource type="Texture2D" uid="uid://dxrvj4jtwhwb4" path="res://Obstacles/Sky_Aether_Metropolis/01_aether_energy_pylon_barrier.png" id="1_p5glf"]
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1713542270]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=340945372]
+texture = ExtResource("1_p5glf")
+region_enabled = true
+region_rect = Rect2(49.111862, 41.222862, 129.97748, 193.83926)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=55880464]
+polygon = PackedVector2Array(-4, -89, 28, -82, 39, -79, 40, -48, 40, 1, 46, 7, 46, 58, 57, 65, 56, 74, 38, 71, 15, 81, 12, 86, -2, 87, -7, 79, -30, 71, -50, 70, -37, 54, -37, 6, -32, 2, -28, -50, -32, -55, -32, -78, -20, -79)

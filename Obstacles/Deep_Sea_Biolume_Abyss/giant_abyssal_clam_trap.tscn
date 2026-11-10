@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dveiem2t71pe8"]
+
+[ext_resource type="Texture2D" uid="uid://dwjpr5qgml175" path="res://Obstacles/Deep_Sea_Biolume_Abyss/03_giant_abyssal_clam_trap.png" id="1_wwalf"]
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1713542270]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=340945372]
+texture = ExtResource("1_wwalf")
+region_enabled = true
+region_rect = Rect2(29, 0, 227, 256)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=55880464]
+polygon = PackedVector2Array(2, 99, 27, 101, 34, 103, 41, 99, 46, 107, 50, 94, 62, 94, 73, 86, 73, 86, 75, 73, 79, 61, 83, 90, 90, 72, 97, 59, 92, 48, 93, 33, 99, 25, 102, 13, 97, 4, 79, 1, 65, -10, 55, -20, 57, -28, 61, -45, 68, -34, 76, -20, 79, -35, 81, -47, 81, -59, 82, -75, 74, -82, 48, -91, 41, -96, 25, -114, 24, -100, 25, -95, 21, -92, 10, -95, -2, -91, -18, -85, -38, -80, -52, -61, -67, -54, -87, -28, -88, -12, -93, 5, -98, 15, -88, 39, -103, 22, -105, 32, -93, 52, -89, 66, -103, 57, -98, 76, -84, 82, -74, 87, -83, 88, -79, 95, -71, 95, -64, 104, -51, 98, -38, 102, -46, 107, -36, 112, -27, 111, -21, 109, -25, 103, -10, 100)

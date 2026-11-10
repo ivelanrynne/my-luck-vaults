@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bnctxm80fgq8d"]
+
+[ext_resource type="Texture2D" uid="uid://t6xratly2hxx" path="res://Obstacles/Sky_Aether_Metropolis/04_server_comms_terminal.png" id="1_8ogdj"]
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1713542270]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=340945372]
+texture = ExtResource("1_8ogdj")
+region_enabled = true
+region_rect = Rect2(79.164474, 26.196564, 130.72879, 201.3524)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=55880464]
+polygon = PackedVector2Array(-2, -63, -2, -80, 6, -98, 8, -65, 23, -59, 31, -47, 32, -30, 33, -46, 52, -38, 53, 27, 31, 19, 40, 43, 43, 86, 35, 86, 25, 81, -2, 91, -3, 98, -12, 100, -29, 91, -37, 91, -49, 82, -52, 77, -45, 2, -53, -3, -52, -20, -46, -26, -48, -55, 0, -66)

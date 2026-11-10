@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://yhd7wk2eedct"]
+
+[ext_resource type="Texture2D" uid="uid://ck7ity0dk1rcx" path="res://Obstacles/Modern_Solarpunk_Horizon/01_solar_sunflower_energy_pylon.png" id="1_dadsd"]
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1713542270]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=340945372]
+texture = ExtResource("1_dadsd")
+region_enabled = true
+region_rect = Rect2(67.89473, 0, 121.71304, 226.79765)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=55880464]
+polygon = PackedVector2Array(11, -7, 35, -18, 45, -39, 40, -64, 23, -86, 5, -98, -18, -98, -32, -89, -43, -72, -44, -51, -34, -30, -26, -23, -17, -6, -34, 83, -37, 94, -30, 98, -34, 110, -22, 104, -4, 110, 18, 108, 34, 111, 28, 101, 37, 92, 34, 81, 19, -1)

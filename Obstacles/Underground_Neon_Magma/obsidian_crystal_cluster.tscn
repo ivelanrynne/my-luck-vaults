@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://d3612avdyabh5"]
+
+[ext_resource type="Texture2D" uid="uid://dscahhd1u10cd" path="res://Obstacles/Underground_Neon_Magma/03_obsidian_crystal_cluster.png" id="1_in53j"]
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1713542270]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=340945372]
+texture = ExtResource("1_in53j")
+region_enabled = true
+region_rect = Rect2(0, 0, 256, 227.54897)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=55880464]
+polygon = PackedVector2Array(-23, -56, 1, -99, 23, -66, 23, -1, 29, -6, 31, -2, 44, -37, 62, -53, 69, -25, 47, 30, 75, 20, 70, 44, 51, 64, 68, 61, 65, 72, 53, 81, 58, 87, 57, 93, 33, 96, 27, 104, 14, 100, 1, 100, -11, 106, -30, 97, -43, 98, -60, 90, -52, 79, -71, 53, -78, 29, -57, 37, -48, 47, -70, -6, -63, -44, -37, -26, -22, 11)

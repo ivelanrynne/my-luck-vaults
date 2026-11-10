@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dvxdsmpo28jhq"]
+
+[ext_resource type="Texture2D" uid="uid://d0twm4msnr3v4" path="res://Obstacles/Modern_Solarpunk_Horizon/04_modern_recycled_park_bench.png" id="1_ujdaa"]
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1713542270]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=340945372]
+texture = ExtResource("1_ujdaa")
+region_enabled = true
+region_rect = Rect2(0, 0, 256, 223.7924)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=55880464]
+polygon = PackedVector2Array(-63, -70, -22, -83, 105, -26, 109, -20, 109, 65, 46, 101, 34, 96, 28, 63, -67, 17, -97, 33, -114, -9, -71, -33)

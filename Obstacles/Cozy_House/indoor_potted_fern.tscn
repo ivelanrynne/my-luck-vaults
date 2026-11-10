@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://ct2ic1ycyleih"]
+
+[ext_resource type="Texture2D" uid="uid://bswvvbj7bif1" path="res://Obstacles/Cozy_House/04_indoor_potted_fern.png" id="1_kksfj"]
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1713542270]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=340945372]
+texture = ExtResource("1_kksfj")
+region_enabled = true
+region_rect = Rect2(85, 71.91613, 155.69083, 173.48541)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=55880464]
+polygon = PackedVector2Array(23, 71, 23, 65, 32, 46, 30, 35, 25, 20, -33, 19, -27, 27, -32, 42, -29, 54, -21, 69, -21, 74, -9, 77, 3, 78)

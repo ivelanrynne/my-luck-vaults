@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dak4n0t6val47"]
+
+[ext_resource type="Texture2D" uid="uid://butamf1jqu68q" path="res://Obstacles/Cozy_House/03_carved_wooden_bookshelf.png" id="1_t31rf"]
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1713542270]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=340945372]
+texture = ExtResource("1_t31rf")
+region_enabled = true
+region_rect = Rect2(83, 46.5, 153, 209.5)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=55880464]
+polygon = PackedVector2Array(58, -82, 59, 89, 55, 87, 50, 92, 42, 91, 39, 81, 32, 79, 25, 83, 19, 79, 1, 85, -9, 82, -21, 83, -38, 76, -62, 86, -65, 85, -65, -69, -71, -78, -71, -82, -49, -80, -23, -92, -8, -93, 10, -90, 36, -82)

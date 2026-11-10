@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://od1r51imiprc"]
+
+[ext_resource type="Texture2D" uid="uid://cigftjw1h01d2" path="res://Obstacles/Underground_Neon_Magma/01_molten_magma_rock_spike.png" id="1_b2bh0"]
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1713542270]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=340945372]
+texture = ExtResource("1_b2bh0")
+region_enabled = true
+region_rect = Rect2(39.344772, 0, 165.28928, 229.8029)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=55880464]
+polygon = PackedVector2Array(-19, -54, -10, -59, 4, -102, 24, -42, 31, -41, 41, 18, 61, -10, 65, -1, 65, 32, 69, 41, 69, 66, 85, 74, 73, 80, 73, 89, 49, 90, 40, 94, 21, 94, 0, 102, -6, 107, -23, 96, -37, 90, -67, 88, -62, 80, -71, 76, -60, 59, -50, 59, -53, 19, -52, 3, -37, 28, -30, 4, -20, -10, -26, -16)

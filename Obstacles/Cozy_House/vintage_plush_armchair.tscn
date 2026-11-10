@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cth4cspvg22s6"]
+
+[ext_resource type="Texture2D" uid="uid://dg8ei4mrduxsn" path="res://Obstacles/Cozy_House/02_vintage_plush_armchair.png" id="1_ylexi"]
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1713542270]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=340945372]
+texture = ExtResource("1_ylexi")
+region_enabled = true
+region_rect = Rect2(87, 80.5, 146, 164)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=55880464]
+polygon = PackedVector2Array(-38, -11, -24, -13, -30, -38, -29, -55, -21, -62, -5, -58, 18, -65, 32, -64, 50, -57, 58, -61, 66, -54, 67, -45, 58, 3, 61, 11, 59, 18, 55, 23, 54, 49, 52, 52, 51, 64, 42, 64, 42, 57, 25, 69, 24, 78, 21, 82, 15, 81, 12, 69, -41, 61, -41, 70, -49, 72, -51, 65, -52, 58, -56, 54, -57, 24, -67, 19, -68, 11, -65, 3, -37, -6)

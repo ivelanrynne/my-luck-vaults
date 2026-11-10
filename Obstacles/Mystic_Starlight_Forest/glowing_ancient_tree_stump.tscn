@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cqjy4qpvgut7x"]
+
+[ext_resource type="Texture2D" uid="uid://dj2iogqjbhypq" path="res://Obstacles/Mystic_Starlight_Forest/01_glowing_ancient_tree_stump.png" id="1_1y5l2"]
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1713542270]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=340945372]
+texture = ExtResource("1_1y5l2")
+region_enabled = true
+region_rect = Rect2(53.619766, 32.207085, 141.2472, 223.79291)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=55880464]
+polygon = PackedVector2Array(-33, -93, -15, -82, -8, -81, 6, -60, 23, -67, 39, -83, 47, -70, 49, -28, 59, -11, 52, 6, 70, 41, 71, 71, 61, 71, 71, 92, 40, 79, 2, 93, -29, 98, -19, 81, -40, 78, -72, 83, -69, 71, -31, 31, -27, -3, -40, -28, -31, -34, -38, -93)

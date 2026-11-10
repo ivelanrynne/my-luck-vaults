@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://bevrr0w1e68x5"]
+
+[ext_resource type="Script" uid="uid://2vm5aquvnutv" path="res://Portals-Scenes/WaterHorizon/WaterHorizonPortal.cs" id="1_ocedc"]
+[ext_resource type="Texture2D" uid="uid://b73k71jgvx23m" path="res://assets/portals/04_water_horizon_gate/04_water_horizon_gate_01_dormant.png" id="2_hfhcv"]
+[ext_resource type="Texture2D" uid="uid://bkeo52vkd566o" path="res://assets/portals/04_water_horizon_gate/04_water_horizon_gate_02_charging.png" id="3_61wvq"]
+[ext_resource type="Texture2D" uid="uid://dij51b8g113s0" path="res://assets/portals/04_water_horizon_gate/04_water_horizon_gate_03_active_swirl.png" id="4_fgglj"]
+[ext_resource type="Texture2D" uid="uid://owrqmn30bjwc" path="res://assets/portals/04_water_horizon_gate/04_water_horizon_gate_04_teleport_flash.png" id="5_v3w7u"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ocedc"]
+radius = 32.0
+height = 120.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0fk3v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_hfhcv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_61wvq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fgglj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_v3w7u")
+}],
+"loop": 1,
+"name": &"activated",
+"speed": 5.0
+}]
+
+[node name="WaterHorizonPortal" type="Node2D" unique_id=263141063]
+script = ExtResource("1_ocedc")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=575825949]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=444624483]
+position = Vector2(0, 4)
+shape = SubResource("CapsuleShape2D_ocedc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1928448568]
+sprite_frames = SubResource("SpriteFrames_0fk3v")
+animation = &"activated"

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://ce62om0tr1see" path="res://scenes/CozyHouse.cs" id="1_88kgs"]
 [ext_resource type="Texture2D" uid="uid://bp5ig4i5bnawu" path="res://assets/backgrounds/indoor/03_cozy_adventurer_guild_hub.png" id="1_wkx2y"]
 [ext_resource type="Texture2D" uid="uid://btc1tl188n7on" path="res://assets/external-src/cozy-house.png" id="2_stkc6"]
+[ext_resource type="PackedScene" uid="uid://dxk80pw668rat" path="res://Portals-Scenes/EmeraldCloverMeadowPortal.tscn" id="4_3srjp"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0s17n"]
 texture = ExtResource("1_wkx2y")
@@ -2210,3 +2211,6 @@ offset_bottom = 40.0
 [node name="Obstacles" type="BoxContainer" parent="." unique_id=683365214]
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="EmeraldCloverMeadowPortal" parent="." unique_id=263141063 instance=ExtResource("4_3srjp")]
+position = Vector2(123, 505)

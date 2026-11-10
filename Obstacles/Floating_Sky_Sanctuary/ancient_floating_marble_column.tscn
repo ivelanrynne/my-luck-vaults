@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://boc604o2rxpc8"]
+
+[ext_resource type="Texture2D" uid="uid://c57vjvi2gdest" path="res://Obstacles/Floating_Sky_Sanctuary/01_ancient_floating_marble_column.png" id="1_e3fer"]
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1713542270]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=340945372]
+texture = ExtResource("1_e3fer")
+region_enabled = true
+region_rect = Rect2(76.77365, 28.621046, 84.693665, 198.07391)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=55880464]
+polygon = PackedVector2Array(16, 35, 16, -8, 11, -8, 1, 5, -1, 12, -8, 9, -16, 16, -17, 46, -24, 59, -17, 68, -7, 71, 6, 72, 19, 66, 23, 59, 21, 52)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="." unique_id=1183386523]
+polygon = PackedVector2Array(13, -15, 17, -24, 17, -44, 19, -51, 20, -63, 27, -62, 28, -71, 28, -81, 2, -92, -27, -79, -28, -72, -28, -65, -23, -62, -23, -62, -18, -56, -16, 5, -9, 6)

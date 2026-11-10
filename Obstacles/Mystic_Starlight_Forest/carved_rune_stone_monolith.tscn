@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dv3maicuilj25"]
+
+[ext_resource type="Texture2D" uid="uid://d4ahjx14oalnp" path="res://Obstacles/Mystic_Starlight_Forest/03_carved_rune_stone_monolith.png" id="1_cfe01"]
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1713542270]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=340945372]
+texture = ExtResource("1_cfe01")
+region_enabled = true
+region_rect = Rect2(61.88423, 55.49785, 89.40646, 200.50215)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=55880464]
+polygon = PackedVector2Array(-2, -90, 19, -65, 33, 68, 3, 85, -36, 71, -24, -60)

@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bqbqw2dfkxkh"]
+
+[ext_resource type="Texture2D" uid="uid://cjhpdtbg0cfr3" path="res://Obstacles/Water_Surface_Sunset_Bay/04_floating_ocean_warning_buoy.png" id="1_8g1ue"]
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1713542270]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=340945372]
+texture = ExtResource("1_8g1ue")
+region_enabled = true
+region_rect = Rect2(91.93681, 0, 164.06319, 205.76083)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=55880464]
+polygon = PackedVector2Array(6, -94, 15, -83, 13, -58, 17, -53, 12, -36, 21, 17, 36, 29, 37, 49, 35, 69, 21, 83, -10, 89, -18, 98, -26, 95, -31, 87, -63, 71, -69, 49, -64, 27, -59, 15, -39, 6, -21, -46, -25, -55, -13, -62, -15, -83)
