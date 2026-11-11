@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://b51j6o2gunq7g"]
+
+[ext_resource type="Texture2D" uid="uid://o52xc8u2167l" path="res://assets/icons/12_Icon_Mute_Tat_Am.png" id="1_hbkhm"]
+[ext_resource type="Script" uid="uid://ci6wmgputo2d4" path="res://UserUI/SoundState.cs" id="1_khmxg"]
+[ext_resource type="Texture2D" uid="uid://cwj2kvsvw0c1i" path="res://assets/icons/02_Icon_Sound_Am_Thanh.png" id="2_khmxg"]
+[ext_resource type="FontFile" uid="uid://53udbob7porp" path="res://assets/gain-circus-font/Gain Circus.ttf" id="3_oqpd6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0s17n"]
+bg_color = Color(0.4236506, 0.42365065, 0.42365053, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.13319638, 0.13319641, 0.1331963, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="LabelSettings" id="LabelSettings_appdd"]
+outline_size = 2
+outline_color = Color(0.13319641, 0.13319641, 0.13319638, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f1fas"]
+bg_color = Color(0.8429114, 0.4371328, 0.70312726, 1)
+
+[node name="soundState" type="Control" unique_id=127654177]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_khmxg")
+
+[node name="Panel" type="Panel" parent="." unique_id=1062308310]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -363.0
+offset_top = -141.0
+offset_right = 364.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0s17n")
+
+[node name="mutedSound" type="TextureButton" parent="." unique_id=533492877]
+layout_mode = 0
+offset_left = -344.0
+offset_top = -133.0
+offset_right = -272.0
+offset_bottom = -61.0
+texture_normal = ExtResource("1_hbkhm")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="activeSound" type="TextureButton" parent="." unique_id=1445709233]
+layout_mode = 0
+offset_left = -343.0
+offset_top = -132.0
+offset_right = -272.0
+offset_bottom = -61.0
+texture_normal = ExtResource("2_khmxg")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="volumeChange" type="VBoxContainer" parent="." unique_id=185159965]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -261.0
+offset_top = -113.0
+offset_right = 334.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="volumeChange" unique_id=1503164114]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_oqpd6")
+text = "Volume:"
+label_settings = SubResource("LabelSettings_appdd")
+
+[node name="HSlider" type="HSlider" parent="volumeChange" unique_id=894042259]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_f1fas")
+value = 100.0

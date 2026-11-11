@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d3l0wxl57ftlq"]
 
-[ext_resource type="Texture2D" uid="uid://ckepscyd0kky1" path="res://assets/decors/indoor/alchemist_bookshelf.png" id="1_ffmu3"]
+[ext_resource type="Texture2D" uid="uid://ckepscyd0kky1" path="res://assets/decorations/indoor/alchemist_bookshelf.png" id="1_ffmu3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0s17n"]
 size = Vector2(90, 133)

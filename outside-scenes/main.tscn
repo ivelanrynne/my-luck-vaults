@@ -51,11 +51,11 @@ shadow_size = 4
 shadow_offset = Vector2(1, 4)
 
 [sub_resource type="Gradient" id="Gradient_exel7"]
-colors = PackedColorArray(0.11607202, 0.85996, 3.85046e-07, 1, 1, 0.59607846, 1, 1)
+colors = PackedColorArray(0.05490196, 0.38039216, 0.64705884, 1, 1, 0.59607846, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_0s17n"]
 gradient = SubResource("Gradient_exel7")
-fill_from = Vector2(0.31196582, 0.7222222)
+fill_from = Vector2(0.36324787, 0.5470086)
 fill_to = Vector2(0.61538464, 0.2777778)
 
 [node name="MainMenu" type="Control" unique_id=1575864040]
@@ -150,6 +150,8 @@ offset_right = 391.0
 offset_bottom = 14.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
 theme_override_fonts/normal_font = ExtResource("3_exel7")
 theme_override_font_sizes/normal_font_size = 100
 text = "My Luck Vaults"

@@ -14,8 +14,8 @@ public static class GameManager
     /// </summary>
     public static readonly string[] CharacterScenes = new string[]
     {
-        "res://Characters/Char01.tscn", // Index 0: Nhân vật Leo (Nam)
-        "res://Characters/Char02.tscn"  // Index 1: Nhân vật Nữ
+        "res://Characters/Leo/Char01.tscn", // Index 0: Nhân vật Leo (Nam)
+        "res://Characters/Luna/Char02.tscn"  // Index 1: Nhân vật Nữ
     };
 
     /// <summary>

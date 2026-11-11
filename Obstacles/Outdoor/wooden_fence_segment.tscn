@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cq5bvh5noph3d"]
 
-[ext_resource type="Texture2D" uid="uid://c8a41etqfvupq" path="res://assets/decors/outdoor/wooden_fence_segment.png" id="1_h2f46"]
+[ext_resource type="Texture2D" uid="uid://c8a41etqfvupq" path="res://assets/decorations/outdoor/wooden_fence_segment.png" id="1_h2f46"]
 
 [node name="StaticBody2D" type="StaticBody2D" unique_id=1713542270]
 

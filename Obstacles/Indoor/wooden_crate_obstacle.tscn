@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://depdqvlo5ndun"]
 
-[ext_resource type="Texture2D" uid="uid://7lcxy7cq6jwm" path="res://assets/decors/indoor/wooden_crate.png" id="1_fduji"]
+[ext_resource type="Texture2D" uid="uid://7lcxy7cq6jwm" path="res://assets/decorations/indoor/wooden_crate.png" id="1_fduji"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0s17n"]
 size = Vector2(62, 62)

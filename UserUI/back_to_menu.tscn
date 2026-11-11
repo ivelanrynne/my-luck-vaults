@@ -2,8 +2,9 @@
 
 [ext_resource type="Script" uid="uid://uy3gxahssyrs" path="res://UserUI/BackToMenu.cs" id="1_5doxc"]
 [ext_resource type="FontFile" uid="uid://53udbob7porp" path="res://assets/gain-circus-font/Gain Circus.ttf" id="1_8bdlp"]
+[ext_resource type="Texture2D" uid="uid://bhl2ny8hjft0q" path="res://assets/icons/03_Icon_Home_Trang_Chu.png" id="3_ppnsu"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5doxc"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ppnsu"]
 bg_color = Color(0.234512, 0.2629233, 0.43086594, 1)
 border_color = Color(0.84131867, 0.7623167, 0.9251394, 1)
 border_blend = true
@@ -14,7 +15,7 @@ corner_radius_bottom_left = 16
 shadow_size = 1
 shadow_offset = Vector2(0.5, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ppnsu"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_omkgh"]
 bg_color = Color(0.032110255, 0.22250134, 0.16908586, 1)
 border_color = Color(0.84131867, 0.7623167, 0.9251394, 1)
 border_blend = true
@@ -25,7 +26,7 @@ corner_radius_bottom_left = 16
 shadow_size = 1
 shadow_offset = Vector2(0.5, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_omkgh"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dh14t"]
 bg_color = Color(0.8627451, 0.19215687, 0.27058825, 1)
 border_color = Color(0.84131867, 0.7623167, 0.9251394, 1)
 border_blend = true
@@ -36,7 +37,7 @@ corner_radius_bottom_left = 16
 shadow_size = 1
 shadow_offset = Vector2(0.5, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0s17n"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gsr4a"]
 bg_color = Color(0.7266078, 0.56966436, 0.35397828, 1)
 corner_radius_top_left = 32
 corner_radius_top_right = 32
@@ -45,12 +46,12 @@ corner_radius_bottom_left = 32
 shadow_size = 3
 shadow_offset = Vector2(1, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_5doxc"]
+[sub_resource type="LabelSettings" id="LabelSettings_bf8md"]
 font_size = 24
 outline_size = 2
 outline_color = Color(0.029506557, 0.029506557, 0.029506557, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gsr4a"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_55qfd"]
 bg_color = Color(0.274608, 0.66818666, 0.6891675, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
@@ -59,14 +60,14 @@ corner_radius_bottom_left = 16
 shadow_size = 1
 shadow_offset = Vector2(1, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bf8md"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qcmax"]
 bg_color = Color(0.31764707, 0.6784314, 0.46666667, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h3fo6"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2n5h4"]
 bg_color = Color(0.3645864, 0.78769547, 0.8133458, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
@@ -75,7 +76,7 @@ corner_radius_bottom_left = 16
 shadow_size = 1
 shadow_offset = Vector2(1, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_55qfd"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_txgqt"]
 bg_color = Color(0.8117647, 0.21176471, 0.39215687, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
@@ -84,14 +85,14 @@ corner_radius_bottom_left = 16
 shadow_size = 1
 shadow_offset = Vector2(1, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qcmax"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p1axr"]
 bg_color = Color(0.9736194, 0.44701397, 0.4140743, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2n5h4"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gh1lv"]
 bg_color = Color(0.9730713, 0.6313619, 0.62500376, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
@@ -100,7 +101,7 @@ corner_radius_bottom_left = 16
 shadow_size = 1
 shadow_offset = Vector2(1, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_txgqt"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ejinv"]
 bg_color = Color(0.8352941, 0.25882354, 0.105882354, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
@@ -109,14 +110,14 @@ corner_radius_bottom_left = 8
 shadow_size = 1
 shadow_offset = Vector2(1, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p1axr"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3bjhg"]
 bg_color = Color(0.77304655, 0.44711053, 0.4952411, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gh1lv"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e1iko"]
 bg_color = Color(0.9647059, 0.09019608, 0.20392157, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
@@ -127,25 +128,27 @@ shadow_offset = Vector2(1, 1)
 
 [node name="ConfirmBackPopup" type="Control" unique_id=175376995]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_5doxc")
 
-[node name="goBackBtn" type="Button" parent="." unique_id=1508202985]
+[node name="goBackBtn2" type="Button" parent="." unique_id=880754651]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -70.0
-offset_top = -188.0
-offset_right = 70.0
-offset_bottom = -149.0
+offset_left = -559.0
+offset_top = -187.0
+offset_right = -397.0
+offset_bottom = -148.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
@@ -153,38 +156,45 @@ theme_override_colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
 theme_override_fonts/font = ExtResource("1_8bdlp")
-theme_override_styles/normal = SubResource("StyleBoxFlat_5doxc")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_ppnsu")
-theme_override_styles/hover = SubResource("StyleBoxFlat_omkgh")
-text = "Back  to Menu"
+theme_override_styles/normal = SubResource("StyleBoxFlat_ppnsu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_omkgh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dh14t")
+text = "Back  to Menu \\L\\"
 
-[node name="Panel" type="Panel" parent="." unique_id=1330165045]
+[node name="backHomeIcon" type="Sprite2D" parent="goBackBtn2" unique_id=1890897733]
+position = Vector2(82, 89)
+scale = Vector2(0.40234375, 0.40234375)
+texture = ExtResource("3_ppnsu")
+
+[node name="Panel2" type="Panel" parent="." unique_id=566683167]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 324.0
-offset_top = 253.0
-offset_right = -324.0
-offset_bottom = -235.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -252.0
+offset_top = -80.0
+offset_right = 252.0
+offset_bottom = 80.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_0s17n")
+theme_override_styles/panel = SubResource("StyleBoxFlat_gsr4a")
 
-[node name="Label" type="Label" parent="Panel" unique_id=1630484366]
+[node name="Label" type="Label" parent="Panel2" unique_id=1774140016]
 layout_mode = 0
-offset_left = 46.0
-offset_top = 18.0
-offset_right = 460.0
-offset_bottom = 73.0
+offset_left = 52.0
+offset_top = 26.0
+offset_right = 466.0
+offset_bottom = 81.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
 text = "Do you want to return to the main menu?"
-label_settings = SubResource("LabelSettings_5doxc")
+label_settings = SubResource("LabelSettings_bf8md")
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="confirm" type="Button" parent="Panel" unique_id=1837236543]
+[node name="confirm" type="Button" parent="Panel2" unique_id=1862843765]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -192,9 +202,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -218.0
-offset_top = 15.0
+offset_top = 13.0
 offset_right = -26.0
-offset_bottom = 67.0
+offset_bottom = 65.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.08855977, 0.08855999, 0.088559784, 1)
@@ -202,12 +212,12 @@ theme_override_colors/font_focus_color = Color(0.29218978, 0.29219007, 0.2921907
 theme_override_colors/font_pressed_color = Color(0.1148968, 0.11489681, 0.1148968, 1)
 theme_override_colors/font_hover_color = Color(0.22310266, 0.22310293, 0.22310343, 1)
 theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxFlat_gsr4a")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_bf8md")
-theme_override_styles/hover = SubResource("StyleBoxFlat_h3fo6")
+theme_override_styles/normal = SubResource("StyleBoxFlat_55qfd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qcmax")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2n5h4")
 text = "confirm"
 
-[node name="cancel" type="Button" parent="Panel" unique_id=278963592]
+[node name="cancel" type="Button" parent="Panel2" unique_id=265724940]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -215,9 +225,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 20.0
-offset_top = 15.0
+offset_top = 13.0
 offset_right = 212.0
-offset_bottom = 67.0
+offset_bottom = 65.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.08078336, 0.080783345, 0.0807833, 1)
@@ -225,19 +235,19 @@ theme_override_colors/font_focus_color = Color(0.15487581, 0.15487596, 0.1548764
 theme_override_colors/font_pressed_color = Color(0.10747976, 0.10747973, 0.10747973, 1)
 theme_override_colors/font_hover_color = Color(0.12591067, 0.12591085, 0.1259112, 1)
 theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxFlat_55qfd")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_qcmax")
-theme_override_styles/hover = SubResource("StyleBoxFlat_2n5h4")
-text = "cancel"
-
-[node name="exitPopup" type="Button" parent="." unique_id=775614591]
-layout_mode = 0
-offset_left = 785.0
-offset_top = 241.0
-offset_right = 848.0
-offset_bottom = 284.0
-theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_txgqt")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_p1axr")
 theme_override_styles/hover = SubResource("StyleBoxFlat_gh1lv")
+text = "cancel"
+
+[node name="exitPopup" type="Button" parent="Panel2" unique_id=1471868534]
+layout_mode = 0
+offset_left = 467.0
+offset_top = -13.0
+offset_right = 530.0
+offset_bottom = 30.0
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_ejinv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3bjhg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_e1iko")
 text = "X"

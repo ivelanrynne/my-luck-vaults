@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ctvmqarwf0m5d"]
 
-[ext_resource type="Texture2D" uid="uid://bm8ovw4l48mm1" path="res://Obstacles/wooden_signpost.png" id="1_kuw3b"]
+[ext_resource type="Texture2D" uid="uid://bm8ovw4l48mm1" path="res://Obstacles/Outdoor/wooden_signpost.png" id="1_kuw3b"]
 
 [node name="StaticBody2D" type="StaticBody2D" unique_id=1713542270]
 

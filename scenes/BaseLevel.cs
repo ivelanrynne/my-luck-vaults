@@ -51,9 +51,16 @@ public partial class BaseLevel : Node2D
     /// <summary>
     /// Tạo ra CanvasLayer độc lập để hiển thị ControlUI.
     /// Giúp UI luôn cố định trên màn hình camera và nằm đè lên trên toàn bộ quái và bản đồ.
+    /// Có cơ chế phòng ngừa sinh trùng lặp giao diện (Duplicate UI).
     /// </summary>
     protected virtual void SetupControlUI()
     {
+        // Kiểm tra nếu trong cây Scene đã có sẵn UIRoot thì không sinh thêm để tránh lỗi trùng giao diện
+        if (FindChild("UIRoot", true, false) != null || FindChild("ControlUI", true, false) != null)
+        {
+            return;
+        }
+
         if (ControlUiScene != null)
         {
             var canvasLayer = new CanvasLayer();

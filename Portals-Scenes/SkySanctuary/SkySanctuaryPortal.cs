@@ -5,6 +5,6 @@ public partial class SkySanctuaryPortal : BasePortal
 {
 	public SkySanctuaryPortal()
 	{
-		TargetLevelPath = "res://scenes/SkySanctuary.tscn";
+		TargetLevelPath = "res://scenes/SkySanctuary/SkySanctuary.tscn";
 	}
 }

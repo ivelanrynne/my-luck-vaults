@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bs87buvdej28s"]
 
-[ext_resource type="Texture2D" uid="uid://bj1hwplnpspi2" path="res://assets/decors/outdoor/mystic_teleport_portal.png" id="1_gvog8"]
+[ext_resource type="Texture2D" uid="uid://bj1hwplnpspi2" path="res://assets/decorations/outdoor/mystic_teleport_portal.png" id="1_gvog8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0s17n"]
 size = Vector2(126, 16)

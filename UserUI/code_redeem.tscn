@@ -1,0 +1,197 @@
+[gd_scene format=3 uid="uid://bka37r1qeynwl"]
+
+[ext_resource type="Script" uid="uid://daxlmlsuuxsp" path="res://UserUI/CodeRedeem.cs" id="1_mf01j"]
+[ext_resource type="FontFile" uid="uid://53udbob7porp" path="res://assets/gain-circus-font/Gain Circus.ttf" id="1_p7s68"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wwjnx"]
+bg_color = Color(0.4236506, 0.42365065, 0.42365053, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.13319638, 0.13319641, 0.1331963, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="LabelSettings" id="LabelSettings_p7s68"]
+font_size = 20
+outline_size = 2
+outline_color = Color(0.096204735, 0.09620475, 0.096204735, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mf01j"]
+bg_color = Color(0.36264378, 0.6966283, 0.16774979, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_joki5"]
+bg_color = Color(0.6469046, 0.84572965, 0.6422481, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wi15s"]
+bg_color = Color(0.44705883, 0.75686276, 0.5176471, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_q6vft"]
+font_size = 20
+font_color = Color(0.29411766, 1, 0.16862746, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_mf01j"]
+font_size = 20
+font_color = Color(0.41568628, 1, 0.827451, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_joki5"]
+font_size = 20
+font_color = Color(1, 1, 0.3019608, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_wi15s"]
+font_size = 20
+font_color = Color(1, 0.20784314, 0.24705882, 1)
+
+[node name="CodeRedeem" type="Control" unique_id=528984243]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mf01j")
+
+[node name="Panel" type="Panel" parent="." unique_id=1419860758]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -238.0
+offset_top = -154.0
+offset_right = 239.0
+offset_bottom = -66.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wwjnx")
+
+[node name="Label" type="Label" parent="." unique_id=822194505]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -49.0
+offset_top = -142.0
+offset_right = 54.0
+offset_bottom = -124.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_p7s68")
+text = "Code Redeem:"
+label_settings = SubResource("LabelSettings_p7s68")
+
+[node name="enterCodes" type="LineEdit" parent="." unique_id=527011554]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -194.0
+offset_top = -110.0
+offset_right = 194.0
+offset_bottom = -82.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_p7s68")
+placeholder_text = "Enter the code..."
+
+[node name="redeemBtn" type="Button" parent="enterCodes" unique_id=1678041378]
+layout_mode = 0
+offset_left = 317.0
+offset_top = 3.0
+offset_right = 384.0
+offset_bottom = 25.0
+theme_override_fonts/font = ExtResource("1_p7s68")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_mf01j")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_joki5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wi15s")
+text = "Comfirm"
+
+[node name="success" type="Label" parent="." unique_id=383121421]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -95.0
+offset_top = -38.0
+offset_right = 95.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "REDEEMED_SUCCESSFULLY"
+label_settings = SubResource("LabelSettings_q6vft")
+
+[node name="already" type="Label" parent="." unique_id=514232934]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -38.0
+offset_right = 75.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "ALREADY_REDEEMED"
+label_settings = SubResource("LabelSettings_mf01j")
+
+[node name="invalid" type="Label" parent="." unique_id=1936687653]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -52.5
+offset_top = -38.0
+offset_right = 52.5
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "INVALID_CODE"
+label_settings = SubResource("LabelSettings_joki5")
+
+[node name="expired" type="Label" parent="." unique_id=693123291]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.5
+offset_top = -38.0
+offset_right = 30.5
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "EXPIRED"
+label_settings = SubResource("LabelSettings_wi15s")

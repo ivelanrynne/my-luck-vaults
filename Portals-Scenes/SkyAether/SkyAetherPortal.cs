@@ -5,6 +5,6 @@ public partial class SkyAetherPortal : BasePortal
 {
 	public SkyAetherPortal()
 	{
-		TargetLevelPath = "res://scenes/SkyAether.tscn";
+		TargetLevelPath = "res://scenes/SkyAether/SkyAether.tscn";
 	}
 }

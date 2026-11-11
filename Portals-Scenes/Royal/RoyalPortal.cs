@@ -5,6 +5,6 @@ public partial class RoyalPortal : BasePortal
 {
     public RoyalPortal()
     {
-        TargetLevelPath = "res://scenes/Royal.tscn";
+        TargetLevelPath = "res://scenes/Royal/Royal.tscn";
     }
 }

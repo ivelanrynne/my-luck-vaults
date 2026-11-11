@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b0h5bch7wlu1x"]
 
-[ext_resource type="Script" uid="uid://u75n6oupaejv" path="res://Enemies/AbyssAnglerBeast.cs" id="1_wdun0"]
+[ext_resource type="Script" uid="uid://u75n6oupaejv" path="res://Enemies/AbyssAnglerBeast/AbyssAnglerBeast.cs" id="1_wdun0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0s17n"]
 radius = 25.0

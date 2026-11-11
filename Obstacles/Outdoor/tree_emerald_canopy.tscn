@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://elwj5dpayctl"]
 
-[ext_resource type="Texture2D" uid="uid://dsfr134e15opk" path="res://Obstacles/tree_emerald_canopy.png" id="1_yljtk"]
+[ext_resource type="Texture2D" uid="uid://dsfr134e15opk" path="res://Obstacles/Outdoor/tree_emerald_canopy.png" id="1_yljtk"]
 
 [node name="StaticBody2D" type="StaticBody2D" unique_id=1713542270]
 

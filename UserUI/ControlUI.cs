@@ -2,94 +2,47 @@ using Godot;
 using System;
 
 /// <summary>
-/// Giao diện điều khiển chính trên màn hình (HUD / Control UI).
-/// Quản lý chức năng Tạm dừng (Pause) và Tiếp tục chơi (Play).
-/// 
-/// ĐẶC ĐIỂM QUAN TRỌNG:
-/// - ProcessMode = Always: Giúp UI vẫn hoạt động và bấm được nút kể cả khi toàn bộ game đang bị Pause (GetTree().Paused = true).
-/// - MouseFilter = Ignore: Đảm bảo vùng trống của ControlUI không nuốt click chuột của người chơi xuống màn hình game.
-/// - FocusMode = None: Ngăn nút cướp phím Space/Enter làm mất khả năng nhảy của nhân vật.
+/// Node gốc chứa toàn bộ các hệ thống giao diện trong màn chơi (HUD Root).
+/// Đóng vai trò là container quản lý tập trung các module UI:
+/// - SettingButtonPopup: Quản lý cài đặt âm thanh, popup menu, giftcode, go back.
+/// - GameState: Quản lý trạng thái vòng lặp trò chơi (Pause/Play) và làm mờ 5-10% màn chơi.
 /// </summary>
 public partial class ControlUI : Control
 {
-	[Export] public BaseButton PauseButton;
-	[Export] public BaseButton PlayButton;
+	[ExportGroup("Các Module Giao Diện Con")]
+	[Export] public SettingButtonPopup SettingPopup;
+	[Export] public GameState GameStateManager;
+
+	[ExportGroup("Tùy Chọn Chế Độ")]
+	// Bật/tắt nút Pause/Play (ví dụ: màn hình CustomCharacter không cần Pause thì tắt đi)
+	[Export] public bool EnableGameState { get; set; } = true;
 
 	public override void _Ready()
 	{
-		// Đảm bảo ControlUI và toàn bộ node con của nó vẫn nhận input khi game bị Pause
+		// Luôn chạy UI ngay cả khi game bị Pause
 		ProcessMode = ProcessModeEnum.Always;
 
-		// Đảm bảo UIRoot không cản click chuột ở các vùng trống xuống game
+		// Để chuột đi xuyên qua các khoảng trống của container UI xuống game
 		MouseFilter = MouseFilterEnum.Ignore;
 
-		// 1. Tự động tìm PauseButton nếu chưa gán trên Inspector
-		if (PauseButton == null)
+		// 1. Tự động liên kết SettingPopup nếu chưa gán
+		if (SettingPopup == null)
 		{
-			PauseButton = GetNodeOrNull<BaseButton>("pauseBtn")
-					   ?? GetNodeOrNull<BaseButton>("PauseButton");
+			SettingPopup = GetNodeOrNull<SettingButtonPopup>("SettingButtonPopup");
 		}
 
-		// 2. Tự động tìm PlayButton nếu chưa gán trên Inspector
-		if (PlayButton == null)
+		// 2. Tự động liên kết GameStateManager nếu chưa gán
+		if (GameStateManager == null)
 		{
-			PlayButton = GetNodeOrNull<BaseButton>("playBtn")
-					  ?? GetNodeOrNull<BaseButton>("PlayButton");
+			GameStateManager = GetNodeOrNull<GameState>("GameState");
 		}
 
-		// 3. Tắt FocusMode để phím Space (nhảy) không bị nút bấm UI cướp mất
-		if (PauseButton != null)
+		// 3. Cấu hình trạng thái hiển thị của GameStateManager
+		if (GameStateManager != null)
 		{
-			PauseButton.FocusMode = FocusModeEnum.None;
-			PauseButton.Pressed += OnPauseButtonPressed;
-		}
-
-		if (PlayButton != null)
-		{
-			PlayButton.FocusMode = FocusModeEnum.None;
-			PlayButton.Pressed += OnPlayButtonPressed;
-		}
-
-		// 4. Trạng thái khởi tạo: game đang chạy, hiển thị nút Pause, ẩn nút Play
-		UpdatePauseUI();
-	}
-
-	/// <summary>
-	/// Khi ấn nút Pause: dừng toàn bộ logic vật lý của trò chơi và chuyển sang hiện nút Play.
-	/// Đồng thời giải phóng Focus để tránh bàn phím bị kẹt vào nút UI.
-	/// </summary>
-	public void OnPauseButtonPressed()
-	{
-		GetTree().Paused = true;
-		UpdatePauseUI();
-		GetViewport()?.GuiReleaseFocus();
-	}
-
-	/// <summary>
-	/// Khi ấn nút Play: tiếp tục trò chơi và chuyển sang hiện nút Pause.
-	/// </summary>
-	public void OnPlayButtonPressed()
-	{
-		GetTree().Paused = false;
-		UpdatePauseUI();
-		GetViewport()?.GuiReleaseFocus();
-	}
-
-	/// <summary>
-	/// Cập nhật hiển thị nút Pause và Play theo trạng thái Paused hiện tại của SceneTree.
-	/// </summary>
-	private void UpdatePauseUI()
-	{
-		bool isPaused = GetTree().Paused;
-
-		if (PauseButton != null)
-		{
-			PauseButton.Visible = !isPaused;
-		}
-
-		if (PlayButton != null)
-		{
-			PlayButton.Visible = isPaused;
+			GameStateManager.Visible = EnableGameState;
+			GameStateManager.SetProcess(EnableGameState);
+			GameStateManager.SetProcessUnhandledInput(EnableGameState);
 		}
 	}
 }

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dg7gfoo5deops"]
 
-[ext_resource type="Script" uid="uid://c2y8pjlpa03a4" path="res://Portals-Scenes/DeepSeaAbyssPortal.cs" id="1_7p8jf"]
+[ext_resource type="Script" uid="uid://c2y8pjlpa03a4" path="res://Portals-Scenes/DeepSeaAbyss/DeepSeaAbyssPortal.cs" id="1_7p8jf"]
 [ext_resource type="Texture2D" uid="uid://cksp4gwdc4byk" path="res://assets/portals/03_deep_sea_abyss_gate/03_deep_sea_abyss_gate_01_dormant.png" id="1_wuchb"]
 [ext_resource type="Texture2D" uid="uid://dhj1bfvfa0eas" path="res://assets/portals/03_deep_sea_abyss_gate/03_deep_sea_abyss_gate_02_charging.png" id="2_7p8jf"]
 [ext_resource type="Texture2D" uid="uid://deivg6e11q4vv" path="res://assets/portals/03_deep_sea_abyss_gate/03_deep_sea_abyss_gate_03_active_swirl.png" id="3_p7flf"]

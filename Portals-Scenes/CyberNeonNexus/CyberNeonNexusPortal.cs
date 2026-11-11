@@ -5,6 +5,6 @@ public partial class CyberNeonNexusPortal : BasePortal
 {
 	public CyberNeonNexusPortal()
 	{
-		TargetLevelPath = "res://scenes/CyberNeonNexus.tscn";
+		TargetLevelPath = "res://scenes/CyberNeonNexus/CyberNeonNexus.tscn";
 	}
 }

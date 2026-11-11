@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c04pqydq2enup"]
 
 [ext_resource type="Texture2D" uid="uid://ba7srjs671dhy" path="res://assets/portals/06_golden_clover_dimension_gate/06_golden_clover_dimension_gate_01_dormant.png" id="1_d7iq7"]
-[ext_resource type="Script" path="res://Portals-Scenes/EmeraldCloverMeadowPortal.cs" id="1_ptm4a"]
+[ext_resource type="Script" uid="uid://63va4srg8env" path="res://Portals-Scenes/EmeraldCloverMeadow/EmeraldCloverMeadowPortal.cs" id="1_ptm4a"]
 [ext_resource type="Texture2D" uid="uid://bpp1tognw18w5" path="res://assets/portals/06_golden_clover_dimension_gate/06_golden_clover_dimension_gate_02_charging.png" id="2_ptm4a"]
 [ext_resource type="Texture2D" uid="uid://cfuwumqno00fq" path="res://assets/portals/06_golden_clover_dimension_gate/06_golden_clover_dimension_gate_03_active_swirl.png" id="3_c4ue5"]
 [ext_resource type="Texture2D" uid="uid://tf3dnatd57fv" path="res://assets/portals/06_golden_clover_dimension_gate/06_golden_clover_dimension_gate_04_teleport_flash.png" id="4_e4bay"]

@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://c4j451ckruj2"]
+
+[ext_resource type="Script" uid="uid://dw2gm67f2awop" path="res://UserUI/GameState.cs" id="1_flomx"]
+[ext_resource type="Texture2D" uid="uid://m2pp5v4ye7qb" path="res://assets/icons/11_Icon_Pause_Tam_Dung.png" id="1_rnb6j"]
+[ext_resource type="Texture2D" uid="uid://bbg8x3v5y2ks2" path="res://assets/icons/05_Icon_Play.png" id="2_flomx"]
+
+[node name="GameState" type="Control" unique_id=440340583]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_flomx")
+
+[node name="pauseBtn" type="TextureButton" parent="." unique_id=32641586]
+layout_mode = 0
+offset_left = 1080.0
+offset_top = 5.0
+offset_right = 1150.0
+offset_bottom = 75.0
+texture_normal = ExtResource("1_rnb6j")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="playBtn" type="TextureButton" parent="." unique_id=182323711]
+layout_mode = 0
+offset_left = 1080.0
+offset_top = 5.0
+offset_right = 1150.0
+offset_bottom = 75.0
+texture_normal = ExtResource("2_flomx")
+ignore_texture_size = true
+stretch_mode = 0

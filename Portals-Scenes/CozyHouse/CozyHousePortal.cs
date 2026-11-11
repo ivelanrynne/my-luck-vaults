@@ -5,6 +5,6 @@ public partial class CozyHousePortal : BasePortal
 {
 	public CozyHousePortal()
 	{
-		TargetLevelPath = "res://scenes/CozyHouse.tscn";
+		TargetLevelPath = "res://scenes/CozyHouse/CozyHouse.tscn";
 	}
 }

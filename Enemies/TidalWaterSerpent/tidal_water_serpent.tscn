@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cojh1ml3a88lm"]
 
 [ext_resource type="Texture2D" uid="uid://cvgssrkhdwuja" path="res://assets/monsters/05_tidal_water_serpent/attack/05_tidal_water_serpent_attack_01.png" id="1_60x2b"]
-[ext_resource type="Script" uid="uid://dhy56jva65jem" path="res://Enemies/TidalWaterSerpent.cs" id="1_np0qs"]
+[ext_resource type="Script" uid="uid://dhy56jva65jem" path="res://Enemies/TidalWaterSerpent/TidalWaterSerpent.cs" id="1_np0qs"]
 [ext_resource type="Texture2D" uid="uid://cmq3yqituyb75" path="res://assets/monsters/05_tidal_water_serpent/attack/05_tidal_water_serpent_attack_02.png" id="2_x0slu"]
 [ext_resource type="Texture2D" uid="uid://jaraxeegvj8k" path="res://assets/monsters/05_tidal_water_serpent/attack/05_tidal_water_serpent_attack_03.png" id="3_h0u2x"]
 [ext_resource type="Texture2D" uid="uid://crlivjpffw2px" path="res://assets/monsters/05_tidal_water_serpent/attack/05_tidal_water_serpent_attack_04.png" id="4_n8a33"]

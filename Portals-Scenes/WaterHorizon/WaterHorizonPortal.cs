@@ -5,6 +5,6 @@ public partial class WaterHorizonPortal : BasePortal
 {
 	public WaterHorizonPortal()
 	{
-		TargetLevelPath = "res://scenes/WaterHorizon.tscn";
+		TargetLevelPath = "res://scenes/WaterHorizon/WaterHorizon.tscn";
 	}
 }

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://lnq1lqdiar83"]
 
-[ext_resource type="Texture2D" uid="uid://bpv3dsjurjdf7" path="res://Obstacles/tree_golden_luck.png" id="1_lmr1v"]
+[ext_resource type="Texture2D" uid="uid://bpv3dsjurjdf7" path="res://Obstacles/Outdoor/tree_golden_luck.png" id="1_lmr1v"]
 
 [node name="StaticBody2D" type="StaticBody2D" unique_id=1713542270]
 

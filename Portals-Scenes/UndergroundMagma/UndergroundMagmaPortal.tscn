@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cw14bjo5cv8ea"]
 
 [ext_resource type="Texture2D" uid="uid://dgl3yty62yhhu" path="res://assets/portals/01_underground_magma_gate/01_underground_magma_gate_01_dormant.png" id="1_sr0by"]
-[ext_resource type="Script" uid="uid://dkqc07680i675" path="res://Portals-Scenes/UndergroundMagmaPortal.cs" id="1_w0nep"]
+[ext_resource type="Script" uid="uid://dkqc07680i675" path="res://Portals-Scenes/UndergroundMagma/UndergroundMagmaPortal.cs" id="1_w0nep"]
 [ext_resource type="Texture2D" uid="uid://dxjhhah3088to" path="res://assets/portals/01_underground_magma_gate/01_underground_magma_gate_02_charging.png" id="2_w0nep"]
 [ext_resource type="Texture2D" uid="uid://b1x5djfd6h6f" path="res://assets/portals/01_underground_magma_gate/01_underground_magma_gate_03_active_swirl.png" id="3_y6ry2"]
 [ext_resource type="Texture2D" uid="uid://dcdnd2jxno5kw" path="res://assets/portals/01_underground_magma_gate/01_underground_magma_gate_04_teleport_flash.png" id="4_abekc"]

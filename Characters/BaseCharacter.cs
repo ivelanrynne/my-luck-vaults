@@ -270,15 +270,30 @@ public partial class BaseCharacter : CharacterBody2D
     /// </summary>
     private void UpdateKeyEdgeTriggers()
     {
+        // Nếu người chơi đang gõ trong ô nhập code (LineEdit/TextEdit), không nhận phím gameplay
+        var focusOwner = GetViewport()?.GuiGetFocusOwner();
+        if (focusOwner is LineEdit || focusOwner is TextEdit)
+        {
+            _isJumpJustPressed = false;
+            _isDashJustPressed = false;
+            _isFlyJustPressed = false;
+            _spaceWasPressed = false;
+            _wWasPressed = false;
+            _qWasPressed = false;
+            _fWasPressed = false;
+            return;
+        }
+
         bool spaceNow = Input.IsKeyPressed(Key.Space);
         bool wNow = Input.IsKeyPressed(Key.W);
         bool qNow = Input.IsKeyPressed(Key.Q);
         bool fNow = Input.IsKeyPressed(Key.F);
 
-        // Bấm nhảy: kiểm tra Space hoặc W vừa được ấn xuống ở frame này, hoặc bắt qua Input Map mặc định của Godot
+        // Bấm nhảy: Chỉ nhận Space hoặc W hoặc ui_up.
+        // Tuyệt đối KHÔNG dùng ui_accept vì ui_accept mặc định chứa phím Enter (dành riêng cho xác nhận UI/Redeem).
         bool spaceJustPressed = spaceNow && !_spaceWasPressed;
         bool wJustPressed = wNow && !_wWasPressed;
-        _isJumpJustPressed = spaceJustPressed || wJustPressed || Input.IsActionJustPressed("ui_accept") || Input.IsActionJustPressed("ui_up");
+        _isJumpJustPressed = spaceJustPressed || wJustPressed || Input.IsActionJustPressed("ui_up");
 
         // Lướt Q và Bay F vừa mới ấn xuống
         _isDashJustPressed = (qNow && !_qWasPressed);
@@ -396,6 +411,10 @@ public partial class BaseCharacter : CharacterBody2D
     /// </summary>
     protected virtual Vector2 GetMovementInputVector()
     {
+        // Khi đang tập trung gõ phím vào ô nhập liệu (LineEdit/TextEdit), không di chuyển nhân vật
+        var focusOwner = GetViewport()?.GuiGetFocusOwner();
+        if (focusOwner is LineEdit || focusOwner is TextEdit) return Vector2.Zero;
+
         float x = 0f;
         float y = 0f;
 

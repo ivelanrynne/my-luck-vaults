@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b350lkpdoejea"]
 
-[ext_resource type="Script" uid="uid://mrrq5e20egwj" path="res://Characters/Char01.cs" id="1_sn1w6"]
+[ext_resource type="Script" uid="uid://mrrq5e20egwj" path="res://Characters/Leo/Char01.cs" id="1_sn1w6"]
 [ext_resource type="Texture2D" uid="uid://cwc8vxmohsc4x" path="res://assets/characters/male_leo/fly/male_leo_fly_01.png" id="2_n6ecc"]
 [ext_resource type="Texture2D" uid="uid://dgsodao5c2pem" path="res://assets/characters/male_leo/fly/male_leo_fly_02.png" id="3_ub4uk"]
 [ext_resource type="Texture2D" uid="uid://bdlonorn1ouij" path="res://assets/characters/male_leo/fly/male_leo_fly_03.png" id="4_a688e"]

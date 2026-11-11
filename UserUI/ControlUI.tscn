@@ -2,8 +2,7 @@
 
 [ext_resource type="Script" uid="uid://du7g5grh7b08a" path="res://UserUI/ControlUI.cs" id="1_665k0"]
 [ext_resource type="PackedScene" uid="uid://dxeh783ewolh3" path="res://UserUI/setting_button_popup.tscn" id="2_xy4j2"]
-[ext_resource type="Texture2D" uid="uid://m2pp5v4ye7qb" path="res://assets/icons/11_Icon_Pause_Tam_Dung.png" id="3_k58wv"]
-[ext_resource type="Texture2D" uid="uid://bbg8x3v5y2ks2" path="res://assets/icons/05_Icon_Play.png" id="4_ircyi"]
+[ext_resource type="PackedScene" uid="uid://c4j451ckruj2" path="res://UserUI/game_state.tscn" id="3_x341s"]
 
 [node name="UIRoot" type="Control" unique_id=287728700]
 layout_mode = 3
@@ -18,22 +17,5 @@ script = ExtResource("1_665k0")
 [node name="SettingButtonPopup" parent="." unique_id=231950983 instance=ExtResource("2_xy4j2")]
 layout_mode = 0
 
-[node name="pauseBtn" type="TextureButton" parent="." unique_id=826653615]
-layout_mode = 0
-offset_left = 1080.0
-offset_top = 5.0
-offset_right = 1150.0
-offset_bottom = 75.0
-texture_normal = ExtResource("3_k58wv")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="playBtn" type="TextureButton" parent="." unique_id=17398759]
-layout_mode = 0
-offset_left = 1080.0
-offset_top = 5.0
-offset_right = 1150.0
-offset_bottom = 75.0
-texture_normal = ExtResource("4_ircyi")
-ignore_texture_size = true
-stretch_mode = 0
+[node name="GameState" parent="." unique_id=440340583 instance=ExtResource("3_x341s")]
+layout_mode = 1

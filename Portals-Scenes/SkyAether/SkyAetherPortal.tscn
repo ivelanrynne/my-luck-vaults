@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://djui1nhepsk5t"]
 
-[ext_resource type="Script" uid="uid://bwwskq2s6nfdj" path="res://Portals-Scenes/SkyAetherPortal.cs" id="1_car6s"]
+[ext_resource type="Script" uid="uid://bwwskq2s6nfdj" path="res://Portals-Scenes/SkyAether/SkyAetherPortal.cs" id="1_car6s"]
 [ext_resource type="Texture2D" uid="uid://dbhopaqjvt8gu" path="res://assets/portals/02_sky_aether_gate/02_sky_aether_gate_01_dormant.png" id="1_r6eic"]
 [ext_resource type="Texture2D" uid="uid://dch0n8xphv1ik" path="res://assets/portals/02_sky_aether_gate/02_sky_aether_gate_02_charging.png" id="2_car6s"]
 [ext_resource type="Texture2D" uid="uid://dnopoy1riqrri" path="res://assets/portals/02_sky_aether_gate/02_sky_aether_gate_03_active_swirl.png" id="3_uhacb"]

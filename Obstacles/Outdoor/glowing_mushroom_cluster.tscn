@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ciwfrsbm64u7k"]
 
-[ext_resource type="Texture2D" uid="uid://cxdi2n7bj506e" path="res://assets/decors/outdoor/glowing_mushroom_cluster.png" id="1_uh5fr"]
+[ext_resource type="Texture2D" uid="uid://cxdi2n7bj506e" path="res://assets/decorations/outdoor/glowing_mushroom_cluster.png" id="1_uh5fr"]
 
 [node name="StaticBody2D" type="StaticBody2D" unique_id=1713542270]
 

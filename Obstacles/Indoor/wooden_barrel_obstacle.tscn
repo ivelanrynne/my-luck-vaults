@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://32yfxgjhmg1g"]
 
-[ext_resource type="Texture2D" uid="uid://tuhm4d5w06wn" path="res://assets/decors/indoor/wooden_barrel.png" id="1_6trbk"]
+[ext_resource type="Texture2D" uid="uid://tuhm4d5w06wn" path="res://assets/decorations/indoor/wooden_barrel.png" id="1_6trbk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0s17n"]
 radius = 28.0

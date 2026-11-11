@@ -6,11 +6,12 @@ using Godot;
 /// 1. Tự động thiết lập thứ tự hiển thị (ZIndex = 0) để quái (Z=5) và player (Z=10) luôn đi đè lên trên hoạt ảnh cổng.
 /// 2. Bắt va chạm Area2D khi Player bước vào vùng kích hoạt.
 /// 3. Chuyển Scene sang màn chơi đích (TargetLevelPath) và đặt người chơi tại tọa độ chỉ định (TargetPosition).
+/// Có thuộc tính [Export(PropertyHint.File, "*.tscn")] giúp dễ dàng chọn hoặc thay đổi Scene đích ngay trên Inspector.
 /// </summary>
 public partial class BasePortal : Node2D
 {
-    // Đường dẫn Scene đích cần chuyển tới (ví dụ: "res://scenes/EmeraldCloverMeadow.tscn")
-    [Export]
+    // Đường dẫn Scene đích cần chuyển tới (ví dụ: "res://scenes/EmeraldCloverMeadow/EmeraldCloverMeadow.tscn")
+    [Export(PropertyHint.File, "*.tscn")]
     public string TargetLevelPath { get; set; } = string.Empty;
 
     // Tọa độ xuất hiện của Player trong màn chơi mới sau khi bước qua cổng

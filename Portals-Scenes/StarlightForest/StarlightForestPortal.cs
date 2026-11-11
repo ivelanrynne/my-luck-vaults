@@ -5,6 +5,6 @@ public partial class StarlightForestPortal : BasePortal
 {
 	public StarlightForestPortal()
 	{
-		TargetLevelPath = "res://scenes/StarlightForest.tscn";
+		TargetLevelPath = "res://scenes/StarlightForest/StarlightForest.tscn";
 	}
 }

@@ -1,8 +1,21 @@
 using Godot;
 using System;
 
+/// <summary>
+/// Module xác nhận quay trở về sảnh chính (Back To Menu Popup).
+/// Quản lý:
+/// - Nút bấm kích hoạt mở popup xác nhận "Back to Menu" (hỗ trợ cả click lẫn phím tắt [L]).
+/// - Màn đen mờ (DimBackground) phủ toàn màn hình khi mở popup để làm tối nền phía sau giống setting popup.
+/// - ĐẶC BIỆT: Hỗ trợ đóng popup khi người chơi CHỦ ĐỘNG CLICK RA NGOÀI bảng (vào màn đen), hoặc ấn phím [ESC], hoặc ấn nút [X]/Cancel.
+/// - Hiệu ứng hiển thị Icon ngôi nhà (BackHomeIcon):
+///   + Hiện khi hover/rê chuột hoặc ấn vào nút.
+///   + Khi bảng popup xác nhận đang hiển thị, icon ngôi nhà luôn được giữ nguyên và chỉ biến mất khi ấn Esc hoặc nút X/Cancel hoặc click ra ngoài!
+/// - Phím [Enter] được dùng để xác nhận Confirm quay về Menu ngay lập tức.
+/// - Bảng xác nhận kèm 2 lựa chọn: Confirm (trở về MainMenu) và Cancel (hủy bỏ).
+/// </summary>
 public partial class BackToMenu : Control
 {
+	[ExportGroup("Các Nút & Panel Cơ Bản")]
 	[Export] public BaseButton GoBackButton; // Nút kích hoạt mở popup ("Back to Menu")
 	[Export] public Control PopupPanel;      // Khung Panel bảng xác nhận
 	[Export] public BaseButton ConfirmButton; // Nút xác nhận về Menu
@@ -11,17 +24,25 @@ public partial class BackToMenu : Control
 	[Export] public ColorRect DimBackground;  // Màn đen mờ phía sau popup
 	[Export] public CanvasItem BackHomeIcon;  // Icon ngôi nhà backHomeIcon
 
-	[Export] public string MainMenuScenePath = "res://outside-scenes/main.tscn";
+	[ExportGroup("Cấu Hình Đường Dẫn Chuyển Cảnh")]
+	// Đường dẫn Scene sảnh chính khi người chơi xác nhận trở về
+	[Export(PropertyHint.File, "*.tscn")]
+	public string MainMenuScenePath = "res://outside-scenes/main.tscn";
+
+	// Cờ theo dõi xem chuột có đang hover trực tiếp trên GoBackButton hay không
+	private bool _isHoveringGoBack = false;
 
 	public override void _Ready()
 	{
-		// Đảm bảo chính node container này KHÔNG BAO GIỜ chặn chuột ở vùng trống
+		// Luôn xử lý UI ngay cả khi game bị Pause
+		ProcessMode = ProcessModeEnum.Always;
 		MouseFilter = MouseFilterEnum.Ignore;
 
-		// 1. Tự động tìm PopupPanel
+		// 1. Tự động tìm PopupPanel (hỗ trợ cả Panel, Panel2, popupPanel, PopupPanel)
 		if (PopupPanel == null)
 		{
-			PopupPanel = GetNodeOrNull<Control>("Panel")
+			PopupPanel = GetNodeOrNull<Control>("Panel2")
+					  ?? GetNodeOrNull<Control>("Panel")
 					  ?? GetNodeOrNull<Control>("popupPanel")
 					  ?? GetNodeOrNull<Control>("PopupPanel");
 		}
@@ -33,15 +54,15 @@ public partial class BackToMenu : Control
 						 ?? GetNodeOrNull<ColorRect>("dimBackground");
 		}
 
-		// Tạo DimBackground phủ toàn màn hình với hiệu ứng đen mờ 60%
+		// Tạo DimBackground phủ toàn màn hình với hiệu ứng đen mờ nếu chưa có
 		if (DimBackground == null)
 		{
 			DimBackground = new ColorRect();
 			DimBackground.Name = "DimBackground";
 			DimBackground.Color = new Color(0, 0, 0, 0.6f);
-			DimBackground.SetAnchorsPreset(LayoutPreset.FullRect);
-			DimBackground.MouseFilter = MouseFilterEnum.Stop; // Chặn click chuột xuyên qua xuống game
+			DimBackground.MouseFilter = MouseFilterEnum.Stop; // Nhận click chuột để đóng khi bấm ra ngoài
 
+			// Thêm DimBackground vào cây node
 			AddChild(DimBackground);
 			if (PopupPanel != null)
 			{
@@ -49,15 +70,31 @@ public partial class BackToMenu : Control
 			}
 		}
 
-		// 3. Tự động tìm nút kích hoạt goBackBtn
+		// Cấu hình DimBackground: phủ toàn màn hình viewport (1152x648 hoặc theo kích thước cửa sổ)
+		ConfigureDimBackground();
+
+		// Kết nối sự kiện click chuột lên DimBackground (bấm ra ngoài bảng thì tắt popup)
+		if (DimBackground != null)
+		{
+			DimBackground.GuiInput += OnDimBackgroundGuiInput;
+		}
+
+		// 3. Tự động tìm nút kích hoạt goBackBtn (hỗ trợ goBackBtn2, goBackBtn, GoBackButton, btn_goBack)
 		if (GoBackButton == null)
 		{
-			GoBackButton = GetNodeOrNull<BaseButton>("goBackBtn")
+			GoBackButton = GetNodeOrNull<BaseButton>("goBackBtn2")
+						?? GetNodeOrNull<BaseButton>("goBackBtn")
 						?? GetNodeOrNull<BaseButton>("GoBackButton")
 						?? GetNodeOrNull<BaseButton>("btn_goBack");
 		}
 
-		// 3.1 Tự động tìm backHomeIcon (Sprite2D hoặc Control/TextureRect)
+		// 3.1 Tự động tìm backHomeIcon (tìm cả bên trong GoBackButton lẫn ở root)
+		if (BackHomeIcon == null && GoBackButton != null)
+		{
+			BackHomeIcon = GoBackButton.GetNodeOrNull<CanvasItem>("backHomeIcon")
+						?? GoBackButton.GetNodeOrNull<CanvasItem>("BackHomeIcon")
+						?? GoBackButton.GetNodeOrNull<CanvasItem>("homeIcon");
+		}
 		if (BackHomeIcon == null)
 		{
 			BackHomeIcon = GetNodeOrNull<CanvasItem>("backHomeIcon")
@@ -65,7 +102,7 @@ public partial class BackToMenu : Control
 						?? GetNodeOrNull<CanvasItem>("homeIcon");
 		}
 
-		// Mặc định ẩn icon ngôi nhà, chỉ hiện khi hover/pressed vào nút Back to Menu
+		// Mặc định ẩn icon ngôi nhà khi bắt đầu
 		if (BackHomeIcon != null)
 		{
 			BackHomeIcon.Visible = false;
@@ -106,13 +143,18 @@ public partial class BackToMenu : Control
 						?? GetNodeOrNull<BaseButton>("cancel");
 		}
 
-		// 6. Tự động tìm Nút X ("exitPopup" hoặc con của PopupPanel)
+		// 6. Tự động tìm Nút X ("exitPopup" hoặc "closeBtn")
+		if (CloseButton == null && PopupPanel != null)
+		{
+			CloseButton = PopupPanel.GetNodeOrNull<BaseButton>("exitPopup")
+					   ?? PopupPanel.GetNodeOrNull<BaseButton>("closeBtn")
+					   ?? PopupPanel.GetNodeOrNull<BaseButton>("CloseButton");
+		}
 		if (CloseButton == null)
 		{
 			CloseButton = GetNodeOrNull<BaseButton>("exitPopup")
-					   ?? PopupPanel?.GetNodeOrNull<BaseButton>("exitPopup")
-					   ?? PopupPanel?.GetNodeOrNull<BaseButton>("closeBtn")
-					   ?? PopupPanel?.GetNodeOrNull<BaseButton>("CloseButton");
+					   ?? GetNodeOrNull<BaseButton>("closeBtn")
+					   ?? GetNodeOrNull<BaseButton>("CloseButton");
 		}
 
 		// Đảm bảo nút X và PopupPanel nằm trên DimBackground
@@ -150,10 +192,41 @@ public partial class BackToMenu : Control
 	}
 
 	/// <summary>
+	/// Cấu hình tọa độ và kích thước của DimBackground để luôn bao phủ toàn bộ màn hình
+	/// kể cả khi node này nằm bên trong popupPanel của Setting.
+	/// </summary>
+	private void ConfigureDimBackground()
+	{
+		if (DimBackground == null) return;
+
+		// Phủ rộng ra toàn bộ màn hình (toàn bộ viewport chuẩn 1152x648)
+		DimBackground.SetAnchorsPreset(LayoutPreset.FullRect);
+		DimBackground.OffsetLeft = -2000;
+		DimBackground.OffsetTop = -2000;
+		DimBackground.OffsetRight = 2000;
+		DimBackground.OffsetBottom = 2000;
+		DimBackground.MouseFilter = MouseFilterEnum.Stop;
+	}
+
+	/// <summary>
+	/// Khi người chơi click chuột vào DimBackground (vùng bên ngoài bảng Popup)
+	/// </summary>
+	private void OnDimBackgroundGuiInput(InputEvent @event)
+	{
+		if (@event is InputEventMouseButton mouseBtn && mouseBtn.Pressed && mouseBtn.ButtonIndex == MouseButton.Left)
+		{
+			// Tự động đóng popup xác nhận khi click ra ngoài
+			OnCloseButtonPressed();
+			GetViewport()?.SetInputAsHandled();
+		}
+	}
+
+	/// <summary>
 	/// Khi hover chuột hoặc ấn vào nút Back to Menu: Hiện icon ngôi nhà backHomeIcon
 	/// </summary>
 	private void OnGoBackButtonHoverStarted()
 	{
+		_isHoveringGoBack = true;
 		if (BackHomeIcon != null)
 		{
 			BackHomeIcon.Visible = true;
@@ -161,12 +234,15 @@ public partial class BackToMenu : Control
 	}
 
 	/// <summary>
-	/// Khi chuột rời khỏi nút Back to Menu: Ẩn icon ngôi nhà backHomeIcon
+	/// Khi rời chuột: Nếu popup xác nhận ĐANG MỞ, giữ nguyên icon ngôi nhà.
+	/// Chỉ ẩn khi popup không mở.
 	/// </summary>
 	private void OnGoBackButtonHoverEnded()
 	{
-		// Nếu nút vẫn đang ở trạng thái hover hoặc pressed thì chưa ẩn
-		if (GoBackButton != null && (GoBackButton.IsHovered() || GoBackButton.ButtonPressed))
+		_isHoveringGoBack = false;
+
+		// Nếu bảng popup đang hiện, giữ nguyên icon không cho mất!
+		if (PopupPanel != null && PopupPanel.Visible)
 		{
 			return;
 		}
@@ -178,7 +254,8 @@ public partial class BackToMenu : Control
 	}
 
 	/// <summary>
-	/// Đệ quy tắt FocusMode của tất cả các Button và Control để tránh việc phím Space/Enter vô tình kích hoạt lại nút.
+	/// Đệ quy tắt FocusMode của tất cả các Button và Control (trừ ô nhập text LineEdit)
+	/// để tránh việc phím Space hay Enter vô tình kích hoạt lại nút vừa bấm.
 	/// </summary>
 	private void RemoveAllControlFocus(Node parent)
 	{
@@ -209,9 +286,17 @@ public partial class BackToMenu : Control
 	/// </summary>
 	public void SetPopupVisible(bool visible)
 	{
-		// Node root luôn để Ignore để không che khuất hay nuốt chuột của Setting phía dưới
 		MouseFilter = MouseFilterEnum.Ignore;
 
+		if (DimBackground != null)
+		{
+			DimBackground.Visible = visible;
+			DimBackground.MouseFilter = visible ? MouseFilterEnum.Stop : MouseFilterEnum.Ignore;
+			if (visible)
+			{
+				ConfigureDimBackground();
+			}
+		}
 		if (PopupPanel != null)
 		{
 			PopupPanel.Visible = visible;
@@ -221,16 +306,20 @@ public partial class BackToMenu : Control
 		{
 			CloseButton.Visible = visible;
 		}
-		if (DimBackground != null)
-		{
-			DimBackground.Visible = visible;
-			DimBackground.MouseFilter = visible ? MouseFilterEnum.Stop : MouseFilterEnum.Ignore;
-		}
 
-		// Khi popup mở hoặc đóng, đảm bảo icon backHomeIcon ẩn đi nếu không hover
-		if (!visible && BackHomeIcon != null)
+		// QUY TẮC HIỂN THỊ ICON NGÔI NHÀ:
+		// Khi popup đang mở -> luôn giữ icon hiển thị.
+		// Khi popup đóng (do Esc, X, Cancel hoặc bấm ra ngoài) -> ẩn icon đi trừ phi chuột đang hover nút.
+		if (BackHomeIcon != null)
 		{
-			BackHomeIcon.Visible = false;
+			if (visible)
+			{
+				BackHomeIcon.Visible = true;
+			}
+			else
+			{
+				BackHomeIcon.Visible = _isHoveringGoBack;
+			}
 		}
 
 		// Giải phóng focus của chuột/phím khỏi UI ngay lập tức
@@ -296,16 +385,46 @@ public partial class BackToMenu : Control
 	}
 
 	/// <summary>
-	/// Bấm ESC trên bàn phím cũng tự động đóng popup nếu đang mở
+	/// Lắng nghe các phím tắt bàn phím:
+	/// - Phím [L]: Bật popup Back to Menu khi đang mở Setting popup mà không gặp lỗi.
+	/// - Phím [Enter]: Dùng để xác nhận Confirm quay về Menu khi popup đang hiển thị.
+	/// - Phím [ESC]: Đóng popup xác nhận nếu đang mở.
 	/// </summary>
 	public override void _UnhandledInput(InputEvent @event)
 	{
 		if (@event is InputEventKey keyEvent && keyEvent.Pressed && !keyEvent.Echo)
 		{
-			if (keyEvent.Keycode == Key.Escape && PopupPanel != null && PopupPanel.Visible)
+			bool isPopupOpen = PopupPanel != null && PopupPanel.Visible;
+
+			// 1. Phím [L]: Kích hoạt popup Back to Menu khi đang ở trong Setting Popup
+			if (keyEvent.Keycode == Key.L)
+			{
+				// Kiểm tra xem nút GoBackButton có đang hiển thị và hoạt động không (khi bảng Setting đang mở)
+				if (IsVisibleInTree() && (GoBackButton == null || GoBackButton.IsVisibleInTree()))
+				{
+					if (!isPopupOpen)
+					{
+						OnGoBackButtonPressed();
+						GetViewport()?.SetInputAsHandled();
+						return;
+					}
+				}
+			}
+
+			// 2. Phím [Enter] hoặc [Numpad Enter]: Xác nhận nút Confirm khi popup xác nhận đang mở
+			if (isPopupOpen && (keyEvent.Keycode == Key.Enter || keyEvent.Keycode == Key.KpEnter))
+			{
+				OnConfirmButtonPressed();
+				GetViewport()?.SetInputAsHandled();
+				return;
+			}
+
+			// 3. Phím [ESC]: Đóng popup xác nhận và làm mất icon ngôi nhà
+			if (isPopupOpen && keyEvent.Keycode == Key.Escape)
 			{
 				OnCloseButtonPressed();
-				GetViewport().SetInputAsHandled();
+				GetViewport()?.SetInputAsHandled();
+				return;
 			}
 		}
 	}

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c44db02cflvcn"]
 
-[ext_resource type="Texture2D" uid="uid://cchsp0rw6rcf" path="res://assets/decors/outdoor/mossy_crystal_rock.png" id="1_74ecu"]
+[ext_resource type="Texture2D" uid="uid://cchsp0rw6rcf" path="res://assets/decorations/outdoor/mossy_crystal_rock.png" id="1_74ecu"]
 
 [node name="MossyCrystalRock" type="StaticBody2D" unique_id=1713542270]
 

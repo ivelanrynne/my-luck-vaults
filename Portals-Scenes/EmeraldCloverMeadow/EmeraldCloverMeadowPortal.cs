@@ -5,6 +5,6 @@ public partial class EmeraldCloverMeadowPortal : BasePortal
 {
 	public EmeraldCloverMeadowPortal()
 	{
-		TargetLevelPath = "res://scenes/EmeraldCloverMeadow.tscn";
+		TargetLevelPath = "res://scenes/EmeraldCloverMeadow/EmeraldCloverMeadow.tscn";
 	}
 }

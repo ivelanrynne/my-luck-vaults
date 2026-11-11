@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cb786mu3w2ig"]
 
-[ext_resource type="Script" uid="uid://244ckeu4qfhe" path="res://Portals-Scenes/RoyalPortal.cs" id="1_fcfto"]
+[ext_resource type="Script" uid="uid://244ckeu4qfhe" path="res://Portals-Scenes/Royal/RoyalPortal.cs" id="1_fcfto"]
 [ext_resource type="Texture2D" uid="uid://c5fv1lcgo1q6g" path="res://assets/portals/01_Royal/frame_00.png" id="1_nc747"]
 [ext_resource type="Texture2D" uid="uid://c3cs8vi3gsdhu" path="res://assets/portals/01_Royal/frame_01.png" id="2_fcfto"]
 [ext_resource type="Texture2D" uid="uid://cp1gcyey62myr" path="res://assets/portals/01_Royal/frame_02.png" id="3_qoir2"]

@@ -5,6 +5,6 @@ public partial class DeepSeaAbyssPortal : BasePortal
 {
 	public DeepSeaAbyssPortal()
 	{
-		TargetLevelPath = "res://scenes/DeepSeaAbyss.tscn";
+		TargetLevelPath = "res://scenes/DeepSeaAbyss/DeepSeaAbyss.tscn";
 	}
 }

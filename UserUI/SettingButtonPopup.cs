@@ -1,25 +1,33 @@
 using Godot;
 using System;
 
+/// <summary>
+/// Quản lý Popup cài đặt (Setting Popup) bao gồm:
+/// - Mở/Đóng popup bảng cài đặt (hỗ trợ cả click nút Setting lẫn phím [ESC]).
+/// - Tự động tạo và điều khiển màn đen làm mờ nền (DimBackground) chặn click chuột xuống gameplay.
+/// - Nhúng module con SoundState để quản lý âm lượng và tắt/bật tiếng.
+/// - Nhúng module con CodeRedeem để người chơi nạp giftcode.
+/// - Nhúng module con BackToMenu để xác nhận quay về sảnh chính (hỗ trợ phím [L]).
+/// </summary>
 public partial class SettingButtonPopup : Control
 {
+	[ExportGroup("Các Nút & Panel Cơ Bản")]
 	[Export] public BaseButton SettingButton;
 	[Export] public Control PopupPanel;
-	[Export] public BaseButton CloseButton; // Nút X để đóng bảng
+	[Export] public BaseButton CloseButton;  // Nút X để đóng bảng
 	[Export] public ColorRect DimBackground; // Màn đen mờ phía sau popup
-	[Export] public Control BackToMenuNode; // Tham chiếu BackToMenu (nút + popup con)
+	[Export] public Control BackToMenuNode;  // Tham chiếu BackToMenu (nút + popup con)
+	[Export] public SoundState SoundStateNode; // Tham chiếu module âm thanh
+	[Export] public CodeRedeem CodeRedeemNode; // Tham chiếu module nhập code
 
-	[ExportGroup("Âm Thanh (Sound Control)")]
-	[Export] public Slider VolumeSlider;
-	[Export] public BaseButton ActiveSoundButton;
-	[Export] public BaseButton MutedSoundButton;
-
-	// Lưu giá trị âm lượng trước khi bấm mute để khi mở lại có thể khôi phục đúng mức cũ (nếu về 0 thì mở lại là 100)
-	private double _lastNonZeroVolume = 100.0;
+	[ExportGroup("Phím Tắt (Hotkeys)")]
+	// Phím tắt để bật / tắt bảng Setting (Mặc định: Phím ESC)
+	[Export] public Key SettingToggleKey { get; set; } = Key.Escape;
 
 	public override void _Ready()
 	{
-		// Đảm bảo node root của Setting không nuốt chuột của gameplay hay UI khác
+		// Luôn xử lý UI ngay cả khi game bị Pause
+		ProcessMode = ProcessModeEnum.Always;
 		MouseFilter = MouseFilterEnum.Ignore;
 
 		// 1. Tự động tìm PopupPanel
@@ -32,9 +40,25 @@ public partial class SettingButtonPopup : Control
 		// 1.1 Tự động tìm BackToMenu nếu có
 		if (BackToMenuNode == null)
 		{
-			BackToMenuNode = GetNodeOrNull<Control>("BackToMenu")
-						  ?? GetNodeOrNull<Control>("popupPanel/BackToMenu")
-						  ?? GetNodeOrNull<Control>("ConfirmBackPopup");
+			BackToMenuNode = GetNodeOrNull<Control>("popupPanel/ConfirmBackPopup")
+						  ?? GetNodeOrNull<Control>("ConfirmBackPopup")
+						  ?? GetNodeOrNull<Control>("BackToMenu")
+						  ?? GetNodeOrNull<Control>("popupPanel/BackToMenu");
+		}
+
+		// 1.2 Tự động tìm SoundState
+		if (SoundStateNode == null)
+		{
+			SoundStateNode = GetNodeOrNull<SoundState>("popupPanel/soundState")
+						  ?? GetNodeOrNull<SoundState>("soundState")
+						  ?? GetNodeOrNull<SoundState>("SoundState");
+		}
+
+		// 1.3 Tự động tìm CodeRedeem
+		if (CodeRedeemNode == null)
+		{
+			CodeRedeemNode = GetNodeOrNull<CodeRedeem>("popupPanel/CodeRedeem")
+						  ?? GetNodeOrNull<CodeRedeem>("CodeRedeem");
 		}
 
 		// 2. Tự động tìm DimBackground (hoặc tự tạo nếu chưa có)
@@ -44,7 +68,6 @@ public partial class SettingButtonPopup : Control
 						 ?? GetNodeOrNull<ColorRect>("dimBackground");
 		}
 
-		// Nếu trong scene chưa có node DimBackground, code sẽ tự động tạo ngay một cái
 		if (DimBackground == null)
 		{
 			DimBackground = new ColorRect();
@@ -53,7 +76,6 @@ public partial class SettingButtonPopup : Control
 			DimBackground.SetAnchorsPreset(LayoutPreset.FullRect);
 			DimBackground.MouseFilter = MouseFilterEnum.Stop; // Chặn click xuyên qua xuống game
 
-			// Đưa DimBackground vào dưới PopupPanel
 			AddChild(DimBackground);
 			if (PopupPanel != null)
 			{
@@ -73,6 +95,7 @@ public partial class SettingButtonPopup : Control
 		if (SettingButton != null)
 		{
 			MoveChild(SettingButton, -1);
+			SettingButton.Pressed += OnSettingButtonPressed;
 		}
 
 		// 4. Tự động tìm Nút X (CloseButton / exitPopup)
@@ -80,9 +103,7 @@ public partial class SettingButtonPopup : Control
 		{
 			CloseButton = PopupPanel.GetNodeOrNull<BaseButton>("exitPopup")
 					   ?? PopupPanel.GetNodeOrNull<BaseButton>("closeBtn")
-					   ?? PopupPanel.GetNodeOrNull<BaseButton>("CloseButton")
-					   ?? PopupPanel.GetNodeOrNull<BaseButton>("btn_close")
-					   ?? PopupPanel.GetNodeOrNull<BaseButton>("ButtonClose");
+					   ?? PopupPanel.GetNodeOrNull<BaseButton>("CloseButton");
 		}
 		if (CloseButton == null)
 		{
@@ -91,162 +112,16 @@ public partial class SettingButtonPopup : Control
 					   ?? GetNodeOrNull<BaseButton>("CloseButton");
 		}
 
-		// 5. Tìm các thành phần điều khiển âm thanh
-		SetupSoundControls();
-
-		// 6. Mặc định ẩn popup và màn đen
-		SetPopupVisible(false);
-
-		// 7. Tắt FocusMode trên toàn bộ các nút UI để phím Space không bị chiếm dụng
-		RemoveAllControlFocus(this);
-
-		// 8. Kết nối sự kiện Click cơ bản
-		if (SettingButton != null)
-		{
-			SettingButton.Pressed += OnSettingButtonPressed;
-		}
-
 		if (CloseButton != null)
 		{
 			CloseButton.Pressed += OnCloseButtonPressed;
 		}
-	}
 
-	/// <summary>
-	/// Khởi tạo và liên kết các nút Âm thanh (Active/Muted) và thanh trượt Volume
-	/// </summary>
-	private void SetupSoundControls()
-	{
-		if (VolumeSlider == null && PopupPanel != null)
-		{
-			VolumeSlider = PopupPanel.GetNodeOrNull<Slider>("volumeChange/HSlider")
-						?? PopupPanel.GetNodeOrNull<Slider>("HSlider")
-						?? PopupPanel.GetNodeOrNull<Slider>("VolumeSlider");
-		}
+		// 5. Mặc định ẩn popup và màn đen
+		SetPopupVisible(false);
 
-		if (ActiveSoundButton == null && PopupPanel != null)
-		{
-			ActiveSoundButton = PopupPanel.GetNodeOrNull<BaseButton>("activeSound")
-							 ?? PopupPanel.GetNodeOrNull<BaseButton>("soundBtn")
-							 ?? PopupPanel.GetNodeOrNull<BaseButton>("btn_activeSound");
-		}
-
-		if (MutedSoundButton == null && PopupPanel != null)
-		{
-			MutedSoundButton = PopupPanel.GetNodeOrNull<BaseButton>("mutedSound")
-							?? PopupPanel.GetNodeOrNull<BaseButton>("muteBtn")
-							?? PopupPanel.GetNodeOrNull<BaseButton>("btn_mutedSound");
-		}
-
-		// Lắng nghe sự kiện kéo thanh âm lượng
-		if (VolumeSlider != null)
-		{
-			VolumeSlider.ValueChanged += OnVolumeSliderValueChanged;
-			if (VolumeSlider.Value > 0)
-			{
-				_lastNonZeroVolume = VolumeSlider.Value;
-			}
-			UpdateSoundUI(VolumeSlider.Value);
-		}
-
-		// Lắng nghe nút Active Sound (đang có tiếng, bấm vào thì Mute về 0)
-		if (ActiveSoundButton != null)
-		{
-			ActiveSoundButton.Pressed += OnActiveSoundPressed;
-		}
-
-		// Lắng nghe nút Muted Sound (đang tắt tiếng, bấm vào thì bật full 100 hoặc khôi phục)
-		if (MutedSoundButton != null)
-		{
-			MutedSoundButton.Pressed += OnMutedSoundPressed;
-		}
-	}
-
-	/// <summary>
-	/// Khi người dùng kéo thanh âm lượng (dùng chuột kéo về 0 hoặc tăng lên)
-	/// </summary>
-	private void OnVolumeSliderValueChanged(double value)
-	{
-		if (value > 0)
-		{
-			_lastNonZeroVolume = value;
-		}
-		ApplyAudioVolume(value);
-		UpdateSoundUI(value);
-	}
-
-	/// <summary>
-	/// Bấm vào icon có tiếng (Active Sound) -> Giảm thanh slider về 0 và chuyển sang icon Mute
-	/// </summary>
-	private void OnActiveSoundPressed()
-	{
-		if (VolumeSlider != null && VolumeSlider.Value > 0)
-		{
-			_lastNonZeroVolume = VolumeSlider.Value;
-			VolumeSlider.Value = 0; // Tự động kích hoạt OnVolumeSliderValueChanged
-		}
-		else
-		{
-			UpdateSoundUI(0);
-		}
-		GetViewport()?.GuiReleaseFocus();
-	}
-
-	/// <summary>
-	/// Bấm vào icon tắt tiếng (Muted Sound) -> Đẩy thanh slider lên full 100 (hoặc mức cũ) và chuyển sang icon Active
-	/// </summary>
-	private void OnMutedSoundPressed()
-	{
-		double targetVolume = _lastNonZeroVolume > 0 ? _lastNonZeroVolume : 100.0;
-		if (VolumeSlider != null)
-		{
-			VolumeSlider.Value = targetVolume; // Tự động kích hoạt OnVolumeSliderValueChanged
-		}
-		else
-		{
-			UpdateSoundUI(targetVolume);
-		}
-		GetViewport()?.GuiReleaseFocus();
-	}
-
-	/// <summary>
-	/// Cập nhật hiển thị luân phiên giữa 2 icon ActiveSound và MutedSound theo giá trị âm lượng
-	/// </summary>
-	private void UpdateSoundUI(double volumeValue)
-	{
-		bool isMuted = volumeValue <= 0.001;
-
-		if (ActiveSoundButton != null)
-		{
-			ActiveSoundButton.Visible = !isMuted;
-		}
-
-		if (MutedSoundButton != null)
-		{
-			MutedSoundButton.Visible = isMuted;
-		}
-	}
-
-	/// <summary>
-	/// Áp dụng âm lượng thực tế vào AudioServer của Godot
-	/// </summary>
-	private void ApplyAudioVolume(double value)
-	{
-		int masterBusIndex = AudioServer.GetBusIndex("Master");
-		if (masterBusIndex >= 0)
-		{
-			if (value <= 0.001)
-			{
-				AudioServer.SetBusMute(masterBusIndex, true);
-			}
-			else
-			{
-				AudioServer.SetBusMute(masterBusIndex, false);
-				// Chuyển đổi tuyến tính 0 - 100 sang thang đo decibel (dB)
-				float volumeDb = Mathf.LinearToDb((float)(value / 100.0));
-				AudioServer.SetBusVolumeDb(masterBusIndex, volumeDb);
-			}
-		}
+		// 6. Tắt FocusMode trên toàn bộ các nút UI để phím Space không bị chiếm dụng
+		RemoveAllControlFocus(this);
 	}
 
 	/// <summary>
@@ -280,7 +155,7 @@ public partial class SettingButtonPopup : Control
 	/// <summary>
 	/// Bật / Tắt trạng thái hiển thị của cả Popup và Màn đen làm mờ
 	/// </summary>
-	private void SetPopupVisible(bool visible)
+	public void SetPopupVisible(bool visible)
 	{
 		MouseFilter = MouseFilterEnum.Ignore;
 
@@ -330,16 +205,42 @@ public partial class SettingButtonPopup : Control
 	}
 
 	/// <summary>
-	/// Bấm ESC trên bàn phím cũng tự động đóng bảng nếu đang mở
+	/// Lắng nghe phím ESC và phím L:
+	/// - Phím [ESC]: Bật/Tắt bảng Setting tiện lợi mà không cần dùng chuột.
+	/// - Phím [L]: Khi đang mở bảng Setting, nhấn [L] sẽ mở bảng xác nhận Go Back Menu.
 	/// </summary>
 	public override void _UnhandledInput(InputEvent @event)
 	{
 		if (@event is InputEventKey keyEvent && keyEvent.Pressed && !keyEvent.Echo)
 		{
-			if (keyEvent.Keycode == Key.Escape && PopupPanel != null && PopupPanel.Visible)
+			bool isSettingOpen = PopupPanel != null && PopupPanel.Visible;
+
+			// 1. Phím [L]: Bật popup Go Back khi bảng Setting đang hiển thị
+			if (keyEvent.Keycode == Key.L && isSettingOpen)
 			{
-				OnCloseButtonPressed();
-				GetViewport().SetInputAsHandled();
+				if (BackToMenuNode is BackToMenu btm)
+				{
+					if (btm.PopupPanel == null || !btm.PopupPanel.Visible)
+					{
+						btm.OnGoBackButtonPressed();
+						GetViewport()?.SetInputAsHandled();
+						return;
+					}
+				}
+			}
+
+			// 2. Phím [ESC]: Đóng/Bật Setting
+			if (keyEvent.Keycode == SettingToggleKey)
+			{
+				// Nếu popup xác nhận Back to Menu con đang mở thì để BackToMenu đóng trước
+				if (BackToMenuNode is BackToMenu btm && btm.PopupPanel != null && btm.PopupPanel.Visible)
+				{
+					return; // Nhường quyền xử lý ESC cho BackToMenu
+				}
+
+				// Đảo ngược trạng thái hiển thị của SettingPopup
+				OnSettingButtonPressed();
+				GetViewport()?.SetInputAsHandled();
 			}
 		}
 	}

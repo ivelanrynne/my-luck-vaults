@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bvapr6525vpfn"]
 
-[ext_resource type="Script" uid="uid://c0h8oli7r6xce" path="res://Characters/Char02.cs" id="1_v86vd"]
+[ext_resource type="Script" uid="uid://c0h8oli7r6xce" path="res://Characters/Luna/Char02.cs" id="1_v86vd"]
 [ext_resource type="Texture2D" uid="uid://dgogxnwed5v0j" path="res://assets/characters/female_luna/fly/female_luna_fly_01.png" id="2_ljyyi"]
 [ext_resource type="Texture2D" uid="uid://c41mrbg163qy4" path="res://assets/characters/female_luna/fly/female_luna_fly_02.png" id="3_eq8l5"]
 [ext_resource type="Texture2D" uid="uid://bsfcfbpox61g8" path="res://assets/characters/female_luna/fly/female_luna_fly_03.png" id="4_dgpxn"]

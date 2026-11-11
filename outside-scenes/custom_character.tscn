@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://c21lcmd58i4nk"]
 
-[ext_resource type="Script" uid="uid://b0ux2r26wk4i8" path="res://CustomCharacter.cs" id="1_xosr1"]
+[ext_resource type="Script" uid="uid://b0ux2r26wk4i8" path="res://outside-scenes/CustomCharacter.cs" id="1_xosr1"]
 [ext_resource type="Texture2D" uid="uid://bp5ig4i5bnawu" path="res://assets/backgrounds/indoor/03_cozy_adventurer_guild_hub.png" id="2_h3est"]
-[ext_resource type="PackedScene" uid="uid://b350lkpdoejea" path="res://Characters/Char01.tscn" id="3_52ikk"]
+[ext_resource type="PackedScene" uid="uid://b350lkpdoejea" path="res://Characters/Leo/Char01.tscn" id="3_52ikk"]
 [ext_resource type="FontFile" uid="uid://53udbob7porp" path="res://assets/gain-circus-font/Gain Circus.ttf" id="4_i4v63"]
-[ext_resource type="PackedScene" uid="uid://bvapr6525vpfn" path="res://Characters/Char02.tscn" id="4_ml8jo"]
+[ext_resource type="PackedScene" uid="uid://bvapr6525vpfn" path="res://Characters/Luna/Char02.tscn" id="4_ml8jo"]
+[ext_resource type="PackedScene" uid="uid://bui0e7g3gktrg" path="res://UserUI/ControlUI.tscn" id="6_rjecb"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0s17n"]
 texture = ExtResource("2_h3est")
@@ -2105,7 +2106,11 @@ text = "Play"
 [node name="Camera2D" type="Camera2D" parent="." unique_id=419133799]
 position = Vector2(576, 323)
 
-[node name="Control" parent="." unique_id=287728700]
+[node name="UICanvasLayer" type="CanvasLayer" parent="." unique_id=287728701]
+layer = 100
+
+[node name="UIRoot" parent="UICanvasLayer" unique_id=287728700 instance=ExtResource("6_rjecb")]
+EnableGameState = false
 
 [connection signal="pressed" from="Char01/ChooseBtn" to="." method="_on_btn_select_char01_pressed"]
 [connection signal="pressed" from="Char02/ChooseBtn" to="." method="_on_btn_select_char02_pressed"]

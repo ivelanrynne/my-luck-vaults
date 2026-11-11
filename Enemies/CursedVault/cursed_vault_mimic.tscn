@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bj0c753786eok"]
 
 [ext_resource type="Texture2D" uid="uid://bnxg1sd3eay11" path="res://assets/monsters/06_cursed_vault_mimic/attack/06_cursed_vault_mimic_attack_01.png" id="1_7ni3x"]
-[ext_resource type="Script" uid="uid://rv10m1mdptv1" path="res://Enemies/CursedVaultMimic.cs" id="1_cm36e"]
+[ext_resource type="Script" uid="uid://rv10m1mdptv1" path="res://Enemies/CursedVault/CursedVaultMimic.cs" id="1_cm36e"]
 [ext_resource type="Texture2D" uid="uid://bab4u3qgjf274" path="res://assets/monsters/06_cursed_vault_mimic/attack/06_cursed_vault_mimic_attack_02.png" id="2_k1tsc"]
 [ext_resource type="Texture2D" uid="uid://dkml64ted4xe1" path="res://assets/monsters/06_cursed_vault_mimic/attack/06_cursed_vault_mimic_attack_03.png" id="3_kqray"]
 [ext_resource type="Texture2D" uid="uid://g6os1mmbpspl" path="res://assets/monsters/06_cursed_vault_mimic/attack/06_cursed_vault_mimic_attack_04.png" id="4_l7kcq"]

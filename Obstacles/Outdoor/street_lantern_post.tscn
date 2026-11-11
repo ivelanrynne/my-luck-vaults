@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://12xe5u4xogb6"]
 
-[ext_resource type="Texture2D" uid="uid://c7geslid75qc0" path="res://Obstacles/street_lantern_post.png" id="1_8gxpg"]
+[ext_resource type="Texture2D" uid="uid://c7geslid75qc0" path="res://Obstacles/Outdoor/street_lantern_post.png" id="1_8gxpg"]
 
 [node name="StaticBody2D" type="StaticBody2D" unique_id=1713542270]
 
