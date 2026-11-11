@@ -11,7 +11,7 @@ public partial class MainMenu : Control
 	[ExportGroup("Cấu Hình Đường Dẫn Chuyển Cảnh")]
 	// Đường dẫn màn chơi khởi đầu khi bấm nút Play
 	[Export(PropertyHint.File, "*.tscn")]
-	public string StartGameScenePath { get; set; } = "res://scenes/EmeraldCloverMeadow/EmeraldCloverMeadow.tscn";
+	public string StartGameScenePath { get; set; } = "res://scenes/Royal/Royal.tscn";
 
 	// Đường dẫn Scene phòng tùy chỉnh nhân vật
 	[Export(PropertyHint.File, "*.tscn")]

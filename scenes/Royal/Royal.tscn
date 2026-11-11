@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://depdqvlo5ndun" path="res://Obstacles/Indoor/wooden_crate_obstacle.tscn" id="9_2twtk"]
 [ext_resource type="Texture2D" uid="uid://bp5pavot7717q" path="res://assets/backgrounds/parallax_layers_transparent/parallax_01_clouds_transparent.png" id="9_xijb2"]
 [ext_resource type="PackedScene" uid="uid://bj0c753786eok" path="res://Enemies/CursedVault/cursed_vault_mimic.tscn" id="12_1luom"]
-[ext_resource type="PackedScene" uid="uid://bujhexxjsg76g" path="res://Portals-Scenes/CrystalIce/CrystalIcePortal.tscn" id="14_38gxt"]
+[ext_resource type="PackedScene" uid="uid://d2x7jih886h2u" path="res://Portals-Scenes/CrystalIce/CrystalIcePortal.tscn" id="14_38gxt"]
 [ext_resource type="PackedScene" uid="uid://bs87buvdej28s" path="res://Portals-Scenes/SPAWN-DECOR.tscn" id="14_i7ypf"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nrwjr"]
@@ -2306,6 +2306,10 @@ metadata/_edit_lock_ = true
 position = Vector2(260, 442)
 texture = ExtResource("3_04meh")
 
+[node name="AlchemistBookshelf6" type="Sprite2D" parent="Decors" unique_id=1629975903]
+position = Vector2(351, 442)
+texture = ExtResource("3_04meh")
+
 [node name="GlowingWallTorch" type="Sprite2D" parent="Decors" unique_id=1590057504]
 position = Vector2(503, 274)
 texture = ExtResource("4_bvjsw")
@@ -2344,6 +2348,11 @@ texture = ExtResource("3_04meh")
 
 [node name="AlchemistBookshelf4" type="Sprite2D" parent="Decors" unique_id=15808102]
 position = Vector2(2255, 447)
+texture = ExtResource("3_04meh")
+
+[node name="AlchemistBookshelf7" type="Sprite2D" parent="Decors" unique_id=1198431535]
+position = Vector2(2391, 468)
+rotation = 1.5707964
 texture = ExtResource("3_04meh")
 
 [node name="GlowingWallTorch2" type="Sprite2D" parent="Decors" unique_id=2605981]
@@ -2451,8 +2460,8 @@ position = Vector2(1636, 534)
 [node name="MagmaImp2" parent="." unique_id=1730089176 instance=ExtResource("12_1luom")]
 position = Vector2(2695, 485)
 
-[node name="Crystal_Ice" parent="." unique_id=263141063 instance=ExtResource("14_38gxt")]
+[node name="Crystal_IcePortal" parent="." unique_id=263141063 instance=ExtResource("14_38gxt")]
 position = Vector2(3294, 447)
 
-[node name="StaticBody2D" parent="." unique_id=1777620444 instance=ExtResource("14_i7ypf")]
-position = Vector2(261, 293)
+[node name="SpawnPortal" parent="." unique_id=1777620444 instance=ExtResource("14_i7ypf")]
+position = Vector2(310, 293)

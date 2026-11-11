@@ -12,8 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://cchsp0rw6rcf" path="res://assets/decorations/outdoor/mossy_crystal_rock.png" id="8_l1qe6"]
 [ext_resource type="Texture2D" uid="uid://ckepscyd0kky1" path="res://assets/decorations/indoor/alchemist_bookshelf.png" id="9_rau3a"]
 [ext_resource type="Texture2D" uid="uid://cxdi2n7bj506e" path="res://assets/decorations/outdoor/glowing_mushroom_cluster.png" id="10_a2jqn"]
-[ext_resource type="PackedScene" uid="uid://cb786mu3w2ig" path="res://Portals-Scenes/Royal/RoyalPortal.tscn" id="12_qx6s3"]
 [ext_resource type="PackedScene" uid="uid://bs87buvdej28s" path="res://Portals-Scenes/SPAWN-DECOR.tscn" id="14_rau3a"]
+[ext_resource type="PackedScene" uid="uid://c04pqydq2enup" path="res://Portals-Scenes/EmeraldCloverMeadow/EmeraldCloverMeadowPortal.tscn" id="16_8lyxv"]
 [ext_resource type="PackedScene" uid="uid://bk7m6oihsenfq" path="res://Enemies/CrystalGolem/crytal_golem.tscn" id="16_ggbog"]
 [ext_resource type="PackedScene" uid="uid://c44db02cflvcn" path="res://Obstacles/Outdoor/mossy_crystal_rock.tscn" id="16_kbkae"]
 
@@ -2305,6 +2305,29 @@ position = Vector2(1435, 418)
 scale = Vector2(1.046875, 1.6875)
 texture = ExtResource("8_l1qe6")
 
+[node name="MossyCrystalRock5" type="Sprite2D" parent="Decors" unique_id=255074272]
+position = Vector2(2308, 534)
+scale = Vector2(1.34375, 1)
+texture = ExtResource("8_l1qe6")
+
+[node name="MossyCrystalRock6" type="Sprite2D" parent="Decors" unique_id=1880798578]
+position = Vector2(2409.7273, 559.1653)
+rotation = 3.1415927
+scale = Vector2(1.355114, -1.6284434)
+texture = ExtResource("8_l1qe6")
+
+[node name="MossyCrystalRock9" type="Sprite2D" parent="Decors" unique_id=656966598]
+position = Vector2(495, 526)
+rotation = 3.1415927
+scale = Vector2(1.355114, -1.6284434)
+texture = ExtResource("8_l1qe6")
+
+[node name="MossyCrystalRock7" type="Sprite2D" parent="Decors" unique_id=979732599]
+position = Vector2(1776, 502)
+rotation = 3.1415927
+scale = Vector2(1.355114, -1.6284434)
+texture = ExtResource("8_l1qe6")
+
 [node name="Obstacles" type="BoxContainer" parent="." unique_id=244629096]
 offset_right = 40.0
 offset_bottom = 40.0
@@ -2368,76 +2391,42 @@ position = Vector2(2231, 475)
 scale = Vector2(-1, 1)
 skew = 0.17104226
 
-[node name="CrytalGolem" parent="." unique_id=969003115]
-position = Vector2(1015, 458)
-JumpVelocity = -380.0
-
-[node name="CrytalGolem2" parent="." unique_id=488013880]
-position = Vector2(1871, 418)
-JumpVelocity = -380.0
-
-[node name="CrytalGolem3" parent="." unique_id=1589332735]
-position = Vector2(2731, 428)
-JumpVelocity = -380.0
-
-[node name="Royal" parent="." unique_id=263141063 instance=ExtResource("12_qx6s3")]
-position = Vector2(3247, 382)
-
-[node name="StaticBody2D" parent="." unique_id=1777620444 instance=ExtResource("14_rau3a")]
-position = Vector2(340.00003, 246)
-rotation = 0.20594884
-
-[node name="MossyCrystalRock" parent="." unique_id=1033758588 instance=ExtResource("16_kbkae")]
+[node name="MossyCrystalRock" parent="Obstacles" unique_id=1033758588 instance=ExtResource("16_kbkae")]
 position = Vector2(853, 459)
 
-[node name="MossyCrystalRock5" parent="." unique_id=2145384398 instance=ExtResource("16_kbkae")]
+[node name="MossyCrystalRock5" parent="Obstacles" unique_id=2145384398 instance=ExtResource("16_kbkae")]
 position = Vector2(1692, 483)
-skew = -0.13788101
+scale = Vector2(1, 0.99999994)
+skew = -0.13788104
 
-[node name="MossyCrystalRock7" parent="." unique_id=1046161510 instance=ExtResource("16_kbkae")]
+[node name="MossyCrystalRock7" parent="Obstacles" unique_id=1046161510 instance=ExtResource("16_kbkae")]
 position = Vector2(2930.0002, 293.0001)
 rotation = 0.6859144
-skew = -0.7033677
+skew = -0.7033678
 
-[node name="MossyCrystalRock8" parent="." unique_id=1016131902 instance=ExtResource("16_kbkae")]
+[node name="MossyCrystalRock8" parent="Obstacles" unique_id=1016131902 instance=ExtResource("16_kbkae")]
 position = Vector2(2872.0002, 277)
-rotation = 3.827507
-skew = -0.7033677
+rotation = -2.4556782
+skew = -0.70336777
 
-[node name="MossyCrystalRock6" parent="." unique_id=1523339948 instance=ExtResource("16_kbkae")]
+[node name="MossyCrystalRock6" parent="Obstacles" unique_id=1523339948 instance=ExtResource("16_kbkae")]
 position = Vector2(2471, 444.0001)
 rotation = -0.06806784
 scale = Vector2(2, 2)
 skew = 0.54803336
 
-[node name="MossyCrystalRock2" type="Sprite2D" parent="." unique_id=255074272]
-position = Vector2(2308, 534)
-scale = Vector2(1.34375, 1)
-texture = ExtResource("8_l1qe6")
+[node name="SpawnPortal" parent="." unique_id=1777620444 instance=ExtResource("14_rau3a")]
+position = Vector2(340.00003, 246)
+rotation = 0.20594884
 
-[node name="MossyCrystalRock3" type="Sprite2D" parent="." unique_id=1880798578]
-position = Vector2(2409.7273, 559.1653)
-scale = Vector2(-1.355114, 1.6284434)
-texture = ExtResource("8_l1qe6")
+[node name="CrytalGolem" parent="." unique_id=969003115 instance=ExtResource("16_ggbog")]
+position = Vector2(1057, 450)
 
-[node name="MossyCrystalRock9" type="Sprite2D" parent="." unique_id=656966598]
-position = Vector2(495, 526)
-scale = Vector2(-1.355114, 1.6284434)
-texture = ExtResource("8_l1qe6")
+[node name="CrytalGolem2" parent="." unique_id=1501590943 instance=ExtResource("16_ggbog")]
+position = Vector2(1845, 399)
 
-[node name="MossyCrystalRock4" type="Sprite2D" parent="." unique_id=979732599]
-position = Vector2(1776, 502)
-scale = Vector2(-1.355114, 1.6284434)
-texture = ExtResource("8_l1qe6")
+[node name="CrytalGolem3" parent="." unique_id=770546851 instance=ExtResource("16_ggbog")]
+position = Vector2(2623, 459)
 
-[node name="CrytalGolem4" parent="." unique_id=1111133703 instance=ExtResource("16_ggbog")]
-position = Vector2(1028, 466)
-script = null
-
-[node name="CrytalGolem5" parent="." unique_id=455172758 instance=ExtResource("16_ggbog")]
-position = Vector2(1842, 402)
-script = null
-
-[node name="CrytalGolem6" parent="." unique_id=1784947529 instance=ExtResource("16_ggbog")]
-position = Vector2(2613, 462)
-script = null
+[node name="EmeraldCloverMeadowPortal" parent="." unique_id=263141063 instance=ExtResource("16_8lyxv")]
+position = Vector2(3263, 424)

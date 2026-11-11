@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://6ove6aurloji" path="res://assets/monsters/03_abyss_angler_beast/hurt_critical/03_abyss_angler_beast_hurt_critical_02.png" id="6_t6agf"]
 [ext_resource type="Texture2D" uid="uid://c7rfrhxex3eo3" path="res://assets/monsters/03_abyss_angler_beast/hurt_critical/03_abyss_angler_beast_hurt_critical_03.png" id="7_h5yup"]
 [ext_resource type="Texture2D" uid="uid://dqa5a1ks71a6" path="res://assets/monsters/03_abyss_angler_beast/hurt_critical/03_abyss_angler_beast_hurt_critical_04.png" id="8_m2iec"]
-[ext_resource type="Texture2D" uid="uid://dj8sdkyfrbmdy" path="res://assets/monsters/03_abyss_angler_beast/idle/03_abyss_angler_beast_idle_01.png" id="9_p5hi6"]
+[ext_resource type="Texture2D" uid="uid://14saejccbs6t" path="res://assets/monsters/03_abyss_angler_beast/idle/03_abyss_angler_beast_idle_01.png" id="9_p5hi6"]
 [ext_resource type="Texture2D" uid="uid://dja2x2v6fmrto" path="res://assets/monsters/03_abyss_angler_beast/idle/03_abyss_angler_beast_idle_02.png" id="10_hbyd5"]
 [ext_resource type="Texture2D" uid="uid://pa8n5gk7u7n8" path="res://assets/monsters/03_abyss_angler_beast/idle/03_abyss_angler_beast_idle_03.png" id="11_0s5qf"]
 [ext_resource type="Texture2D" uid="uid://bl3vswnkx88vh" path="res://assets/monsters/03_abyss_angler_beast/idle/03_abyss_angler_beast_idle_04.png" id="12_ro8mv"]

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cr7tgs5dudguj" path="res://outside-scenes/MainMenu.cs" id="1_71404"]
 [ext_resource type="Texture2D" uid="uid://kwyjent3rjrh" path="res://assets/backgrounds/outdoor/01_emerald_clover_meadow.png" id="2_exel7"]
 [ext_resource type="FontFile" uid="uid://53udbob7porp" path="res://assets/gain-circus-font/Gain Circus.ttf" id="3_exel7"]
+[ext_resource type="PackedScene" uid="uid://dxeh783ewolh3" path="res://UserUI/setting_button_popup.tscn" id="4_10k40"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_joyb4"]
 texture = ExtResource("2_exel7")
@@ -166,6 +167,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_0s17n")
+
+[node name="SettingButtonPopup" parent="." unique_id=231950983 instance=ExtResource("4_10k40")]
+layout_mode = 0
 
 [connection signal="pressed" from="VBoxContainer/btnPlay" to="." method="_on_btn_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/btnCustomCharacter" to="." method="_on_btn_custom_character_pressed"]

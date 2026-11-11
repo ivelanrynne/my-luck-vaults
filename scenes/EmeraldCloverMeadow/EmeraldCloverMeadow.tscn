@@ -5,11 +5,19 @@
 [ext_resource type="Texture2D" uid="uid://bp5pavot7717q" path="res://assets/backgrounds/parallax_layers_transparent/parallax_01_clouds_transparent.png" id="2_tsaxn"]
 [ext_resource type="Texture2D" uid="uid://dfepeahv20v71" path="res://assets/external-src/beautiful-nature.jpg" id="2_v743m"]
 [ext_resource type="Texture2D" uid="uid://dwmeeu66yhyr8" path="res://assets/backgrounds/parallax_layers_transparent/parallax_02_hills_transparent.png" id="3_v743m"]
-[ext_resource type="PackedScene" uid="uid://bk7m6oihsenfq" path="res://Enemies/CrystalGolem/crytal_golem.tscn" id="6_husoe"]
+[ext_resource type="PackedScene" uid="uid://elwj5dpayctl" path="res://Obstacles/Outdoor/tree_emerald_canopy.tscn" id="6_hldgv"]
+[ext_resource type="Texture2D" uid="uid://dhsr5brir87y" path="res://assets/decorations/outdoor/ancient_luck_shrine.png" id="6_j7way"]
+[ext_resource type="Texture2D" uid="uid://ctxw7li0tv1ir" path="res://assets/decorations/outdoor/tree_emerald_canopy.png" id="7_0n8sk"]
+[ext_resource type="PackedScene" uid="uid://lnq1lqdiar83" path="res://Obstacles/Outdoor/tree_golden_luck.tscn" id="7_frf44"]
 [ext_resource type="PackedScene" uid="uid://bj0c753786eok" path="res://Enemies/CursedVault/cursed_vault_mimic.tscn" id="7_j7way"]
-[ext_resource type="PackedScene" uid="uid://b3drupl4jja0y" path="res://Enemies/MagmaImp/magma_imp.tscn" id="8_0n8sk"]
-[ext_resource type="PackedScene" uid="uid://lcwr5se24cmx" path="res://Enemies/StormSkyHarpy/storm_sky_harpy.tscn" id="9_aaw16"]
-[ext_resource type="PackedScene" uid="uid://ccq73oc2gpwjb" path="res://Enemies/AbyssAnglerBeast/abyss_angler_beast.tscn" id="10_ns4vg"]
+[ext_resource type="Texture2D" uid="uid://b1cqq0f0dbga1" path="res://assets/decorations/outdoor/tree_golden_luck.png" id="8_aaw16"]
+[ext_resource type="Texture2D" uid="uid://xu4jcs6v6rdi" path="res://assets/decorations/outdoor/bush_clover_flower.png" id="9_ns4vg"]
+[ext_resource type="Texture2D" uid="uid://7lcxy7cq6jwm" path="res://assets/decorations/indoor/wooden_crate.png" id="10_aaw16"]
+[ext_resource type="Texture2D" uid="uid://djf7msg0gow5u" path="res://Obstacles/Outdoor/wooden_fence_segment.png" id="11_3nrm5"]
+[ext_resource type="PackedScene" uid="uid://bs87buvdej28s" path="res://Portals-Scenes/SPAWN-DECOR.tscn" id="11_ns4vg"]
+[ext_resource type="PackedScene" uid="uid://cq5bvh5noph3d" path="res://Obstacles/Outdoor/wooden_fence_segment.tscn" id="14_3nrm5"]
+[ext_resource type="PackedScene" uid="uid://c2ag5s0unchyv" path="res://Portals-Scenes/CozyHouse/CozyHousePortal.tscn" id="16_h3oit"]
+[ext_resource type="Texture2D" uid="uid://bm8ovw4l48mm1" path="res://Obstacles/Outdoor/wooden_signpost.png" id="18_1bjwa"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0s17n"]
 texture = ExtResource("1_ceb1o")
@@ -2217,6 +2225,26 @@ layer_0/tile_data = PackedInt32Array(2359296, 0, 30, 2359297, 65536, 30, 2359298
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="WoodenCrate" type="Sprite2D" parent="Decors" unique_id=1990127414]
+position = Vector2(192, 537)
+texture = ExtResource("10_aaw16")
+
+[node name="WoodenCrate2" type="Sprite2D" parent="Decors" unique_id=1855007544]
+position = Vector2(254, 537)
+texture = ExtResource("10_aaw16")
+
+[node name="WoodenCrate3" type="Sprite2D" parent="Decors" unique_id=1842055925]
+position = Vector2(317, 537)
+texture = ExtResource("10_aaw16")
+
+[node name="WoodenCrate4" type="Sprite2D" parent="Decors" unique_id=952270637]
+position = Vector2(287, 477)
+texture = ExtResource("10_aaw16")
+
+[node name="WoodenCrate5" type="Sprite2D" parent="Decors" unique_id=1955109089]
+position = Vector2(225, 477)
+texture = ExtResource("10_aaw16")
+
 [node name="Parallax01CloudsTransparent" type="Sprite2D" parent="Decors" unique_id=1690451457]
 position = Vector2(1687, 488.74997)
 scale = Vector2(2.0708334, 1.8750001)
@@ -2240,21 +2268,569 @@ texture = ExtResource("3_v743m")
 position = Vector2(2511, 309)
 texture = ExtResource("3_v743m")
 
+[node name="AncientLuckShrine" type="Sprite2D" parent="Decors" unique_id=1711478284]
+position = Vector2(2110, 497)
+texture = ExtResource("6_j7way")
+
+[node name="TreeEmeraldCanopy" type="Sprite2D" parent="Decors" unique_id=506652655]
+position = Vector2(650, 322)
+texture = ExtResource("7_0n8sk")
+
+[node name="TreeEmeraldCanopy4" type="Sprite2D" parent="Decors" unique_id=744366071]
+position = Vector2(1508, 293.4)
+scale = Vector2(0.8375, 0.83750004)
+texture = ExtResource("7_0n8sk")
+
+[node name="TreeEmeraldCanopy5" type="Sprite2D" parent="Decors" unique_id=708192038]
+position = Vector2(1442.0001, 300)
+scale = Vector2(0.8375, 0.83750004)
+texture = ExtResource("7_0n8sk")
+
+[node name="TreeEmeraldCanopy11" type="Sprite2D" parent="Decors" unique_id=1799112598]
+position = Vector2(928, 324)
+scale = Vector2(0.8375, 0.83750004)
+texture = ExtResource("7_0n8sk")
+
+[node name="TreeEmeraldCanopy12" type="Sprite2D" parent="Decors" unique_id=491498343]
+position = Vector2(977, 341.60007)
+scale = Vector2(0.67499924, 0.67499924)
+texture = ExtResource("7_0n8sk")
+
+[node name="TreeEmeraldCanopy13" type="Sprite2D" parent="Decors" unique_id=1713834768]
+position = Vector2(881, 374.00003)
+scale = Vector2(0.67499924, 0.67499924)
+texture = ExtResource("7_0n8sk")
+
+[node name="TreeEmeraldCanopy14" type="Sprite2D" parent="Decors" unique_id=2031324111]
+position = Vector2(769.00006, 430)
+scale = Vector2(0.67499924, 0.67499924)
+texture = ExtResource("7_0n8sk")
+
+[node name="TreeEmeraldCanopy15" type="Sprite2D" parent="Decors" unique_id=1407736845]
+position = Vector2(191.00012, 337)
+scale = Vector2(0.67499924, 0.67499924)
+texture = ExtResource("7_0n8sk")
+
+[node name="TreeEmeraldCanopy27" type="Sprite2D" parent="Decors" unique_id=1194650698]
+z_index = 100
+position = Vector2(690, 574)
+scale = Vector2(0.67499924, 0.67499924)
+texture = ExtResource("7_0n8sk")
+
+[node name="TreeEmeraldCanopy28" type="Sprite2D" parent="Decors" unique_id=421446606]
+z_index = 100
+position = Vector2(216, 574)
+scale = Vector2(0.67499924, 0.67499924)
+texture = ExtResource("7_0n8sk")
+
+[node name="TreeEmeraldCanopy29" type="Sprite2D" parent="Decors" unique_id=847620639]
+z_index = 100
+position = Vector2(65.000015, 569)
+scale = Vector2(0.67499924, 0.67499924)
+texture = ExtResource("7_0n8sk")
+
+[node name="TreeEmeraldCanopy30" type="Sprite2D" parent="Decors" unique_id=1010483678]
+z_index = 100
+position = Vector2(65.000015, 569)
+scale = Vector2(0.67499924, 0.67499924)
+texture = ExtResource("7_0n8sk")
+
+[node name="TreeEmeraldCanopy31" type="Sprite2D" parent="Decors" unique_id=397901316]
+z_index = 100
+position = Vector2(277.00003, 589.19995)
+scale = Vector2(0.5374995, 0.53749955)
+texture = ExtResource("7_0n8sk")
+
+[node name="TreeEmeraldCanopy17" type="Sprite2D" parent="Decors" unique_id=2034222521]
+position = Vector2(86.00001, 424)
+scale = Vector2(0.67499924, 0.67499924)
+texture = ExtResource("7_0n8sk")
+
+[node name="TreeEmeraldCanopy16" type="Sprite2D" parent="Decors" unique_id=850410615]
+position = Vector2(320.50003, 335.60004)
+scale = Vector2(0.8687494, 0.8687495)
+texture = ExtResource("7_0n8sk")
+
+[node name="TreeEmeraldCanopy6" type="Sprite2D" parent="Decors" unique_id=1907120608]
+position = Vector2(1540, 370)
+scale = Vector2(0.8375, 0.83750004)
+texture = ExtResource("7_0n8sk")
+
+[node name="TreeEmeraldCanopy18" type="Sprite2D" parent="Decors" unique_id=902682945]
+position = Vector2(1653, 488)
+scale = Vector2(0.8375, 0.83750004)
+texture = ExtResource("7_0n8sk")
+
+[node name="TreeEmeraldCanopy19" type="Sprite2D" parent="Decors" unique_id=1295307407]
+position = Vector2(1718, 488)
+scale = Vector2(0.8375, 0.83750004)
+texture = ExtResource("7_0n8sk")
+
+[node name="TreeEmeraldCanopy20" type="Sprite2D" parent="Decors" unique_id=1030397007]
+position = Vector2(1933.0001, 507)
+scale = Vector2(0.64375013, 0.64375025)
+texture = ExtResource("7_0n8sk")
+
+[node name="TreeEmeraldCanopy21" type="Sprite2D" parent="Decors" unique_id=1542711528]
+position = Vector2(2357, 507)
+scale = Vector2(0.64375013, 0.64375025)
+texture = ExtResource("7_0n8sk")
+
+[node name="TreeEmeraldCanopy22" type="Sprite2D" parent="Decors" unique_id=453439253]
+position = Vector2(2308, 507)
+scale = Vector2(0.64375013, 0.64375025)
+texture = ExtResource("7_0n8sk")
+
+[node name="TreeEmeraldCanopy23" type="Sprite2D" parent="Decors" unique_id=313329499]
+position = Vector2(2569, 458.00003)
+scale = Vector2(0.8843745, 0.88437474)
+texture = ExtResource("7_0n8sk")
+
+[node name="TreeEmeraldCanopy24" type="Sprite2D" parent="Decors" unique_id=319653235]
+position = Vector2(2617, 300.00003)
+scale = Vector2(0.8843745, 0.88437474)
+texture = ExtResource("7_0n8sk")
+
+[node name="TreeEmeraldCanopy25" type="Sprite2D" parent="Decors" unique_id=1949866079]
+position = Vector2(2718, 334.00003)
+scale = Vector2(0.8843745, 0.88437474)
+texture = ExtResource("7_0n8sk")
+
+[node name="TreeEmeraldCanopy26" type="Sprite2D" parent="Decors" unique_id=1815209669]
+position = Vector2(2834.125, 307.55008)
+scale = Vector2(0.7234379, 0.72343814)
+texture = ExtResource("7_0n8sk")
+
+[node name="TreeEmeraldCanopy32" type="Sprite2D" parent="Decors" unique_id=530427067]
+position = Vector2(3028.0625, 391.72504)
+scale = Vector2(0.84922045, 0.94505256)
+texture = ExtResource("7_0n8sk")
+
+[node name="TreeEmeraldCanopy33" type="Sprite2D" parent="Decors" unique_id=1567273935]
+position = Vector2(2914, 472)
+scale = Vector2(0.7308588, 0.71210957)
+texture = ExtResource("7_0n8sk")
+
+[node name="TreeEmeraldCanopy34" type="Sprite2D" parent="Decors" unique_id=23498904]
+z_index = 100
+position = Vector2(3119, 573)
+scale = Vector2(0.7308588, 0.71210957)
+texture = ExtResource("7_0n8sk")
+
+[node name="TreeEmeraldCanopy35" type="Sprite2D" parent="Decors" unique_id=1734671648]
+z_index = 100
+position = Vector2(3018.7656, 561.1813)
+scale = Vector2(0.7654278, 0.83522147)
+texture = ExtResource("7_0n8sk")
+
+[node name="TreeEmeraldCanopy3" type="Sprite2D" parent="Decors" unique_id=110331269]
+position = Vector2(544, 409.2)
+scale = Vector2(0.7375, 0.7375)
+texture = ExtResource("7_0n8sk")
+
+[node name="TreeEmeraldCanopy2" type="Sprite2D" parent="Decors" unique_id=531565357]
+position = Vector2(480.5, 327.4)
+scale = Vector2(0.61875, 0.61875004)
+texture = ExtResource("7_0n8sk")
+
+[node name="TreeEmeraldCanopy7" type="Sprite2D" parent="Decors" unique_id=187092309]
+position = Vector2(1940.0001, 266)
+scale = Vector2(0.8375, 0.83750004)
+texture = ExtResource("7_0n8sk")
+
+[node name="TreeEmeraldCanopy8" type="Sprite2D" parent="Decors" unique_id=1777847463]
+position = Vector2(1874.5, 290.59988)
+scale = Vector2(0.7187489, 0.718749)
+texture = ExtResource("7_0n8sk")
+
+[node name="TreeEmeraldCanopy9" type="Sprite2D" parent="Decors" unique_id=1959665710]
+position = Vector2(2338, 357)
+scale = Vector2(0.7187489, 0.718749)
+texture = ExtResource("7_0n8sk")
+
+[node name="TreeEmeraldCanopy10" type="Sprite2D" parent="Decors" unique_id=47637268]
+position = Vector2(2136, 357)
+scale = Vector2(0.7187489, 0.718749)
+texture = ExtResource("7_0n8sk")
+
+[node name="TreeGoldenLuck" type="Sprite2D" parent="Decors" unique_id=636833830]
+position = Vector2(1187, 279)
+texture = ExtResource("8_aaw16")
+
+[node name="TreeGoldenLuck4" type="Sprite2D" parent="Decors" unique_id=175883375]
+position = Vector2(1267, 301)
+texture = ExtResource("8_aaw16")
+
+[node name="TreeGoldenLuck2" type="Sprite2D" parent="Decors" unique_id=848322772]
+position = Vector2(1971, 267.8)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("8_aaw16")
+
+[node name="TreeGoldenLuck5" type="Sprite2D" parent="Decors" unique_id=1616013785]
+position = Vector2(1796.0001, 336.2)
+scale = Vector2(0.625, 0.625)
+texture = ExtResource("8_aaw16")
+
+[node name="TreeGoldenLuck7" type="Sprite2D" parent="Decors" unique_id=2117340915]
+position = Vector2(1835.0001, 381)
+scale = Vector2(0.79999995, 0.79999995)
+texture = ExtResource("8_aaw16")
+
+[node name="TreeGoldenLuck6" type="Sprite2D" parent="Decors" unique_id=827006937]
+position = Vector2(1752, 349)
+scale = Vector2(0.625, 0.625)
+texture = ExtResource("8_aaw16")
+
+[node name="TreeGoldenLuck3" type="Sprite2D" parent="Decors" unique_id=1787088831]
+position = Vector2(3208, 319)
+scale = Vector2(0.9875, 0.98750013)
+texture = ExtResource("8_aaw16")
+
+[node name="TreeGoldenLuck8" type="Sprite2D" parent="Decors" unique_id=958371871]
+position = Vector2(3156.0002, 350.00003)
+scale = Vector2(0.9875, 0.98750013)
+texture = ExtResource("8_aaw16")
+
+[node name="BushCloverFlower" type="Sprite2D" parent="Decors" unique_id=201897507]
+position = Vector2(1211.5, 533.5)
+scale = Vector2(1.3046875, 1.28125)
+texture = ExtResource("9_ns4vg")
+
+[node name="BushCloverFlower8" type="Sprite2D" parent="Decors" unique_id=1577252336]
+position = Vector2(1662.9999, 540.00006)
+scale = Vector2(1.0342027, 1.0156243)
+texture = ExtResource("9_ns4vg")
+
+[node name="BushCloverFlower9" type="Sprite2D" parent="Decors" unique_id=1749278371]
+position = Vector2(1955, 556.00006)
+scale = Vector2(1.0342027, 1.0156243)
+texture = ExtResource("9_ns4vg")
+
+[node name="BushCloverFlower18" type="Sprite2D" parent="Decors" unique_id=706151507]
+z_index = 100
+position = Vector2(1876.4055, 547.875)
+scale = Vector2(1.1186639, 1.1848962)
+texture = ExtResource("9_ns4vg")
+
+[node name="BushCloverFlower10" type="Sprite2D" parent="Decors" unique_id=874361612]
+z_index = 100
+position = Vector2(2153, 599.00006)
+scale = Vector2(1.0342027, 1.0156243)
+texture = ExtResource("9_ns4vg")
+
+[node name="BushCloverFlower19" type="Sprite2D" parent="Decors" unique_id=216427818]
+z_index = 100
+position = Vector2(2531, 553.00006)
+scale = Vector2(1.0342027, 1.0156243)
+texture = ExtResource("9_ns4vg")
+
+[node name="BushCloverFlower20" type="Sprite2D" parent="Decors" unique_id=1779106662]
+z_index = 100
+position = Vector2(2617.0002, 565)
+scale = Vector2(1.2749133, 1.1536462)
+texture = ExtResource("9_ns4vg")
+
+[node name="BushCloverFlower21" type="Sprite2D" parent="Decors" unique_id=1186804715]
+position = Vector2(2936.0002, 542)
+scale = Vector2(1.2749133, 1.1536462)
+texture = ExtResource("9_ns4vg")
+
+[node name="BushCloverFlower22" type="Sprite2D" parent="Decors" unique_id=950427991]
+z_index = 100
+position = Vector2(2854.0002, 562.00006)
+scale = Vector2(1.2749133, 1.1536462)
+texture = ExtResource("9_ns4vg")
+
+[node name="BushCloverFlower23" type="Sprite2D" parent="Decors" unique_id=1552260081]
+position = Vector2(3306.0002, 362)
+scale = Vector2(1.2749133, 1.1536462)
+texture = ExtResource("9_ns4vg")
+
+[node name="BushCloverFlower24" type="Sprite2D" parent="Decors" unique_id=477851591]
+z_index = 100
+position = Vector2(3174.0002, 602)
+scale = Vector2(1.2749133, 1.1536462)
+texture = ExtResource("9_ns4vg")
+
+[node name="BushCloverFlower11" type="Sprite2D" parent="Decors" unique_id=1014160786]
+position = Vector2(1439, 604.00006)
+scale = Vector2(1.0342027, 1.0156243)
+texture = ExtResource("9_ns4vg")
+
+[node name="BushCloverFlower12" type="Sprite2D" parent="Decors" unique_id=910579305]
+position = Vector2(890.99994, 613.00006)
+scale = Vector2(1.0342027, 1.0156243)
+texture = ExtResource("9_ns4vg")
+
+[node name="BushCloverFlower17" type="Sprite2D" parent="Decors" unique_id=2122293599]
+position = Vector2(890.99994, 613.00006)
+scale = Vector2(1.0342027, 1.0156243)
+texture = ExtResource("9_ns4vg")
+
+[node name="BushCloverFlower16" type="Sprite2D" parent="Decors" unique_id=406224701]
+z_index = 100
+position = Vector2(800.99994, 588.00006)
+scale = Vector2(1.0342027, 1.0156243)
+texture = ExtResource("9_ns4vg")
+
+[node name="BushCloverFlower2" type="Sprite2D" parent="Decors" unique_id=445284863]
+position = Vector2(644.185, 386.25)
+scale = Vector2(0.88570267, 0.8697918)
+texture = ExtResource("9_ns4vg")
+
+[node name="BushCloverFlower3" type="Sprite2D" parent="Decors" unique_id=116428446]
+z_index = 99
+position = Vector2(94.00001, 558)
+scale = Vector2(1.3046875, 1.28125)
+texture = ExtResource("9_ns4vg")
+
+[node name="BushCloverFlower13" type="Sprite2D" parent="Decors" unique_id=1292861148]
+position = Vector2(190, 536)
+scale = Vector2(1.3046875, 1.28125)
+texture = ExtResource("9_ns4vg")
+
+[node name="BushCloverFlower4" type="Sprite2D" parent="Decors" unique_id=849653660]
+z_index = 100
+position = Vector2(439.90955, 575.375)
+scale = Vector2(0.9076632, 0.9036457)
+texture = ExtResource("9_ns4vg")
+
+[node name="BushCloverFlower15" type="Sprite2D" parent="Decors" unique_id=1269206995]
+z_index = 100
+position = Vector2(551.40955, 568.375)
+scale = Vector2(0.8998506, 0.96614623)
+texture = ExtResource("9_ns4vg")
+
+[node name="BushCloverFlower14" type="Sprite2D" parent="Decors" unique_id=516131664]
+z_index = 100
+position = Vector2(492.90955, 574.875)
+scale = Vector2(0.8295382, 0.8098958)
+texture = ExtResource("9_ns4vg")
+
+[node name="BushCloverFlower5" type="Sprite2D" parent="Decors" unique_id=1649853669]
+position = Vector2(951, 408.00003)
+scale = Vector2(1.3046875, 1.28125)
+texture = ExtResource("9_ns4vg")
+
+[node name="BushCloverFlower6" type="Sprite2D" parent="Decors" unique_id=1875222346]
+position = Vector2(753.12, 325.25003)
+scale = Vector2(1.1190616, 1.0989587)
+texture = ExtResource("9_ns4vg")
+
+[node name="BushCloverFlower7" type="Sprite2D" parent="Decors" unique_id=1519592679]
+position = Vector2(783.5559, 492.625)
+scale = Vector2(0.8777474, 0.86197954)
+texture = ExtResource("9_ns4vg")
+
+[node name="WoodenFenceSegment" type="Sprite2D" parent="Decors" unique_id=1829540178]
+position = Vector2(411, 501)
+texture = ExtResource("11_3nrm5")
+
+[node name="WoodenFenceSegment2" type="Sprite2D" parent="Decors" unique_id=1943592495]
+position = Vector2(513, 501)
+texture = ExtResource("11_3nrm5")
+
+[node name="WoodenFenceSegment3" type="Sprite2D" parent="Decors" unique_id=1723471660]
+position = Vector2(859, 501)
+texture = ExtResource("11_3nrm5")
+
+[node name="WoodenFenceSegment10" type="Sprite2D" parent="Decors" unique_id=1216714039]
+position = Vector2(2472, 501)
+texture = ExtResource("11_3nrm5")
+
+[node name="WoodenFenceSegment11" type="Sprite2D" parent="Decors" unique_id=1406738495]
+position = Vector2(2643, 501)
+texture = ExtResource("11_3nrm5")
+
+[node name="WoodenFenceSegment4" type="Sprite2D" parent="Decors" unique_id=337896482]
+position = Vector2(995, 501)
+texture = ExtResource("11_3nrm5")
+
+[node name="WoodenFenceSegment5" type="Sprite2D" parent="Decors" unique_id=951775222]
+position = Vector2(1253, 481.0001)
+rotation = 0.7278023
+skew = -0.60562927
+texture = ExtResource("11_3nrm5")
+
+[node name="WoodenFenceSegment9" type="Sprite2D" parent="Decors" unique_id=326261797]
+position = Vector2(2029.0002, 371.00006)
+rotation = -0.39618975
+skew = 0.429351
+texture = ExtResource("11_3nrm5")
+
+[node name="WoodenFenceSegment14" type="Sprite2D" parent="Decors" unique_id=1945054548]
+position = Vector2(1928.0001, 414.00006)
+rotation = -0.39618975
+skew = 0.429351
+texture = ExtResource("11_3nrm5")
+
+[node name="WoodenFenceSegment15" type="Sprite2D" parent="Decors" unique_id=1211029203]
+position = Vector2(2239, 327.00012)
+rotation = -0.1308997
+skew = 0.15882497
+texture = ExtResource("11_3nrm5")
+
+[node name="WoodenFenceSegment16" type="Sprite2D" parent="Decors" unique_id=1700902312]
+position = Vector2(2445, 374.00003)
+rotation = 0.13439035
+skew = -0.15533431
+texture = ExtResource("11_3nrm5")
+
+[node name="WoodenFenceSegment17" type="Sprite2D" parent="Decors" unique_id=1492583905]
+position = Vector2(2850.0002, 366.00006)
+rotation = 0.13439035
+skew = -0.15533431
+texture = ExtResource("11_3nrm5")
+
+[node name="WoodenFenceSegment18" type="Sprite2D" parent="Decors" unique_id=82825602]
+position = Vector2(3146.0002, 444.0001)
+rotation = 0.13439035
+skew = -0.15533431
+texture = ExtResource("11_3nrm5")
+
+[node name="WoodenFenceSegment6" type="Sprite2D" parent="Decors" unique_id=82621190]
+z_index = 100
+position = Vector2(1141, 611)
+scale = Vector2(1.390625, 1)
+texture = ExtResource("11_3nrm5")
+
+[node name="WoodenFenceSegment12" type="Sprite2D" parent="Decors" unique_id=805608774]
+z_index = 100
+position = Vector2(2233, 611)
+scale = Vector2(1.390625, 1)
+texture = ExtResource("11_3nrm5")
+
+[node name="WoodenFenceSegment13" type="Sprite2D" parent="Decors" unique_id=798885127]
+z_index = 100
+position = Vector2(2775, 600)
+scale = Vector2(1.390625, 1)
+texture = ExtResource("11_3nrm5")
+
+[node name="WoodenFenceSegment7" type="Sprite2D" parent="Decors" unique_id=865374424]
+z_index = 100
+position = Vector2(131, 606)
+scale = Vector2(0.921875, 1)
+texture = ExtResource("11_3nrm5")
+
+[node name="WoodenFenceSegment8" type="Sprite2D" parent="Decors" unique_id=93962499]
+z_index = 100
+position = Vector2(361, 606)
+scale = Vector2(0.921875, 1)
+texture = ExtResource("11_3nrm5")
+
 [node name="Obstacles" type="BoxContainer" parent="." unique_id=1668416907]
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="CursedVaultMimic" parent="." unique_id=746059162 instance=ExtResource("7_j7way")]
-position = Vector2(870, 544)
+[node name="normal-tree" parent="Obstacles" unique_id=1713542270 instance=ExtResource("6_hldgv")]
+position = Vector2(1074, 485)
 
-[node name="MagmaImp" parent="." unique_id=1859085008 instance=ExtResource("8_0n8sk")]
-position = Vector2(79, 554)
+[node name="normal-tree3" parent="Obstacles" unique_id=1811698387 instance=ExtResource("6_hldgv")]
+position = Vector2(1115, 503)
 
-[node name="StormSkyHarpy" parent="." unique_id=2025129766 instance=ExtResource("9_aaw16")]
-position = Vector2(1319, 549)
+[node name="normal-tree2" parent="Obstacles" unique_id=780731004 instance=ExtResource("6_hldgv")]
+position = Vector2(1055, 515)
 
-[node name="CrytalGolem" parent="." unique_id=969003115 instance=ExtResource("6_husoe")]
-position = Vector2(366, 530)
+[node name="normal-tree10" parent="Obstacles" unique_id=1735301426 instance=ExtResource("6_hldgv")]
+position = Vector2(625, 515)
 
-[node name="AbyssAnglerBeast" parent="." unique_id=1342296334 instance=ExtResource("10_ns4vg")]
-position = Vector2(623, 520)
+[node name="normal-tree11" parent="Obstacles" unique_id=1238738212 instance=ExtResource("6_hldgv")]
+position = Vector2(2220, 515)
+
+[node name="normal-tree12" parent="Obstacles" unique_id=679211294 instance=ExtResource("6_hldgv")]
+position = Vector2(2421, 515)
+
+[node name="normal-tree7" parent="Obstacles" unique_id=1229427632 instance=ExtResource("6_hldgv")]
+position = Vector2(775, 566.00006)
+rotation = 0.89884454
+scale = Vector2(0.4, 0.4)
+
+[node name="normal-tree8" parent="Obstacles" unique_id=657205982 instance=ExtResource("6_hldgv")]
+position = Vector2(791.00006, 554.00006)
+rotation = -0.6806784
+scale = Vector2(0.4, 0.4)
+
+[node name="normal-tree9" parent="Obstacles" unique_id=455355705 instance=ExtResource("6_hldgv")]
+position = Vector2(825, 554)
+rotation = 0.075049154
+scale = Vector2(0.4, 0.4)
+
+[node name="normal-tree4" parent="Obstacles" unique_id=607796350 instance=ExtResource("6_hldgv")]
+position = Vector2(1516, 534.99994)
+rotation = -1.2479104
+
+[node name="normal-tree5" parent="Obstacles" unique_id=2136628035 instance=ExtResource("6_hldgv")]
+position = Vector2(1804, 525.00006)
+rotation = -0.7679449
+
+[node name="normal-tree6" parent="Obstacles" unique_id=537950594 instance=ExtResource("6_hldgv")]
+position = Vector2(1750.0001, 540.0001)
+rotation = 0.60562927
+scale = Vector2(0.8, 0.8)
+
+[node name="gold-tree" parent="Obstacles" unique_id=929478997 instance=ExtResource("7_frf44")]
+position = Vector2(1355, 490)
+
+[node name="gold-tree2" parent="Obstacles" unique_id=762597441 instance=ExtResource("7_frf44")]
+position = Vector2(1376, 516)
+
+[node name="gold-tree4" parent="Obstacles" unique_id=1837618565 instance=ExtResource("7_frf44")]
+position = Vector2(2664, 507)
+
+[node name="gold-tree3" parent="Obstacles" unique_id=162639309 instance=ExtResource("7_frf44")]
+position = Vector2(2726, 504)
+scale = Vector2(1.2, 1.2)
+
+[node name="StaticBody2D" parent="Obstacles" unique_id=1372171768 instance=ExtResource("14_3nrm5")]
+position = Vector2(2297, 548.99994)
+rotation = 0.61784655
+scale = Vector2(0.6, 0.6)
+skew = -0.5480335
+
+[node name="StaticBody2D2" parent="Obstacles" unique_id=315426869 instance=ExtResource("14_3nrm5")]
+position = Vector2(2192, 547.9999)
+rotation = 0.61784655
+scale = Vector2(0.99999994, 1)
+skew = -0.5480335
+
+[node name="StaticBody2D3" parent="Obstacles" unique_id=822059199 instance=ExtResource("14_3nrm5")]
+position = Vector2(957.00006, 546)
+rotation = 0.61784655
+scale = Vector2(0.99999994, 1)
+skew = -0.5480335
+
+[node name="StaticBody2D4" parent="Obstacles" unique_id=295939076 instance=ExtResource("14_3nrm5")]
+position = Vector2(1332, 540.99994)
+rotation = 0.61784655
+scale = Vector2(0.99999994, 1)
+skew = -0.5480335
+
+[node name="SpawnPortal" parent="." unique_id=1777620444 instance=ExtResource("11_ns4vg")]
+position = Vector2(258, 360)
+
+[node name="CozyHousePortal" parent="." unique_id=263141063 instance=ExtResource("16_h3oit")]
+position = Vector2(3296, 463)
+
+[node name="CursedVaultMimic" parent="." unique_id=969003115 instance=ExtResource("7_j7way")]
+position = Vector2(715, 552)
+
+[node name="CursedVaultMimic2" parent="." unique_id=1124853297 instance=ExtResource("7_j7way")]
+position = Vector2(1293, 425)
+
+[node name="CursedVaultMimic3" parent="." unique_id=573029434 instance=ExtResource("7_j7way")]
+position = Vector2(2021, 531)
+
+[node name="CursedVaultMimic4" parent="." unique_id=827584128 instance=ExtResource("7_j7way")]
+position = Vector2(2815, 535)
+
+[node name="WoodenSignpost" type="Sprite2D" parent="." unique_id=1697936485]
+position = Vector2(1576, 502)
+scale = Vector2(0.625, 0.625)
+texture = ExtResource("18_1bjwa")
+
+[node name="WoodenSignpost2" type="Sprite2D" parent="." unique_id=1205556825]
+position = Vector2(2277, 433)
+rotation = 0.46251225
+scale = Vector2(0.625, 0.625)
+skew = -0.3298672
+texture = ExtResource("18_1bjwa")

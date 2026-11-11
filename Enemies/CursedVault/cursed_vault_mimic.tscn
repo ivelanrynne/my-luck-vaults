@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://degkkueqc7iod" path="res://assets/monsters/06_cursed_vault_mimic/hurt_critical/06_cursed_vault_mimic_hurt_critical_02.png" id="6_lbvdl"]
 [ext_resource type="Texture2D" uid="uid://mquimivjrcep" path="res://assets/monsters/06_cursed_vault_mimic/hurt_critical/06_cursed_vault_mimic_hurt_critical_03.png" id="7_ilrs1"]
 [ext_resource type="Texture2D" uid="uid://ct4u0dg2dtsoi" path="res://assets/monsters/06_cursed_vault_mimic/hurt_critical/06_cursed_vault_mimic_hurt_critical_04.png" id="8_6dxdu"]
-[ext_resource type="Texture2D" uid="uid://w278km0qg4ra" path="res://assets/monsters/06_cursed_vault_mimic/idle/06_cursed_vault_mimic_idle_01.png" id="9_ydv7k"]
+[ext_resource type="Texture2D" uid="uid://h61der8bvrxm" path="res://Enemies/CursedVault/06_cursed_vault_mimic_idle_01.png" id="10_q06un"]
 [ext_resource type="Texture2D" uid="uid://cxend2he3wfpn" path="res://assets/monsters/06_cursed_vault_mimic/idle/06_cursed_vault_mimic_idle_02.png" id="10_trly6"]
 [ext_resource type="Texture2D" uid="uid://c7xd2b4awi78" path="res://assets/monsters/06_cursed_vault_mimic/idle/06_cursed_vault_mimic_idle_03.png" id="11_0wm8n"]
 [ext_resource type="Texture2D" uid="uid://bpkisi8fujo81" path="res://assets/monsters/06_cursed_vault_mimic/idle/06_cursed_vault_mimic_idle_04.png" id="12_0q36d"]
@@ -59,7 +59,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("9_ydv7k")
+"texture": ExtResource("10_q06un")
 }, {
 "duration": 1.0,
 "texture": ExtResource("10_trly6")

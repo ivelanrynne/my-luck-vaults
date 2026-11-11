@@ -9,5 +9,6 @@ texture = ExtResource("1_wr3bc")
 region_enabled = true
 region_rect = Rect2(64.88948, 55.49785, 138.99326, 175.80771)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=55880464]
-polygon = PackedVector2Array(3, -28, 42, -18, 59, -2, 65, 13, 60, 22, 51, 30, 46, 43, 45, 55, 38, 64, 28, 57, 25, 39, 19, 41, 14, 54, 10, 74, 0, 82, -11, 70, -13, 58, -20, 40, -25, 39, -27, 51, -37, 65, -47, 47, -49, 35, -53, 27, -65, 16, -67, 5, -52, -12, -31, -22, -6, -28)
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="." unique_id=1098420794]
+polygon = PackedVector2Array(-54, -8, 51, -7, 60, -2, 64, 8, 64, 16, 60, 22, 54, 27, 46, 45, 35, 47, 28, 45, 26, 38, 19, 39, 16, 49, 13, 54, -3, 60, -12, 58, -14, 52, -21, 41, -28, 40, -29, 46, -46, 44, -52, 28, -65, 17, -67, 9, -60, -2)
+one_way_collision = true
